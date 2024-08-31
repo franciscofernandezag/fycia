@@ -10,14 +10,14 @@
   --background-color: #f4f4f4; /* Light grey background color for a clean look */
   --default-color: #2c3e50; /* Dark grey for general text, providing good readability */
   --heading-color: #1a1a1a; /* Very dark grey for headings to ensure emphasis */
-  --accent-color: #3faabd; /* Deep blue for accents, symbolizing trust and professionalism */
+  --accent-color: #5a858d; /* Deep blue for accents, symbolizing trust and professionalism */
   --surface-color: #ffffff; /* White for cards and boxed elements to keep content clear */
   --contrast-color: #ffffff; /* White for contrast on darker backgrounds */
 }
 
 /* Nav Menu Colors */
 :root {
-  --nav-color: #a3abb3; /* Darker grey for navmenu links */
+  --nav-color: #a3b8ce; /* Darker grey for navmenu links */
   --nav-hover-color: #2980b9; /* Deep blue on hover for emphasis */
   --nav-mobile-background-color: #ffffff; /* White background for mobile menu for clarity */
   --nav-dropdown-background-color: #ffffff; /* White background for dropdown items */
@@ -865,6 +865,43 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 
+/* Estilos para el contenido del overlay */
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem; /* Tamaño reducido para h1 en dispositivos móviles */
+  }
+
+  .hero-content p {
+    font-size: 1.2rem; /* Tamaño reducido para párrafos en dispositivos móviles */
+  }
+
+  .btn-primary {
+    padding: 10px 20px; /* Ajuste de padding para el botón en dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem; /* Tamaño aún más reducido para h1 en dispositivos móviles más pequeños */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Tamaño aún más reducido para párrafos en dispositivos móviles más pequeños */
+  }
+
+  .btn-primary {
+    padding: 8px 16px; /* Ajuste de padding para el botón en dispositivos móviles más pequeños */
+  }
+}
 
 
 
