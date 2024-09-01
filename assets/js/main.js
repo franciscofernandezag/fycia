@@ -1,11 +1,6 @@
-
-
 (function() {
   "use strict";
 
-
-
-  
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
@@ -40,7 +35,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -136,7 +130,6 @@
         }
       }, false);
     });
-
   });
 
   /**
@@ -163,7 +156,68 @@
    */
   new PureCounter();
 
+  /**
+   * Update active link in the navbar based on scroll position
+   */
+  function updateActiveLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#navmenu a');
+    
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  (function() {
+    "use strict";
+  
+    // Otras funciones aquí...
+  
+    /**
+     * Update active link in the navbar based on scroll position
+     */
+    function updateActiveLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('#navmenu a');
+      
+      let current = '';
+  
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight - 50) {
+          current = section.getAttribute('id');
+        }
+      });
+  
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+  
+  })();
+  
+
+  window.addEventListener('scroll', updateActiveLink);
+  window.addEventListener('load', updateActiveLink);
+
 })();
-
-
-

@@ -142,7 +142,7 @@ h6 {
 .php-email-form .sent-message {
   display: none;
   color: #ffffff;
-  background: #059652;
+  background: var(--accent-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -221,7 +221,7 @@ h6 {
 }
 
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 18px rgba(212, 196, 196, 0.1);
 }
 
 /* Global Header on Scroll
@@ -230,10 +230,14 @@ h6 {
   --background-color: rgba(59, 59, 59, 0.8); /* Fondo negro semi-transparente */
   --heading-color: #ffffff; /* Texto blanco */
   --nav-color: #ffffff; /* Color de los enlaces de navegación */
-  --nav-hover-color: #82bc01; /* Color de los enlaces de navegación al pasar el ratón */
+  --nav-hover-color: #a0b6ad; /* Color de los enlaces de navegación al pasar el ratón */
 }
 
-
+@media (max-width: 767px) {
+  .scrolled .header {
+    --background-color: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
+  }
+}
 
 
 /*--------------------------------------------------------------
@@ -243,6 +247,8 @@ h6 {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+
+    
   }
 
   .navmenu ul {
@@ -296,7 +302,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: #82bc01;
+    background-color: #6cc0bc;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -353,10 +359,13 @@ h6 {
 
 }
 
+
+
+
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: var(--nav-hover-color);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -2091,6 +2100,8 @@ section,
 .faq .faq-container .faq-item .faq-content p {
   margin-bottom: 0;
   overflow: hidden;
+  margin: 0; /* Elimina los márgenes que hacen que el contenedor se expanda */
+  padding: 0; /* Elimina el padding adicional */
 }
 
 .faq .faq-container .faq-item .faq-toggle {
