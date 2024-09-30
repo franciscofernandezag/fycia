@@ -17,12 +17,12 @@
 
 /* Nav Menu Colors */
 :root {
-  --nav-color: #a3b8ce; /* Darker grey for navmenu links */
-  --nav-hover-color: #2980b9; /* Deep blue on hover for emphasis */
+  --nav-color: #d3e6e9; /* Darker grey for navmenu links */
+  --nav-hover-color: #5d9ca7; /* Deep blue on hover for emphasis */
   --nav-mobile-background-color: #ffffff; /* White background for mobile menu for clarity */
   --nav-dropdown-background-color: #ffffff; /* White background for dropdown items */
   --nav-dropdown-color: #34495e; /* Dark grey for dropdown menu links */
-  --nav-dropdown-hover-color: #2980b9; /* Deep blue on hover for dropdown links */
+  --nav-dropdown-hover-color: #0d4d52; /* Deep  on hover for dropdown links */
 }
 
 /* Color Presets */
@@ -59,7 +59,7 @@
 
 .custom-header .navmenu a:hover,
 .custom-header .navmenu .active {
-  color: #0f6b65; /* Color al pasar el ratón sobre los enlaces */
+  color: #0f6b654b; /* Color al pasar el ratón sobre los enlaces */
 }
 
 .custom-header .mobile-nav-toggle {
@@ -188,7 +188,6 @@ h6 {
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -196,6 +195,8 @@ h6 {
 .header .logo img {
   max-height: 150px; /* Tamaño más grande por defecto */
   width: auto; 
+  height: auto; /* Mantiene la proporción de la imagen */
+
 }
 
 /* Media Query para ajustar en pantallas pequeñas */
@@ -220,35 +221,52 @@ h6 {
   color: var(--color-primary);
 }
 
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(212, 196, 196, 0.1);
-}
-
-/* Global Header on Scroll
-------------------------------*/
-.scrolled .header {
-  --background-color: rgba(59, 59, 59, 0.8); /* Fondo negro semi-transparente */
-  --heading-color: #ffffff; /* Texto blanco */
-  --nav-color: #ffffff; /* Color de los enlaces de navegación */
-  --nav-hover-color: #a0b6ad; /* Color de los enlaces de navegación al pasar el ratón */
-}
-
-@media (max-width: 767px) {
-  .scrolled .header {
-    --background-color: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
-  }
-}
 
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
-@media (min-width: 1200px) {
+
+/* Global Header on Scroll */
+.scrolled .header {
+  --background-color: rgba(63, 108, 116, 0.753); /* Fondo más oscuro y semi-transparente */
+  padding: 0; /* Altura reducida del navbar al hacer scroll */
+  color: #FFEBCC;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
+}
+
+.scrolled .header .navmenu ul li a,
+.header .navmenu ul li a {
+  color: #FFEBCC; /* Color de los enlaces de navegación */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+  font-weight: 400; /* Aumenta el grosor de la fuente */
+  font-size: 16px; /* Tamaño de fuente ligeramente mayor */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Suave transición en hover */
+}
+
+.header .navmenu ul li a:hover {
+  color: var(--nav-hover-color); /* Cambia el color al hacer hover */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el ratón */
+}
+
+/* Mobile nav toggle */
+.header .mobile-nav-toggle {
+  color: #0d4d52;
+}
+
+
+/* Mobile Navigation */
+@media (min-width: 768px) { /* Cambiado a 768px para incluir dispositivos hasta iPad Pro */
   .navmenu {
     padding: 0;
+  }
 
-    
+  .scrolled .header .navmenu ul li a,
+  .header .navmenu ul li a {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+    font-weight: 400; /* Aumenta el grosor de la fuente */
+    font-size: 16px; /* Tamaño de fuente ligeramente mayor */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Suave transición en hover */
   }
 
   .navmenu ul {
@@ -259,16 +277,12 @@ h6 {
     align-items: center;
   }
 
-  .navmenu li {
-    position: relative;
-  }
-
-  .navmenu>ul>li {
+  .navmenu > ul > li {
     white-space: nowrap;
     padding: 15px 14px;
   }
 
-  .navmenu>ul>li:last-child {
+  .navmenu > ul > li:last-child {
     padding-right: 0;
   }
 
@@ -296,32 +310,30 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu>ul>li>a:before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: #6cc0bc;
-    visibility: hidden;
-    width: 0px;
-    transition: all 0.3s ease-in-out 0s;
-  }
-
   .navmenu a:hover:before,
-  .navmenu li:hover>a:before,
+  .navmenu li:hover > a:before,
   .navmenu .active:before {
     visibility: visible;
     width: 100%;
   }
 
-  .navmenu li:hover>a,
+  .navmenu a:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #FFEBCC;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
   }
-
-
 
   .navmenu .dropdown ul li {
     min-width: 200px;
@@ -335,17 +347,13 @@ h6 {
     color: var(--nav-dropdown-color);
   }
 
-  .navmenu .dropdown ul a i {
-    font-size: 12px;
-  }
-
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -356,17 +364,13 @@ h6 {
     left: -90%;
     visibility: hidden;
   }
-
 }
 
-
-
-
 /* Mobile Navigation */
-@media (max-width: 1199px) {
+@media (max-width: 820px) { /* Ajustes para dispositivos móviles */
   .mobile-nav-toggle {
     color: var(--nav-hover-color);
-    font-size: 28px;
+    font-size: 24px; /* Tamaño de fuente reducido */
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
@@ -385,9 +389,9 @@ h6 {
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
+    background-color: #2c4e50; /* Cambia el color de fondo aquí */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Cambia el borde si lo deseas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra suave */
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -395,10 +399,10 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
-    padding: 10px 20px;
+    color: #ffffff; /* Cambiado a blanco para el navbar en móviles */
+    padding: 10px 15px; /* Reduce el padding para un menú más compacto */
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 15px; /* Tamaño de fuente ligeramente menor */
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -419,19 +423,13 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  }
-
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para iconos */
   }
 
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: #FFEBCC; /* Color en hover, puedes cambiarlo si deseas */
   }
 
   .navmenu .active i,
@@ -445,7 +443,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -468,11 +466,11 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background: rgba(33, 37, 41, 0.8); /* Mantiene el fondo oscuro semi-transparente */
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -763,10 +761,101 @@ h6 {
   margin-bottom: 10px !important; /* Ajusta el margen inferior del título según sea necesario */
 }
 
+/* Estilos del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* Permitir scroll si el contenido es largo */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%; /* Ajusta el ancho del modal */
+  max-width: 800px; /* Ancho máximo en pantallas grandes */
+  margin: 0 10px; /* Añadido margen para evitar el contacto con los bordes */
+  max-height: 80vh; /* Limita la altura máxima del modal */
+  overflow-y: auto; /* Permitir scroll dentro del modal si el contenido es largo */
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+  float: right;
+}
+
+.modal-title {
+  margin-bottom: 20px; /* Espacio entre el título y el contenido */
+}
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 576px) { /* Cambia este valor según tus necesidades */
+  .modal-content {
+    width: 95%; /* Ancho mayor para dispositivos pequeños */
+    max-width: none; /* Desactiva el ancho máximo para pantallas pequeñas */
+  }
+}
+
+
+
+/* Estilos de la sección de servicios */
+.section-title h2 {
+  text-align: center;
+}
+
+.card-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-bg {
+  background: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.more-link:hover {
+  text-decoration: underline;
+}
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Estilos para Títulos H2
+--------------------------------------------------------------*/
+
+
+
+
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -837,38 +926,54 @@ section,
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Estilos para Títulos H2 con Efecto Gráfico
+--------------------------------------------------------------*/
+
 .section-title {
-  text-align: center;
-  padding-bottom: 40px;
-  position: relative;
+  position: relative; /* Para el posicionamiento del pseudo-elemento */
+  padding-bottom: 20px; /* Espacio inferior para el título */
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  position: relative;
+  color: #02191f; /* Color azul para el título */
+  text-transform: uppercase; /* Mayúsculas */
+  margin-bottom: 5px; /* Espacio inferior del título */
+  position: relative; /* Para el posicionamiento del pseudo-elemento */
+  display: inline-block; /* Para permitir el uso de pseudo-elementos */
 }
 
-.section-title h2:before,
-.section-title h2:after {
-  content: "";
-  width: 50px;
-  height: 2px;
-  background: var(--accent-color);
-  display: inline-block;
+/* Pseudo-elemento compartido */
+.section-title::before {
+  content: ""; /* Crear un pseudo-elemento */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0; /* Alineación a la izquierda */
+  bottom: 0; /* Alineación en la parte inferior */
+  width: 100%; /* Ancho del subrayado */
+  height: 5px; /* Altura del subrayado */
+  background-color: #0c4749fb; /* Color verde para el subrayado */
+  transform: scaleX(0); /* Inicia como 0 */
+  transition: transform 0.3s ease; /* Transición suave */
 }
 
-.section-title h2:before {
-  margin: 0 15px 10px 0;
+.custom-padding {
+  padding-top: 40px; /* Ajusta el valor según tus necesidades */
 }
 
-.section-title h2:after {
-  margin: 0 0 10px 15px;
-}
-
+/* Aplicar el efecto al párrafo */
 .section-title p {
-  margin-bottom: 0;
+  font-size: 18px; /* Tamaño del texto del párrafo */
+  color: #333; /* Color del texto del párrafo */
+  margin-top: 0; /* Sin margen superior */
+  position: relative; /* Para el posicionamiento del pseudo-elemento */
 }
+
+/* Activar el efecto al pasar el mouse sobre el título o el párrafo */
+.section-title:hover::before {
+  transform: scaleX(1); /* Expande el subrayado al pasar el mouse */
+}
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -877,6 +982,7 @@ section,
 /* Estilos para el contenido del overlay */
 .hero-content h1 {
   font-size: 3rem;
+  
 }
 
 .hero-content p {

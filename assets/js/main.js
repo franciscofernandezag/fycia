@@ -7,10 +7,21 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+
+    // Verificar si la navbar tiene alguna de las clases específicas
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+
+    // Aplicar o quitar la clase 'scrolled' según la posición del scroll
+    if (window.scrollY > 100) {
+      selectBody.classList.add('scrolled');
+      selectHeader.classList.add('scrolled');  // Agregar la clase también al header
+    } else {
+      selectBody.classList.remove('scrolled');
+      selectHeader.classList.remove('scrolled');  // Quitar la clase cuando el scroll regrese al tope
+    }
   }
 
+  // Ejecutar al cargar la página y al hacer scroll
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
@@ -36,6 +47,8 @@
       }
     });
   });
+
+  
 
   /**
    * Toggle mobile nav dropdowns
@@ -221,3 +234,5 @@
   window.addEventListener('load', updateActiveLink);
 
 })();
+
+
