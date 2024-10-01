@@ -944,18 +944,21 @@ section,
   display: inline-block; /* Para permitir el uso de pseudo-elementos */
 }
 
-/* Pseudo-elemento compartido */
 .section-title::before {
-  content: ""; /* Crear un pseudo-elemento */
+  content: ""; /* Crear el pseudo-elemento */
   position: absolute; /* Posicionamiento absoluto */
-  left: 0; /* Alineación a la izquierda */
-  bottom: 0; /* Alineación en la parte inferior */
-  width: 100%; /* Ancho del subrayado */
-  height: 5px; /* Altura del subrayado */
-  background-color: #0c4749fb; /* Color verde para el subrayado */
-  transform: scaleX(0); /* Inicia como 0 */
-  transition: transform 0.3s ease; /* Transición suave */
+  left: -40px; /* Extender aún más a la izquierda */
+  right: -40px; /* Extender aún más a la derecha */
+  bottom: -10px; /* Ajustar para que la onda no se corte */
+  height: 30px; /* Subrayado más grueso */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 10"><path d="M0 5 Q 25 0, 50 5 T 120 5" fill="none" stroke="%23177a7efb" stroke-width="5"/></svg>'); /* SVG con longitud mayor */
+  background-repeat: no-repeat;
+  background-size: 70% 180%; /* Hacer el subrayado más largo y visible */
+  transform: scaleX(0); /* Iniciar invisible */
+  transform-origin: left; /* Iniciar animación desde la derecha */
+  transition: transform 1.5s ease; /* Animación lenta */
 }
+
 
 .custom-padding {
   padding-top: 40px; /* Ajusta el valor según tus necesidades */
@@ -1120,6 +1123,9 @@ section,
   position: relative;
   border-radius: 0;
 }
+
+
+
 
 .servicios .card-item .card-bg {
   min-height: 300px;
