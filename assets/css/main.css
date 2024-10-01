@@ -474,81 +474,19 @@ h6 {
     display: block;
   }
 }
-
-
 /*--------------------------------------------------------------
-# Global Footer
+# Modern Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  background: url("../img/IMG-20240830-WA0014.jpg") top center no-repeat;
-  background-size: cover;
-  font-size: 13px;
-  position: relative;
-  
-}
-
-.footer .container {
-  position: relative;
-}
-
-.footer:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
-  position: absolute;
-  inset: 0;
-}
-
-.footer .footer-top {
-  padding-top: 20px;
-}
-
-.footer .footer-about {
-  margin-top: -10px; /* Ajustar margen superior para subir la sección */
-  padding-top: 0; /* Reducir padding superior si es necesario */
-}
-.footer .footer-about .logo {
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.footer .footer-about .logo img {
-  max-height: 120px;
-  margin-right: 3px;
-}
-
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.footer .footer-about p {
-  font-size: 12px;
-  font-family: var(--heading-font);
-}
-
-
-.footer .social-links a {
+  background: rgba(63, 108, 116, 0.753) url("/assets/img/footer.jpg") top center no-repeat;
+  background-size: cover; /* Ajusta la imagen de fondo */
+  color: #FFEBCC; /* Texto color
+  padding: 20px 10px; /* Reduce el espaciado alrededor */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-right: 10px;
-  transition: 0.3s;
-}
+  flex-direction: column;
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
 
-.footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
 .footer h4 {
@@ -556,61 +494,96 @@ h6 {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  color: #FFEBCC;
 }
 
-.footer .footer-links {
-  margin-bottom: 30px;
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.footer .footer-links ul {
+.footer-logo {
+  flex: 1 1 100%; /* Logo ocupa el ancho completo */
+  text-align: center;
+  margin-bottom: 10px; /* Reduce el margen inferior */
+}
+
+.footer-logo img {
+  max-width: 120px; /* Ajusta tamaño del logo */
+}
+
+.footer-info {
+  flex: 1; /* Info ocupa el espacio restante */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-about,
+.footer-links,
+.footer-services,
+.footer-partners {
+  flex: 1 1 200px; /* Cada sección ocupa un ancho mínimo */
+  margin: 5px; /* Reduce el margen entre secciones */
+}
+
+.footer-about h3,
+.footer-links h4,
+.footer-services h4,
+.footer-partners h4 {
+  border-bottom: 1px solid #ffffff; /* Línea debajo de los títulos */
+  padding-bottom: 5px; /* Reduce el padding inferior */
+  margin-bottom: 10px; /* Espacio inferior */
+  font-size: 16px; /* Tamaño de fuente más pequeño para los títulos */
+}
+
+.footer-links ul,
+.footer-services ul,
+.footer-partners ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 10px;
-  line-height: 0;
+.footer-links ul li,
+.footer-services ul li,
+.footer-partners ul li {
+  margin: 4px 0; /* Margen entre ítems de la lista */
 }
 
-.footer .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
+.footer-links ul li a,
+.footer-services ul li a,
+.footer-partners ul li a {
+  color: #ffffff; /* Color de texto de los enlaces */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s; /* Efecto de transición */
 }
 
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
+.footer-links ul li a:hover,
+.footer-services ul li a:hover,
+.footer-partners ul li a:hover {
+  color: #ffcc00; /* Color al pasar el mouse */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
 }
 
-.footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  display: inline-block;
-  line-height: 1;
+.footer-bottom {
+  text-align: center; /* Centrar el texto en el pie */
+  margin-top: 10px; /* Espacio superior */
+  padding: 5px 0; /* Reduce el padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Línea superior */
 }
 
-.footer .footer-links ul a:hover {
-  color: var(--accent-color);
+.footer-bottom p {
+  margin: 0; /* Eliminar márgenes */
+  font-size: 12px; /* Tamaño de fuente más pequeño para el pie */
 }
 
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer .copyright {
-  padding-top: 10px;
-  padding-bottom: 15px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 2px;
-  font-size: 10px;
+/* Responsividad */
+@media (max-width: 768px) {
+  .footer-info {
+    flex-direction: column; /* Colocar las secciones una debajo de la otra */
+  }
 }
 
 
@@ -1123,8 +1096,6 @@ section,
   position: relative;
   border-radius: 0;
 }
-
-
 
 
 .servicios .card-item .card-bg {
