@@ -1,0 +1,12 @@
+# Permitir a todos los motores de búsqueda rastrear el sitio
+User-agent: *
+Disallow:
+
+# Bloquear el acceso a la carpeta /private/
+User-agent: *
+Disallow: /private/
+
+# Si deseas permitir el acceso a una sección específica, puedes usar Allow
+# Por ejemplo, permitir a Google rastrear la carpeta /public/
+User-agent: Googlebot
+Allow: /public/
