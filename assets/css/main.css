@@ -510,7 +510,7 @@ h6 {
 --------------------------------------------------------------*/
 /* Estilos para el footer */
 .footer {
-  background: linear-gradient(315deg, rgba(0, 150, 136, 0.9), rgba(4, 46, 48, 0.9)); /* Degradado de verde a un tono más oscuro */
+  background: linear-gradient(315deg, rgba(1, 114, 103, 0.507), rgba(4, 46, 48, 0.9)); /* Degradado de verde a un tono más oscuro */
   color: #FFEBCC; /* Color del texto */
   padding: 20px 10px; /* Espaciado */
   display: flex;
@@ -626,42 +626,50 @@ h6 {
 --------------------------------------------------------------*/
 #preloader {
   position: fixed;
-  inset: 0;
-  z-index: 999999;
-  overflow: hidden;
-  background: var(--background-color);
-  transition: all 0.6s ease-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  z-index: 9999;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
 }
 
-#preloader:before, #preloader:after {
-  content: "";
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--accent-color);
-  border-radius: 50%;
-  position: absolute;
-  animation: spin 1.5s linear infinite;
+#preloader img {
+  width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto; /* Mantiene la proporción de la imagen */
+  animation: pulse 1.5s infinite;
 }
 
-#preloader:after {
-  width: 30px;
-  height: 30px;
-  border-color: transparent;
-  border-top-color: var(--accent-color);
-  border-left-color: var(--accent-color);
-  animation-direction: reverse;
-}
-
-@keyframes spin {
+@keyframes pulse {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
+    opacity: 1;
   }
+}
+
+
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Cambia la dirección a columna */
+  align-items: center; /* Alinea los elementos al centro */
+  text-align: center; /* Centra el contenido */
+}
+
+.loading-text {
+  margin-top: 20px; /* Espacio entre el slogan y el texto "Cargando..." */
+  font-weight: normal; /* Peso de fuente normal */
+  font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
 /*--------------------------------------------------------------
@@ -828,24 +836,32 @@ h6 {
 
 }
 
+/* Estilos para el pseudo-elemento que crea el subrayado */
 .card-item::after {
   content: ""; /* Crear el pseudo-elemento */
   position: absolute; /* Posicionamiento absoluto */
   left: -40px; /* Extender a la izquierda */
   right: -40px; /* Extender a la derecha */
-  bottom: -20px; /* Ajustar para que la onda aparezca más abajo */
+  bottom: -20px; /* Posiciona el subrayado ligeramente debajo del contenido */
   height: 30px; /* Altura del efecto */
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 10"><path d="M0 10 H 120 V 10 V 0 Q 60 5, 0 0 Z" fill="none" stroke="%23177a7efb" stroke-width="8"/></svg>');
   background-repeat: no-repeat; /* No repetir la imagen */
-  background-size: 100% 100%; /* Hacer el subrayado más largo y visible */
-  transform: scaleX(0); /* Iniciar invisible */
-  transform-origin: left; /* Iniciar animación desde la izquierda */
+  background-size: 100% 100%; /* Escala completa de la imagen */
+  transform: scaleX(0); /* Inicia invisible */
+  transform-origin: left; /* La animación comienza desde la izquierda */
   transition: transform 1s ease; /* Transición suave */
 }
 
+/* Efecto al pasar el cursor en desktop */
 .card-item:hover::after {
-  transform: scaleX(1); /* Escalar el efecto a 1 en hover */
+  transform: scaleX(1); /* Activa el subrayado en hover */
 }
+
+/* Para activar el efecto automáticamente en pantallas móviles */
+.card-item.active::after {
+  transform: scaleX(1); /* Aplica el subrayado cuando el elemento es visible */
+}
+
 
 .card-bg {
   background: #f8f9fa;
@@ -969,6 +985,7 @@ section,
   position: relative; /* Para el posicionamiento del pseudo-elemento */
   display: inline-block; /* Para permitir el uso de pseudo-elementos */
 }
+/* Estilos para el subrayado del título */
 .section-title::before {
   content: ""; /* Crear el pseudo-elemento */
   position: absolute; /* Posicionamiento absoluto */
@@ -980,14 +997,20 @@ section,
   background-repeat: no-repeat;
   background-size: 100% 180%; /* Hacer el subrayado más largo y visible */
   transform: scaleX(0); /* Iniciar invisible */
-  transform-origin: left; /* Iniciar animación desde la derecha */
+  transform-origin: left; /* Iniciar animación desde la izquierda */
   transition: transform 1.5s ease; /* Animación lenta */
 }
 
-/* Activar el efecto al pasar el mouse sobre el título o el párrafo */
+/* Efecto al pasar el cursor en desktop */
 .section-title:hover::before {
   transform: scaleX(1); /* Expande el subrayado al pasar el mouse */
 }
+
+/* Aplicar subrayado automáticamente cuando el título está en pantalla en móviles */
+.section-title.active::before {
+  transform: scaleX(1); /* Expande el subrayado automáticamente en móviles */
+}
+
 
 
 .custom-padding {
@@ -1005,32 +1028,69 @@ section,
 }
 
 
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 
 /* Estilos para el contenido del overlay */
+.hero-content {
+  position: absolute;
+  top: 60%; /* Ajusta según lo necesites */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  width: 90%; /* Abarca más espacio horizontal */
+}
+
 .hero-content h1 {
-  font-size: 3rem;
-  
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  color: #FFEBCC;
 }
 
 .hero-content p {
-  font-size: 1.5rem;
+  font-size: 20px;
+  margin-top: 16px;
+  color: #FFEBCC;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Clase específica para párrafos adicionales */
+.hero-paragraph {
+  font-size: 24px;
+  margin-top: 16px;
+  max-width: 100%;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 2s ease-out;
+  margin-bottom: 16px;
+}
 
-
+.btn-primary {
+  padding: 12px 24px;
+  background-color: #0f6b65;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 32px;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(255, 17, 80, 0.4);
+  animation: bounceIn 2.5s ease-out;
+}
 
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 768px) {
+  .hero-content {
+    width: 95%; /* Abarca más espacio horizontal en móviles */
+  }
+
   .hero-content h1 {
-    font-size: 2rem; /* Tamaño reducido para h1 en dispositivos móviles */
+    font-size: 32px; /* Tamaño reducido para h1 en dispositivos móviles */
   }
 
   .hero-content p {
-    font-size: 1.2rem; /* Tamaño reducido para párrafos en dispositivos móviles */
+    font-size: 18px; /* Tamaño reducido para párrafos en dispositivos móviles */
   }
 
   .btn-primary {
@@ -1039,12 +1099,16 @@ section,
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    width: 100%; /* Abarca el 100% en pantallas más pequeñas */
+  }
+
   .hero-content h1 {
-    font-size: 1.5rem; /* Tamaño aún más reducido para h1 en dispositivos móviles más pequeños */
+    font-size: 24px; /* Tamaño aún más reducido para h1 en dispositivos móviles más pequeños */
   }
 
   .hero-content p {
-    font-size: 1rem; /* Tamaño aún más reducido para párrafos en dispositivos móviles más pequeños */
+    font-size: 16px; /* Tamaño aún más reducido para párrafos en dispositivos móviles más pequeños */
   }
 
   .btn-primary {
@@ -1721,37 +1785,6 @@ section,
   max-width: 1200px;
   padding: 20px;
 }
-
-/* Estilos para los títulos y párrafos */
-.hero-heading {
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  animation: fadeInDown 1.5s ease-out;
-  margin: 0;
-}
-
-.hero-paragraph {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  max-width: 100%;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 2s ease-out;
-  margin-bottom: 1rem;
-}
-
-.btn-primary {
-  padding: 12px 24px;
-  background-color: #0f6b65;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 2rem;
-  display: inline-block;
-  box-shadow: 0 3px 10px rgba(255, 17, 80, 0.4);
-  animation: bounceIn 2.5s ease-out;
-}
-
 
 /*--------------------------------------------------------------
 # Stats Counter Section

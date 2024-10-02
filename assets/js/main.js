@@ -8,20 +8,17 @@
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
 
-    // Verificar si la navbar tiene alguna de las clases específicas
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
 
-    // Aplicar o quitar la clase 'scrolled' según la posición del scroll
     if (window.scrollY > 100) {
       selectBody.classList.add('scrolled');
-      selectHeader.classList.add('scrolled');  // Agregar la clase también al header
+      selectHeader.classList.add('scrolled');
     } else {
       selectBody.classList.remove('scrolled');
-      selectHeader.classList.remove('scrolled');  // Quitar la clase cuando el scroll regrese al tope
+      selectHeader.classList.remove('scrolled');
     }
   }
 
-  // Ejecutar al cargar la página y al hacer scroll
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
@@ -48,8 +45,6 @@
     });
   });
 
-  
-
   /**
    * Toggle mobile nav dropdowns
    */
@@ -61,16 +56,17 @@
       e.stopImmediatePropagation();
     });
   });
+  
 
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
+// Preloader
+const preloader = document.querySelector('#preloader');
+if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove();
+        preloader.remove(); // Elimina el preloader una vez que la página se carga
     });
-  }
+}
+
+
 
   /**
    * Scroll top button
@@ -181,7 +177,7 @@
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+      if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight - 50) {
         current = section.getAttribute('id');
       }
     });
@@ -194,48 +190,42 @@
     });
   }
 
-
-
-  
-  (function() {
-    "use strict";
-  
-    // Otras funciones aquí...
-  
-    /**
-     * Update active link in the navbar based on scroll position
-     */
-    function updateActiveLink() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('#navmenu a');
-      
-      let current = '';
-  
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight - 50) {
-          current = section.getAttribute('id');
-        }
-      });
-  
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-  
-    window.addEventListener('scroll', updateActiveLink);
-    window.addEventListener('load', updateActiveLink);
-  
-  })();
-  
-
   window.addEventListener('scroll', updateActiveLink);
   window.addEventListener('load', updateActiveLink);
 
+  /**
+   * Subrayado automático en móviles para card-item y section-title
+   */
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function applyEffectOnScroll() {
+    const cardItems = document.querySelectorAll('.card-item');
+    const sectionTitles = document.querySelectorAll('.section-title');
+
+    if (window.innerWidth <= 768) {
+      cardItems.forEach(item => {
+        if (isInViewport(item)) {
+          item.classList.add('active');
+        }
+      });
+
+      sectionTitles.forEach(title => {
+        if (isInViewport(title)) {
+          title.classList.add('active');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', applyEffectOnScroll);
+  window.addEventListener('load', applyEffectOnScroll);
+
 })();
-
-
