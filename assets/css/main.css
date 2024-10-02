@@ -659,12 +659,6 @@ h6 {
 }
 
 
-.logo-container {
-  display: flex;
-  flex-direction: column; /* Cambia la dirección a columna */
-  align-items: center; /* Alinea los elementos al centro */
-  text-align: center; /* Centra el contenido */
-}
 
 .loading-text {
   margin-top: 20px; /* Espacio entre el slogan y el texto "Cargando..." */
