@@ -477,17 +477,18 @@ h6 {
 /*--------------------------------------------------------------
 # Modern Footer
 --------------------------------------------------------------*/
+/* Estilos para el footer */
 .footer {
-  background: rgba(63, 108, 116, 0.753) url("/assets/img/footer.jpg") top center no-repeat;
-  background-size: cover; /* Ajusta la imagen de fondo */
-  color: #FFEBCC; /* Texto color
-  padding: 20px 10px; /* Reduce el espaciado alrededor */
+  background: linear-gradient(315deg, rgba(0, 150, 136, 0.9), rgba(4, 46, 48, 0.9)); /* Degradado de verde a un tono más oscuro */
+  color: #FFEBCC; /* Color del texto */
+  padding: 20px 10px; /* Espaciado */
   display: flex;
   flex-direction: column;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
-
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de profundidad */
 }
+
+
 
 .footer h4 {
   font-size: 14px;
@@ -566,6 +567,8 @@ h6 {
   color: #ffcc00; /* Color al pasar el mouse */
   transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
 }
+
+
 
 .footer-bottom {
   text-align: center; /* Centrar el texto en el pie */
@@ -787,10 +790,30 @@ h6 {
 
 .card-item {
   border: 1px solid #ddd;
+  position: relative; /* Necesario para el pseudo-elemento */
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+
+}
+
+.card-item::after {
+  content: ""; /* Crear el pseudo-elemento */
+  position: absolute; /* Posicionamiento absoluto */
+  left: -40px; /* Extender a la izquierda */
+  right: -40px; /* Extender a la derecha */
+  bottom: -20px; /* Ajustar para que la onda aparezca más abajo */
+  height: 30px; /* Altura del efecto */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 10"><path d="M0 10 H 120 V 10 V 0 Q 60 5, 0 0 Z" fill="none" stroke="%23177a7efb" stroke-width="8"/></svg>');
+  background-repeat: no-repeat; /* No repetir la imagen */
+  background-size: 100% 100%; /* Hacer el subrayado más largo y visible */
+  transform: scaleX(0); /* Iniciar invisible */
+  transform-origin: left; /* Iniciar animación desde la izquierda */
+  transition: transform 1s ease; /* Transición suave */
+}
+
+.card-item:hover::after {
+  transform: scaleX(1); /* Escalar el efecto a 1 en hover */
 }
 
 .card-bg {
@@ -805,7 +828,7 @@ h6 {
 }
 
 .card-body {
-  padding: 15px;
+  padding: 5px;
 }
 
 .more-link {
@@ -906,7 +929,6 @@ section,
 
 .section-title {
   position: relative; /* Para el posicionamiento del pseudo-elemento */
-  padding-bottom: 20px; /* Espacio inferior para el título */
 }
 
 .section-title h2 {
@@ -916,26 +938,32 @@ section,
   position: relative; /* Para el posicionamiento del pseudo-elemento */
   display: inline-block; /* Para permitir el uso de pseudo-elementos */
 }
-
 .section-title::before {
   content: ""; /* Crear el pseudo-elemento */
   position: absolute; /* Posicionamiento absoluto */
-  left: -40px; /* Extender aún más a la izquierda */
-  right: -40px; /* Extender aún más a la derecha */
-  bottom: -10px; /* Ajustar para que la onda no se corte */
-  height: 30px; /* Subrayado más grueso */
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 10"><path d="M0 5 Q 25 0, 50 5 T 120 5" fill="none" stroke="%23177a7efb" stroke-width="5"/></svg>'); /* SVG con longitud mayor */
+  left: -20px; /* Ajustar para que termine más a la izquierda */
+  right: -40px; /* Mantener el mismo valor o ajustarlo según sea necesario */
+  bottom: -20px; /* Ajustar para que la onda no se corte */
+  height: 20px; /* Altura del efecto (puedes ajustarlo a tu gusto) */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 10"><path d="M0 5 Q 50 2, 100 5 Q 150 8, 200 5 V 10 H 0 Z" fill="none" stroke="%23177a7efb" stroke-width="4"/></svg>'); /* Mantener el mismo SVG */
   background-repeat: no-repeat;
-  background-size: 70% 180%; /* Hacer el subrayado más largo y visible */
+  background-size: 100% 180%; /* Hacer el subrayado más largo y visible */
   transform: scaleX(0); /* Iniciar invisible */
   transform-origin: left; /* Iniciar animación desde la derecha */
   transition: transform 1.5s ease; /* Animación lenta */
+}
+
+/* Activar el efecto al pasar el mouse sobre el título o el párrafo */
+.section-title:hover::before {
+  transform: scaleX(1); /* Expande el subrayado al pasar el mouse */
 }
 
 
 .custom-padding {
   padding-top: 40px; /* Ajusta el valor según tus necesidades */
 }
+
+
 
 /* Aplicar el efecto al párrafo */
 .section-title p {
@@ -945,10 +973,6 @@ section,
   position: relative; /* Para el posicionamiento del pseudo-elemento */
 }
 
-/* Activar el efecto al pasar el mouse sobre el título o el párrafo */
-.section-title:hover::before {
-  transform: scaleX(1); /* Expande el subrayado al pasar el mouse */
-}
 
 
 /*--------------------------------------------------------------
@@ -2686,7 +2710,9 @@ section,
   margin: 0;
   padding: 0;
 }
-
+.info-item {
+  transition: transform 0.3s;
+}
 .contact .info-item p a {
   display: inline;
 }
@@ -3027,4 +3053,47 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+.whatsapp-container {
+  position: fixed;
+  right: 5px; /* Pegado a la derecha */
+  top: 55%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajustar para que quede centrado */
+  display: flex;
+  flex-direction: column; /* Para colocar el texto debajo del ícono */
+  align-items: center; /* Centra los elementos horizontalmente */
+  background-color: transparent; /* Sin fondo */
+  z-index: 1000; /* Asegúrate de que el ícono esté por encima de otros elementos */
+}
+
+.whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px; /* Espaciado alrededor del ícono */
+  border-radius: 50%; /* Redondear el contenedor del ícono */
+  font-size: 40px; /* Tamaño del ícono para pantallas grandes */
+}
+
+.whatsapp-text {
+  margin-top: 1px; /* Espaciado entre el ícono y el texto */
+  font-size: 12px; /* Tamaño del texto más pequeño */
+  color: #013f3c; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .whatsapp-container {
+      top: 80%; /* Ajustar la posición para pantallas pequeñas */
+  }
+
+  .whatsapp-icon {
+      font-size: 30px; /* Tamaño más pequeño del ícono en móviles */
+  }
+
+  .whatsapp-text {
+      font-size: 10px; /* Tamaño más pequeño del texto en móviles */
+  }
 }
