@@ -282,7 +282,16 @@ h6 {
 
 /* Mobile nav toggle */
 .header .mobile-nav-toggle {
-  color: #0d4d52;
+  color: #0d4d52; /* Color del ícono o texto */
+  background-color: #FFEBCC; /* Amarillo */
+  border-radius: 50%; /* Hace que el contenedor sea redondo */
+  padding: 10px; /* Ajusta el espacio dentro de la redondela */
+  display: inline-flex; /* Asegura que el contenido esté centrado */
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Ajusta el tamaño de la redondela */
+  height: 40px; /* Ajusta el tamaño de la redondela */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 
@@ -836,11 +845,11 @@ h6 {
   position: absolute; /* Posicionamiento absoluto */
   left: -40px; /* Extender a la izquierda */
   right: -40px; /* Extender a la derecha */
-  bottom: -20px; /* Posiciona el subrayado ligeramente debajo del contenido */
+  bottom: -15px; /* Posiciona el subrayado ligeramente debajo del contenido */
   height: 30px; /* Altura del efecto */
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 10"><path d="M0 10 H 120 V 10 V 0 Q 60 5, 0 0 Z" fill="none" stroke="%23177a7efb" stroke-width="8"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 10"><path d="M0 5 Q 50 2, 100 5 Q 150 8, 200 5 V 10 H 0 Z" fill="none" stroke="%23177a7efb" stroke-width="4"/></svg>'); /* Mantener el mismo SVG */
   background-repeat: no-repeat; /* No repetir la imagen */
-  background-size: 100% 100%; /* Escala completa de la imagen */
+  background-size: 180% 100%; /* Escala completa de la imagen */
   transform: scaleX(0); /* Inicia invisible */
   transform-origin: left; /* La animación comienza desde la izquierda */
   transition: transform 1s ease; /* Transición suave */
