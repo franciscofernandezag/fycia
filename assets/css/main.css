@@ -786,7 +786,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para mejorar el contraste */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -803,16 +803,25 @@ h6 {
   margin: 0 10px; /* Añadido margen para evitar el contacto con los bordes */
   max-height: 80vh; /* Limita la altura máxima del modal */
   overflow-y: auto; /* Permitir scroll dentro del modal si el contenido es largo */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para un efecto más elevado */
 }
 
 .close-btn {
   cursor: pointer;
   font-size: 24px;
   float: right;
+  color: #007bff; /* Color del botón de cierre */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Cambiar a rojo en hover */
 }
 
 .modal-title {
   margin-bottom: 20px; /* Espacio entre el título y el contenido */
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  font-weight: bold; /* Hacer el título más destacado */
 }
 
 /* Media query para dispositivos pequeños */
@@ -822,7 +831,6 @@ h6 {
     max-width: none; /* Desactiva el ancho máximo para pantallas pequeñas */
   }
 }
-
 
 
 /* Estilos de la sección de servicios */

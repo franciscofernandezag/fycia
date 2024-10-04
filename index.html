@@ -220,16 +220,20 @@
 
 
 <script>
-function openDetailWindow(title, content) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-body').innerHTML = content;
-    document.getElementById('detail-modal').style.display = 'block'; // Mostrar la ventana
-}
+  function openDetailWindow(title, content) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-body').innerHTML = content;
+      const modal = document.getElementById('detail-modal');
+      modal.style.display = 'flex'; // Cambia a 'flex' para asegurar el centrado
+  }
 
-function closeDetailWindow() {
-    document.getElementById('detail-modal').style.display = 'none'; // Ocultar la ventana
-}
+  function closeDetailWindow() {
+      const modal = document.getElementById('detail-modal');
+      modal.style.display = 'none'; // Ocultar la ventana
+  }
 </script>
+
+
 <!-- Modal -->
 <div id="detail-modal" class="modal" style="display: none;">
   <div class="modal-content">
@@ -238,6 +242,7 @@ function closeDetailWindow() {
       <div id="modal-body"></div>
   </div>
 </div>
+
 
 <!-- Servicios Section -->
 <section id="servicios" class="constructions section">
