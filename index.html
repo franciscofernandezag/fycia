@@ -28,6 +28,15 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
   </head>
@@ -209,6 +218,27 @@
 
 <!-- Servicios Section -->
 
+
+<script>
+function openDetailWindow(title, content) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-body').innerHTML = content;
+    document.getElementById('detail-modal').style.display = 'block'; // Mostrar la ventana
+}
+
+function closeDetailWindow() {
+    document.getElementById('detail-modal').style.display = 'none'; // Ocultar la ventana
+}
+</script>
+<!-- Modal -->
+<div id="detail-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeDetailWindow()">&times;</span>
+      <h3 id="modal-title" class="modal-title"></h3>
+      <div id="modal-body"></div>
+  </div>
+</div>
+
 <!-- Servicios Section -->
 <section id="servicios" class="constructions section">
   <!-- Section Title -->
@@ -245,6 +275,7 @@
     </div>
 </div>
 <!-- End Card Item -->
+
 
 
 <!-- Contenido oculto dentro del HTML -->

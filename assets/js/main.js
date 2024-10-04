@@ -4,6 +4,9 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
+
+
+  
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
