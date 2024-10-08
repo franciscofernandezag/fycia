@@ -144,38 +144,8 @@ if (preloader) {
     });
   });
 
- /**
-   * Formulario de
-   */
-  document.querySelector('form.php-email-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evitar el envío normal del formulario
-    
-    var form = this;
-    var formData = new FormData(form);
-    
-    fetch(form.action, {
-      method: form.method,
-      body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-      if (data.includes('Su mensaje fue recibido con éxito')) {
-        document.querySelector('.sent-message').style.display = 'block'; // Mostrar el mensaje de éxito
-        document.querySelector('.error-message').style.display = 'none'; // Ocultar el mensaje de error
-      } else {
-        document.querySelector('.error-message').innerHTML = data; // Mostrar el mensaje de error
-        document.querySelector('.error-message').style.display = 'block';
-        document.querySelector('.sent-message').style.display = 'none';
-      }
-    })
-    .catch(error => {
-      document.querySelector('.error-message').innerHTML = 'Error al enviar el mensaje, por favor intente nuevamente.';
-      document.querySelector('.error-message').style.display = 'block';
-      document.querySelector('.sent-message').style.display = 'none';
-    });
-  });
 
-
+  
   /**
    * Init swiper sliders
    */
