@@ -21,9 +21,9 @@
       $success = mail($receiving_email_address, $subject, $message, $headers);
       
       if ($success) {
-        echo 'Su mensaje fue enviado, muchas gracias!';
+        echo 'Su mensaje fue recibido con éxito, muchas gracias!.';
       } else {
-        echo 'Error al enviar el mensaje.';
+        echo 'Error al enviar el mensaje, por favor intente nuevamente.';
       }
     } else {
       echo 'Por favor complete todos los campos.';

@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', applyEffectOnScroll);
 <!-- Contact Form -->
 <div class="col-lg-8">
   <h4>¡Contáctanos para una consulta gratuita!</h4>
- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+  <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
     <div class="row gy-4">
       <div class="col-md-6">
         <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
@@ -832,18 +832,17 @@ document.addEventListener('DOMContentLoaded', applyEffectOnScroll);
         <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
       </div>
       <div class="col-md-12 text-center">
-        <div class="loading">Cargando</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Su mensaje fue enviado, muchas gracias!</div>
+        <div class="loading">Cargando...</div>
+        <div class="error-message" style="color: red; display: none;"></div> <!-- Asegúrate que este esté oculto por defecto -->
+        <div class="sent-message" style="display: none; background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px;">
+          Su mensaje fue recibido con éxito, muchas gracias!.
+        </div>
         <button type="submit">Enviar</button>
       </div>
     </div>
   </form>
 </div>
-    </div>
-  </div>
-</section>
-<!-- /Contact Section -->
+
 
 
     
