@@ -145,7 +145,7 @@ if (preloader) {
   });
 
  /**
-   * Formulario de contacto
+   * Formulario de
    */
   document.querySelector('form.php-email-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Evitar el envío normal del formulario
