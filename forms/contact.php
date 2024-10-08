@@ -1,41 +1,34 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+  // Dirección de correo a la que se enviarán los mensajes
+  $receiving_email_address = 'contacto@exico.cl';
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+  // Verifica si el formulario fue enviado
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtiene los datos del formulario
+    $name = strip_tags($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $subject = strip_tags($_POST['subject']);
+    $message = strip_tags($_POST['message']);
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
+    // Verifica que los campos requeridos no estén vacíos
+    if ($name && $email && $subject && $message) {
+      // Encabezados del correo
+      $headers = "From: $name <$email>" . "\r\n" .
+                 "Reply-To: $email" . "\r\n" .
+                 "X-Mailer: PHP/" . phpversion();
+      
+      // Enviar el correo
+      $success = mail($receiving_email_address, $subject, $message, $headers);
+      
+      if ($success) {
+        echo 'Su mensaje fue enviado, muchas gracias!';
+      } else {
+        echo 'Error al enviar el mensaje.';
+      }
+    } else {
+      echo 'Por favor complete todos los campos.';
+    }
   } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+    echo 'Método de envío no permitido.';
   }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
 ?>

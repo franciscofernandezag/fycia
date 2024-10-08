@@ -294,6 +294,16 @@ h6 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
+.legal-link {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: inherit; /* Usa el mismo color del texto circundante */
+}
+
+.legal-link:hover, .legal-link:focus {
+  text-decoration: none; /* Mantiene sin subrayado al pasar el cursor o al enfocarse */
+  color: inherit; /* No cambia de color al hacer hover */
+}
+
 
 /* Mobile Navigation */
 @media (min-width: 768px) { /* Cambiado a 768px para incluir dispositivos hasta iPad Pro */
