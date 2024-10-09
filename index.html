@@ -849,7 +849,35 @@ document.addEventListener('DOMContentLoaded', applyEffectOnScroll);
   </div>
   <!-- End Contact Form -->
 
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      let isSubmitting = false; // Variable para evitar envíos dobles
+    
+      form.addEventListener('submit', function (e) {
+        if (isSubmitting) {
+          e.preventDefault();
+          return;
+        }
+    
+        isSubmitting = true; // Marca como "enviando" una vez que el formulario es enviado
+    
+        // Muestra el mensaje de "Cargando"
+        document.querySelector('.loading').style.display = 'block';
+    
+        // Puedes ocultar los mensajes previos
+        document.querySelector('.error-message').style.display = 'none';
+        document.querySelector('.sent-message').style.display = 'none';
+    
+        // Cuando termine el envío, resetea el estado
+        setTimeout(function () {
+          isSubmitting = false;
+          document.querySelector('.loading').style.display = 'none';
+        }, 3000); // Simula el tiempo de envío, ajusta según tus necesidades
+      });
+    });
+    </script>
+    
     
     </main>
 
