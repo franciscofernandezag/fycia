@@ -3,7 +3,7 @@
   $receiving_email_address = 'contacto@exico.cl';
 
   // Verifica que el archivo PHP Email Form exista
-  if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
+  if (file_exists($php_email_form = '../assets/vendor/php-email-form')) {
     include($php_email_form);
   } else {
     die('No se puede cargar la librería "PHP Email Form".');
