@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica si los datos son válidos
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format";
+        echo json_encode(['status' => 'error', 'message' => 'Formato de correo inválido']);
         exit;
     }
 
@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Envía el correo
     if (mail($to, $subject, $message, $headers)) {
-        echo "OK";
+        echo json_encode(['status' => 'success', 'message' => 'Tu mensaje ha sido enviado. ¡Gracias!']);
     } else {
-        echo "Error: No se pudo enviar el mensaje.";
+        echo json_encode(['status' => 'error', 'message' => 'Error: No se pudo enviar el mensaje.']);
     }
 } else {
-    echo "Error: El formulario no se ha enviado correctamente.";
+    echo json_encode(['status' => 'error', 'message' => 'Error: El formulario no se ha enviado correctamente.']);
 }
 ?>
