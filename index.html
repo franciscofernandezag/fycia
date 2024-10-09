@@ -817,29 +817,35 @@ document.addEventListener('DOMContentLoaded', applyEffectOnScroll);
    <div class="col-lg-8">
     <!-- Título con efecto al final del contenido -->
     <h4>¡Contáctanos para una consulta gratuita!</h4> <!-- Añadir la clase section-title aquí -->
-    
-    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" id="contactForm">
       <div class="row gy-4">
-        <div class="col-md-6">
-          <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
+        
+        <div class="col-md-12">
+          <input type="text" name="name" class="form-control" placeholder="Tu Nombre" required>
         </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" name="email" placeholder="Tu correo" required>
+    
+        <div class="col-md-12">
+          <input type="email" class="form-control" name="email" placeholder="Tu Correo Electrónico" required>
         </div>
+    
         <div class="col-md-12">
           <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
         </div>
+    
         <div class="col-md-12">
           <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
         </div>
-        <div class="col-md-12 text-center">
-          <div class="loading">Cargando</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Su mensaje fue enviado, muchas gracias!</div>
-          <button type="submit">Enviar</button>
+    
+        <div class="col-12 text-center">
+          <div class="loading" style="display: none;">Cargando</div>
+          <div class="error-message" style="display: none;"></div>
+          <div class="sent-message" style="display: none;">Tu mensaje ha sido enviado. ¡Gracias!</div>
+    
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
         </div>
       </div>
     </form>
+    
   </div>
   <!-- End Contact Form -->
 
