@@ -1,34 +1,28 @@
 <?php
-  // Dirección de correo a la que se enviarán los mensajes
+  // Cambia la dirección de correo de destino
   $receiving_email_address = 'contacto@exico.cl';
 
-  // Verifica si el formulario fue enviado
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtiene los datos del formulario
-    $name = strip_tags($_POST['name']);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $subject = strip_tags($_POST['subject']);
-    $message = strip_tags($_POST['message']);
-
-    // Verifica que los campos requeridos no estén vacíos
-    if ($name && $email && $subject && $message) {
-      // Encabezados del correo
-      $headers = "From: $name <$email>" . "\r\n" .
-                 "Reply-To: $email" . "\r\n" .
-                 "X-Mailer: PHP/" . phpversion();
-      
-      // Enviar el correo
-      $success = mail($receiving_email_address, $subject, $message, $headers);
-      
-      if ($success) {
-        echo 'Su mensaje fue recibido con éxito, muchas gracias!.';
-      } else {
-        echo 'Error al enviar el mensaje, por favor intente nuevamente.';
-      }
-    } else {
-      echo 'Por favor complete todos los campos.';
-    }
+  // Verifica que el archivo PHP Email Form exista
+  if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
+    include($php_email_form);
   } else {
-    echo 'Método de envío no permitido.';
+    die('No se puede cargar la librería "PHP Email Form".');
   }
+
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+
+  // Establecer el destinatario
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
+
+  // Mensajes del formulario
+  $contact->add_message($_POST['name'], 'Nombre');
+  $contact->add_message($_POST['email'], 'Correo');
+  $contact->add_message($_POST['message'], 'Mensaje', 10);
+
+  // Enviar el correo
+  echo $contact->send();
 ?>
