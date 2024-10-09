@@ -10,3 +10,4 @@ Disallow: /private/
 # Por ejemplo, permitir a Google rastrear la carpeta /public/
 User-agent: Googlebot
 Allow: /public/
+Sitemap: https://exico.cl/sitemap.xml
