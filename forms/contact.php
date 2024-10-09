@@ -1,43 +1,53 @@
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del formulario
-    $name = strip_tags(trim($_POST["name"])); // Sanitiza el nombre
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL); // Sanitiza el email
-    $subject = strip_tags(trim($_POST["subject"])); // Sanitiza el asunto
-    $message = trim($_POST["message"]); // Mensaje
+// Configuración del correo receptor
+$receiving_email_address = 'contacto@exico.cl';
 
-    // Verifica que los campos no estén vacíos y que el email sea válido
-    if (empty($name) || empty($subject) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      http_response_code(400);
-      echo "Por favor completa el formulario correctamente.";
-      exit;
+// Verifica si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitiza y valida los datos del formulario
+    $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $subject = filter_var(trim($_POST["subject"]), FILTER_SANITIZE_STRING);
+    $message = filter_var(trim($_POST["message"]), FILTER_SANITIZE_STRING);
+
+    // Verifica si los campos no están vacíos
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        http_response_code(400);
+        echo "Por favor, completa todos los campos.";
+        exit;
     }
 
-    // Dirección de correo donde quieres recibir los mensajes
-    $recipient = "contacto@exico.cl";
+    // Verifica si el email es válido
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo "El formato del correo no es válido.";
+        exit;
+    }
 
-    // Contenido del correo
-    $email_subject = "Nuevo mensaje de contacto: $subject";
-    $email_content = "Nombre: $name\n";
-    $email_content .= "Correo: $email\n\n";
-    $email_content .= "Mensaje:\n$message\n";
+    // Configura el mensaje y las cabeceras
+    $to = $receiving_email_address;
+    $email_subject = "Contacto desde la página Web: $subject";
+    $email_body = "Nombre: $name\n";
+    $email_body .= "Correo: $email\n\n";
+    $email_body .= "Mensaje:\n$message\n";
 
-    // Cabeceras del correo
-    $email_headers = "From: $name <$email>";
+    // Asegúrate de codificar correctamente el mensaje
+    $headers = "From: $name <$email>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // Intenta enviar el correo
-    if (mail($recipient, $email_subject, $email_content, $email_headers)) {
-      // Envío exitoso
-      http_response_code(200);
-      echo "¡Gracias! Tu mensaje ha sido enviado.";
+    // Envía el correo
+    if (mail($to, $email_subject, $email_body, $headers)) {
+        http_response_code(200);
+        echo "¡Gracias! Tu mensaje ha sido enviado.";
     } else {
-      // Error al enviar
-      http_response_code(500);
-      echo "Hubo un problema al enviar tu mensaje, intenta nuevamente.";
+        http_response_code(500);
+        echo "Error: No se pudo enviar el mensaje.";
     }
-  } else {
-    // Método no permitido
+} else {
+    // Si no es POST, retorna error
     http_response_code(403);
-    echo "Hubo un problema con tu envío, intenta nuevamente.";
-  }
+    echo "Error: El formulario no se ha enviado correctamente.";
+}
 ?>
