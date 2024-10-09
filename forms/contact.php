@@ -23,4 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Reply-To: $email\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
+    // Envía el correo
+    if (mail($to, $subject, $message, $headers)) {
+        echo "OK";
+    } else {
+        echo "Error: No se pudo enviar el mensaje.";
+    }
+} else {
+    echo "Error: El formulario no se ha enviado correctamente.";
+}
 ?>
