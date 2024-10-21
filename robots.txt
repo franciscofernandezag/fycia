@@ -11,7 +11,7 @@ Allow: /images/
 Allow: /css/
 Allow: /js/
 
-# Evitar indexar parÃ¡metros de bÃºsqueda
+# Evitar indexar parámetros de búsqueda
 Disallow: /search?
 
 # Sitemap
