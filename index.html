@@ -909,12 +909,17 @@ document.addEventListener('DOMContentLoaded', applyEffectOnScroll);
 
     </footer>
 
-<div class="whatsapp-container" id="whatsappIcon" style="display: none;">
-    <a href="https://wa.me/56982291257" target="_blank" class="whatsapp-icon" title="Escríbenos por WhatsApp">
-        <i class="fab fa-whatsapp" style="color: #13ac6c; "></i>
-    </a>
-    <span class="whatsapp-text">¡Te Ayudamos!</span>
-</div>
+    <div class="whatsapp-container" id="whatsappIcon" style="display: none; position: fixed; right: 10px; bottom: 200px; display: flex; flex-direction: column; align-items: flex-end;">
+      <a href="https://wa.me/56982291257" target="_blank" class="whatsapp-icon" title="Escríbenos por WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; font-size: 30px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <span class="whatsapp-text" style="margin-top: 8px; font-size: 16px; color: #25D366; font-weight: 700; text-transform: uppercase; text-align: right;">
+        ¡Te Ayudamos!
+      </span>
+    </div>
+    
+    
+  
 
 <script>
     // Esperar a que el DOM esté completamente cargado

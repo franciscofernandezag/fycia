@@ -524,6 +524,7 @@ h6 {
     display: block;
   }
 }
+
 /*--------------------------------------------------------------
 # Modern Footer
 --------------------------------------------------------------*/
@@ -536,9 +537,10 @@ h6 {
   flex-direction: column;
   font-size: 14px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de profundidad */
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  position: relative;
+  z-index: 10;
 }
-
-
 
 .footer h4 {
   font-size: 14px;
@@ -548,11 +550,15 @@ h6 {
   color: #FFEBCC;
 }
 
+/* Modificación aquí para que footer-container ocupe el 100% del ancho */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  margin: 0 auto; /* Asegura que se centre correctamente */
+  padding: 0 10px; /* Agrega un pequeño espaciado a los lados */
 }
 
 .footer-logo {
@@ -618,8 +624,6 @@ h6 {
   transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
 }
 
-
-
 .footer-bottom {
   text-align: center; /* Centrar el texto en el pie */
   margin-top: 10px; /* Espacio superior */
@@ -638,7 +642,6 @@ h6 {
     flex-direction: column; /* Colocar las secciones una debajo de la otra */
   }
 }
-
 
 /*--------------------------------------------------------------
 # Preloader
@@ -3115,73 +3118,60 @@ section,
   display: inline-block;
 }
 
-.tags-widget ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-  padding: 6px 14px;
-  margin: 0 6px 8px 0;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 60%);
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.tags-widget ul a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border: 1px solid var(--accent-color);
-}
-
-.tags-widget ul a span {
-  padding-left: 5px;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  font-size: 14px;
-}
 
 .whatsapp-container {
   position: fixed;
-  right: 5px; /* Pegado a la derecha */
-  top: 85%; /* Ajusta este valor para bajar el ícono (incrementa el porcentaje) */
-  transform: translateY(-50%); /* Ajustar para que quede centrado */
+  bottom: 20px; /* Ajusta esta distancia para la altura desde el fondo */
   display: flex;
-  flex-direction: column; /* Para colocar el texto debajo del ícono */
-  align-items: center; /* Centra los elementos horizontalmente */
-  background-color: transparent; /* Sin fondo */
-  z-index: 1000; /* Asegúrate de que el ícono esté por encima de otros elementos */
+  flex-direction: column; /* Coloca el texto debajo del ícono */
+  align-items: center; /* Centra el ícono y el texto */
+  background-color: transparent;
+  z-index: 1000;
 }
 
 .whatsapp-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2px; /* Espaciado alrededor del ícono */
-  border-radius: 50%; /* Redondear el contenedor del ícono */
-  font-size: 40px; /* Tamaño del ícono para pantallas grandes */
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* Color verde característico de WhatsApp */
+  border-radius: 50%; /* Hace el ícono circular */
+  font-size: 30px; /* Tamaño del ícono */
+  color: white; /* Color del ícono */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-right: 30px; /* Desplaza el ícono a la izquierda */
+
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
 .whatsapp-text {
-  margin-top: 1px; /* Espaciado entre el ícono y el texto */
-  font-size: 16px; /* Aumentar el tamaño del texto */
-  color: #00bfa5; /* Color verde vibrante típico de WhatsApp */
-  text-align: center; /* Centrar el texto */
-  font-weight: 900; /* Hacer el texto lo más grueso posible */
-  text-transform: uppercase; /* Convertir el texto en mayúsculas para mayor impacto */
+  margin-top: 8px; /* Espacio entre el ícono y el texto */
+  font-size: 16px;
+  color: #25D366;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center; /* Centra el texto debajo del ícono */
 }
-
 
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
   .whatsapp-container {
-      top: 80%; /* Ajustar la posición para pantallas pequeñas */
+      bottom: 10px; /* Ajusta la distancia desde el fondo en dispositivos móviles */
   }
 
   .whatsapp-icon {
-      font-size: 30px; /* Tamaño más pequeño del ícono en móviles */
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
   }
 
   .whatsapp-text {
-      font-size: 10px; /* Tamaño más pequeño del texto en móviles */
+      font-size: 12px;
   }
-}
-#scroll-top {
-  visibility: hidden; /* Esto oculta el botón pero mantiene su espacio en el diseño */
 }
