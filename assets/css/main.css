@@ -10,7 +10,7 @@
   --background-color: #f4f4f4; /* Light grey background color for a clean look */
   --default-color: #2c3e50; /* Dark grey for general text, providing good readability */
   --heading-color: #1a1a1a; /* Very dark grey for headings to ensure emphasis */
-  --accent-color: #5a858d; /* Deep blue for accents, symbolizing trust and professionalism */
+  --accent-color: #384d78; /* Deep blue for accents, symbolizing trust and professionalism */
   --surface-color: #ffffff; /* White for cards and boxed elements to keep content clear */
   --contrast-color: #ffffff; /* White for contrast on darker backgrounds */
 }
@@ -18,7 +18,7 @@
 /* Nav Menu Colors */
 :root {
   --nav-color: #d3e6e9; /* Darker grey for navmenu links */
-  --nav-hover-color: #5d9ca7; /* Deep blue on hover for emphasis */
+  --nav-hover-color: #1c4c7971; /* Deep blue on hover for emphasis */
   --nav-mobile-background-color: #ffffff; /* White background for mobile menu for clarity */
   --nav-dropdown-background-color: #ffffff; /* White background for dropdown items */
   --nav-dropdown-color: #34495e; /* Dark grey for dropdown menu links */
@@ -204,7 +204,7 @@ h6 {
 /* Media Query para ajustar en pantallas pequeñas */
 @media (max-width: 768px) {
   .header .logo img {
-    max-height: 80px; /* Reducir tamaño en pantallas más pequeñas */
+    max-height: 120px; /* Reducir tamaño en pantallas más pequeñas */
   }
 }
 
@@ -223,34 +223,7 @@ h6 {
   color: var(--color-primary);
 }
 
-/*--------------------------------------------------------------
-# SLOGAN
---------------------------------------------------------------*/
-.logo-container {
-  display: flex; /* Flexbox para alinear el logo y el eslogan */
-  align-items: center; /* Alinear verticalmente al centro */
-}
 
-.slogan {
-  margin-left: -15px; /* Espacio muy pequeño entre el logo y el eslogan */
-  font-size: 1rem; /* Tamaño del texto del eslogan */
-  font-weight: normal; /* Peso del texto más sutil */
-  color: #FFEBCC; /* Color del texto (ajusta según el diseño) */
-  padding-top: 20px; /* Espacio superior para bajar el eslogan un poco más */
-}
-
-.slogan p {
-  margin: 0; /* Eliminar el margen por defecto del párrafo */
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-  .slogan {
-    margin-left: -5px; /* Espacio muy pequeño entre el logo y el eslogan */
-    font-size: 0.8rem; /* Tamaño del texto del eslogan más pequeño */
-    padding-top: 15px; /* Espacio superior adicional en móviles */
-  }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -258,10 +231,10 @@ h6 {
 
 /* Global Header on Scroll */
 .scrolled .header {
-  --background-color: rgba(63, 108, 116, 0.753); /* Fondo más oscuro y semi-transparente */
+  --background-color: rgba(21, 47, 95, 0.85); /* Fondo más oscuro y semi-transparente */
   padding: 0; /* Altura reducida del navbar al hacer scroll */
   color: #FFEBCC;
-  height: 70px; /* Altura reducida cuando se hace scroll */
+  height: 120px; /* Altura reducida cuando se hace scroll */
 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
 }
@@ -439,7 +412,7 @@ h6 {
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: #2c4e50; /* Cambia el color de fondo aquí */
+    background-color: rgba(21, 47, 95, 0.85);; /* Cambia el color de fondo aquí */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Cambia el borde si lo deseas */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra suave */
     overflow-y: auto;
@@ -530,9 +503,13 @@ h6 {
 --------------------------------------------------------------*/
 /* Estilos para el footer */
 .footer {
-  background: linear-gradient(315deg, rgba(1, 114, 103, 0.507), rgba(4, 46, 48, 0.9)); /* Degradado de verde a un tono más oscuro */
-  color: #FFEBCC; /* Color del texto */
-  padding: 20px 10px; /* Espaciado */
+background: linear-gradient(135deg, 
+    #0a192f 0%, 
+    #1a3a6c 25%, 
+    #3b598c 50%, 
+    #1a3a6c 75%, 
+    #0a192f 100%);
+     padding: 20px 10px; /* Espaciado */
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -590,7 +567,7 @@ h6 {
 .footer-links h4,
 .footer-services h4,
 .footer-partners h4 {
-  border-bottom: 1px solid #ffffff; /* Línea debajo de los títulos */
+  border-bottom: 1px solid #b8c0d3; /* Línea debajo de los títulos */
   padding-bottom: 5px; /* Reduce el padding inferior */
   margin-bottom: 10px; /* Espacio inferior */
   font-size: 16px; /* Tamaño de fuente más pequeño para los títulos */
@@ -620,7 +597,7 @@ h6 {
 .footer-links ul li a:hover,
 .footer-services ul li a:hover,
 .footer-partners ul li a:hover {
-  color: #ffcc00; /* Color al pasar el mouse */
+  color: #aabbc5; /* Color al pasar el mouse */
   transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
 }
 
@@ -628,7 +605,7 @@ h6 {
   text-align: center; /* Centrar el texto en el pie */
   margin-top: 10px; /* Espacio superior */
   padding: 5px 0; /* Reduce el padding */
-  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Línea superior */
+  border-top: 1px solid rgba(253, 255, 255, 0.5); /* Línea superior */
 }
 
 .footer-bottom p {
@@ -652,7 +629,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  background-color: rgba(129, 151, 207, 0.8); /* Fondo blanco semi-transparente */
   z-index: 9999;
   display: flex;
   align-items: center; /* Centra verticalmente */
@@ -808,7 +785,7 @@ h6 {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   width: 90%; /* Ajusta el ancho del modal */

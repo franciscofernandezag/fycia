@@ -15,4 +15,41 @@ Allow: /js/
 Disallow: /search?
 
 # Sitemap
-Sitemap: https://www.exico.cl/sitemap.xml
+Sitemap: https://www.exico.cl/sitemap.xmlUser-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /checkout/
+Disallow: /private/
+Disallow: /webmail/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /config/
+
+# Permitir el acceso a todos los archivos importantes
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /vendor/
+
+# Evitar indexar parámetros de búsqueda y sesiones
+Disallow: /search?
+Disallow: /*?
+Disallow: /*.php$
+Disallow: /*?sessionid=
+Disallow: /*?referrer=
+Disallow: /*?utm_
+
+# Permitir todas las páginas principales
+Allow: /index.html
+Allow: /servicios.html
+Allow: /nosotros.html
+Allow: /preguntas-frecuentes.html
+Allow: /contacto.html
+
+# Crawl delay para ser amigable con el servidor
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://fycia.cl/sitemap.xml

@@ -4,32 +4,37 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+<!-- Sitemap actualizado para fycia.cl - Páginas individuales -->
 <url>
-  <loc>https://www.exico.cl/</loc>
+  <loc>https://www.fycia.cl/</loc>
   <lastmod>2024-10-09T02:26:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.exico.cl/servicios</loc>
+  <loc>https://www.fycia.cl/servicios.html</loc>
   <lastmod>2024-10-09T02:26:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.fycia.cl/nosotros.html</loc>
+  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.exico.cl/nosotros</loc>
+  <loc>https://www.fycia.cl/preguntas-frecuentes.html</loc>
   <lastmod>2024-10-09T02:26:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.exico.cl/preguntas</loc>
+  <loc>https://www.fycia.cl/contacto.html</loc>
   <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.exico.cl/contacto</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 
 </urlset>
