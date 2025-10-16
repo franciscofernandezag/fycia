@@ -55,9 +55,9 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <!-- <li><a href="index.html">Inicio</a></li> -->
-            <li><a href="nosotrosx.html">Quienes Somos</a></li>
-            <li><a href="practicasx.html">Prácticas</a></li>
-            <li><a href="preguntas-frecuentesx.html">Preguntas Frecuentes</a></li>
+            <li><a href="nosotros.html">Quienes Somos</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="practicas.html">Prácticas</a></li>
             <li><a href="contactox.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -92,37 +92,38 @@
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap');
 
-        /* Hero Section */
-        .hero-mask {
-          position: relative;
-          height: 100vh;
-          width: 100%;
-          overflow: hidden;
-          margin: 0;
-          padding: 0;
-          background: #ffffff; /* Fondo blanco por defecto */
-          clip-path: polygon(30% 100%, 70% 0%, 100% 0, 0% 77%, 68% 0%, 24% 89%, 0 99%, 0 0);
-            animation: movePolygon 20s ease-in-out infinite;
 
-        }
+/* Hero Section */
 
+/* Hero Section */
+/* Hero Section */
+.hero-mask {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #ffffff; /* Fondo blanco */
+  clip-path: polygon(100% 0, 99% 88%, 61% 96%, 25% 93%, 0 98%, 0 0); /* figura base */
+  animation: movePolygon 12s ease-in-out infinite; /* ciclo más rápido */
+}
+
+/* Animación del polígono */
 @keyframes movePolygon {
   0% {
-    /* Forma base */
-    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 77%, 68% 95%, 24% 89%, 0 99%, 0 0);
+    clip-path: polygon(100% 0, 99% 88%, 61% 96%, 25% 93%, 0 98%, 0 0); /* base */
   }
 
   50% {
-    /* Las puntas inferiores bajan (más video visible) */
-    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 85%, 68% 100%, 24% 97%, 0 100%, 0 0);
+    /* Expansión hacia abajo: las puntas inferiores bajan a casi 100% */
+    clip-path: polygon(100% 0, 100% 100%, 80% 100%, 35% 100%, 0 100%, 0 0);
   }
 
   100% {
-    /* Vuelve a la forma original */
-    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 77%, 68% 95%, 24% 89%, 0 99%, 0 0);
+    clip-path: polygon(100% 0, 99% 88%, 61% 96%, 25% 93%, 0 98%, 0 0); /* vuelve a la base */
   }
 }
-
 
 
         /* Video */
