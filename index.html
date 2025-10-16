@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>fycia- Defensa Legal</title>
-    <meta name="description" content="En fycia, ofrecemos asesoría legal en defensa de deudores. Negociamos con acreedores y brindamos soluciones efectivas para proteger tus derechos financieros. Consulta gratuita.">
+    <meta name="description" content="Derecho Corporativo">
     <meta name="keywords" content="abogados defensa deudores" >
   
     <!-- Favicons -->
@@ -48,637 +48,596 @@
         <!-- Logo y Slogan -->
         <div class="logo-container d-flex align-items-center sticky-top">
           <a href="index.html" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="fycia - Defensa Legal de Deudores" class="logo-img">
+            <img src="assets/img/logo.png" alt="fycia - Derecho Corporativo" class="logo-img">
           </a>
-     
         </div>
         
         <nav id="navmenu" class="navmenu">
-  <ul>
-    <!-- <li><a href="index.html">Inicio</a></li> -->
-         <li><a href="nosotrosx.html">Quienes Somos</a></li>
-    <li><a href="practicasx.html">Prácticas</a></li>
-    <li><a href="preguntas-frecuentesx.html">Preguntas Frecuentes</a></li>
-    <li><a href="contactox.html">Contacto</a></li>
-  </ul>
-  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-</nav>
-        
+          <ul>
+            <!-- <li><a href="index.html">Inicio</a></li> -->
+            <li><a href="nosotrosx.html">Quienes Somos</a></li>
+            <li><a href="practicasx.html">Prácticas</a></li>
+            <li><a href="preguntas-frecuentesx.html">Preguntas Frecuentes</a></li>
+            <li><a href="contactox.html">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
       </div>
     </header>
+    
     <main class="main">
+      <!-- Hero Section Optimizado -->
+      <section class="hero-mask">
+        <!-- Video optimizado -->
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-placeholder.jpg">
+          <source src="assets/video/hero1.mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
 
-      
-<!-- Hero Section Optimizado -->
-<section class="hero-mask">
-  <!-- Video optimizado -->
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-placeholder.jpg">
-    <source src="assets/video/hero1.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
+        <!-- Overlay poligonal y sombreado superior -->
+        <div class="mask"></div>
+        <div class="top-shadow"></div>
 
-  <!-- Overlay poligonal y sombreado superior -->
-  <div class="mask"></div>
-  <div class="top-shadow"></div>
+        <!-- Texto principal -->
+        <div class="hero-text">
+          <ul>
+            <li>Derecho Laboral</li>
+            <li>Derecho Corporativo</li>
+            <li>Juicios y Arbitrajes</li>
+            <li>Cobranza</li>
+          </ul>
+        </div>
+      </section>
 
-  <!-- Texto principal -->
-  <div class="hero-text">
-    <ul>
-      <li>Derecho Laboral</li>
-      <li>Derecho Corporativo</li>
-      <li>Juicios y Arbitrajes</li>
-      <li>Cobranza</li>
-    </ul>
-  </div>
-</section>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+        /* Hero Section */
+        .hero-mask {
+          position: relative;
+          height: 100vh;
+          width: 100%;
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+          background: #ffffff; /* Fondo blanco por defecto */
+          clip-path: polygon(30% 100%, 70% 0%, 100% 0, 0% 77%, 68% 0%, 24% 89%, 0 99%, 0 0);
+            animation: movePolygon 20s ease-in-out infinite;
 
-/* Hero Section */
-.hero-mask {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  background: #ffffff; /* Fondo blanco por defecto */
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 70% 95%, 0 100%);
-}
-
-/* Polígono inferior */
-.hero-mask::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: white;
-  clip-path: ellipse(50% 100% at 50% 100%);
-  z-index: 1;
-}
-
-/* Video */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: brightness(0.6); /* Oscurece para contraste */
-  transition: filter 0.5s ease;
-}
-
-.hero-video:hover {
-  filter: brightness(0.7);
-}
-
-/* Overlay poligonal */
-.mask {
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%), /* Más oscuro arriba */
-    radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.1) 90%);
-  z-index: 1;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 70% 95%, 0 100%);
-}
-
-/* Sombra superior para navbar */
-.top-shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
-  z-index: 2;
-}
-
-/* Texto principal */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: #ffffff; /* Letras blancas */
-  font-family: 'Cinzel', serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-align: left;
-  z-index: 3;
-}
-
-/* Lista con animación y hover */
-.hero-text ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.hero-text li {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-  margin-bottom: 0.5em;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.hero-text li:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 15px rgba(255,255,255,0.5);
-}
-
-/* Delay escalonado */
-.hero-text li:nth-child(1) { animation-delay: 0.3s; }
-.hero-text li:nth-child(2) { animation-delay: 0.8s; }
-.hero-text li:nth-child(3) { animation-delay: 1.1s; }
-.hero-text li:nth-child(4) { animation-delay: 1.4s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-  .hero-text {
-    left: 5%;
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-text {
-    font-size: 1.3rem;
-  }
-}
-</style>
-
-<script>
-// Lazy load / play solo cuando se vea el hero
-const heroVideo = document.querySelector('.hero-video');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      heroVideo.play();
-    } else {
-      heroVideo.pause();
-    }
-  });
-});
-observer.observe(heroVideo);
-</script>
-
-
-      
-
-<!-- Sección Fernández&Cía - Firma Legal -->
-<section id="fernandez-cia" class="fernandez-section">
-  <div class="fernandez-content" data-aos="fade-up" data-aos-duration="1000">
-    <div class="section-header text-center">
-      <h2>Fernández&amp;Cía</h2>
-      <div class="divider mx-auto"></div>
-    </div>
-    
-    <div class="fernandez-description text-center">
-      <p>Fernández&amp;Cía centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.</p>
-      <p>Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.</p>
-    </div>
-    
-    <!-- <div class="fernandez-cta text-center">
-      <a href="contacto.html" class="btn btn-primary">Consultar con Nuestra Firma</a>
-    </div> -->
-  </div>
-</section>
-
-<style>
-/* Sección completa con fondo blanco */
-.fernandez-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-family: 'Cinzel', serif;
-  background: #ffffff;
-  color: #222222;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-}
-
-/* Fondo poligonal sutil */
-.fernandez-section::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: rgba(0, 0, 0, 0.046);
-  clip-path: polygon(0% 0%, 100% 10%, 90% 100%, 10% 90%);
-  animation: polyMove 30s linear infinite;
-  z-index: 0;
-}
-
-@keyframes polyMove {
-  0% { transform: rotate(0deg) translate(0,0); }
-  50% { transform: rotate(30deg) translate(15px, -15px); }
-  100% { transform: rotate(0deg) translate(0,0); }
-}
-
-/* Contenido centrado */
-.fernandez-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* Título principal con hover */
-.section-header h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  color: #111111;
-}
-
-.section-header h2:hover {
-  color: #183458;
-  transform: scale(1.05);
-  text-shadow: 0 0 15px rgba(0, 92, 215, 0.3);
-}
-
-/* Divider */
-.divider {
-  width: 100px;
-  height: 4px;
-  margin: 0 auto 40px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #005CD7, #111111);
-  transition: all 0.3s ease;
-}
-
-.section-header:hover .divider {
-  width: 120px;
-}
-
-/* Descripción con animación y efecto hover */
-.fernandez-description p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 1.5em;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-  transition: all 0.3s ease;
-  color: #111111;
-}
-
-.fernandez-description p:hover {
-  color: #005CD7;
-  transform: translateY(-5px) scale(1.02);
-  text-shadow: 0 0 10px rgba(0,92,215,0.2);
-}
-
-.fernandez-description p:nth-child(1) { animation-delay: 0.3s; }
-.fernandez-description p:nth-child(2) { animation-delay: 0.6s; }
-.fernandez-description p:nth-child(3) { animation-delay: 0.9s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Botón */
-.fernandez-cta .btn {
-  background: linear-gradient(45deg, #005CD7, #FF1150);
-  border: none;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.fernandez-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-  .fernandez-section { height: auto; padding: 80px 0; clip-path: none; }
-  .section-header h2 { font-size: 2.5rem; }
-  .fernandez-description p { font-size: 1.1rem; }
-}
-
-@media (max-width: 767px) {
-  .section-header h2 { font-size: 2rem; }
-  .fernandez-description p { font-size: 1rem; text-align: left; }
-  .fernandez-cta .btn { padding: 10px 25px; font-size: 0.95rem; }
-}
-</style>
-
-    
-    </main>
-
-<footer id="footer" class="footer">
-  <div class="footer-container">
-    <div class="footer-columns">
-
-      <!-- Contacto -->
-      <div class="footer-section">
-        <h4>Contáctanos</h4>
-        <p><strong>Teléfono:</strong> <a href="tel:+56982291257">+56 9 7620 2568</a></p>
-        <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
-      </div>
-
-      <!-- Prácticas -->
-      <div class="footer-section">
-        <h4>Prácticas</h4>
-        <ul>
-          <li><a href="servicios.html#defensa-deudores">Derecho Laboral</a></li>
-          <li><a href="servicios.html#dicom">Derecho Corporativo</a></li>
-          <li><a href="servicios.html#defensa-bancaria">Juicios y Arbitrajes</a></li>
-          <li><a href="servicios.html#tercerias">Cobranza</a></li>
-        </ul>
-      </div>
-
-      <!-- Dirección / Empresa -->
-      <div class="footer-section">
-        <h4>Dirección</h4>
-        <p>Fernández & Cía - Defensa Legal</p>
-        <p>Av. Ejemplo 1234, Santiago, Chile</p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2024 <strong>fycia Spa</strong> - Todos los derechos reservados</p>
-  </div>
-</footer>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
-
-/* Footer general: más claro, gris oscuro */
-.footer {
-  position: relative;
-  background: linear-gradient(to top, #1a1a1a 0%, #2a2a2a 50%, #3a3a3a 100%);
-  color: #d7e4e5c0;
-  font-family: 'Cinzel', serif;
-  font-size: 0.85rem; /* tamaño pequeño */
-  padding: 20px 0 7px 0; /* –30% delgado */
-  overflow: hidden;
-}
-
-/* Efecto sutil de luz lenta */
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(41, 62, 88, 0.85) 0%, transparent 70%);
-  animation: lightMove 40s linear infinite; /* lento y sutil */
-  pointer-events: none;
-}
-
-/* Contenedor de columnas */
-.footer-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.footer-columns {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-/* Secciones individuales */
-.footer-section h4 {
-  color: #fff;
-  font-size: 1rem; 
-  margin-bottom: 6px; /* reducido */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.footer-section h4:hover {
-  color: #00c3a5;
-}
-
-.footer-section p, 
-.footer-section li, 
-.footer-section a {
-  color: #d7e4e5c0;
-  text-decoration: none;
-  margin-bottom: 3px; /* reducido */
-  font-size: 0.8rem; /* más pequeño */
-  transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-  color: #00c3a5;
-}
-
-/* Lista de prácticas */
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Footer bottom */
-.footer-bottom {
-  text-align: center;
-  margin-top: 10px; /* reducido */
-  font-size: 0.7rem; /* más pequeño */
-  color: #bbb;
-}
-
-/* Animación efecto de luz lenta */
-@keyframes lightMove {
-  0% { transform: rotate(0deg) translate(0, 0); }
-  50% { transform: rotate(180deg) translate(5px, 5px); }
-  100% { transform: rotate(360deg) translate(0, 0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-columns {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-}
-</style>
-
-
-    
-
-    <!-- <div class="whatsapp-container" id="whatsappIcon" style="display: none; position: fixed; right: 10px; bottom: 200px; display: flex; flex-direction: column; align-items: flex-end;">
-      <a href="https://wa.me/56982291257" target="_blank" class="whatsapp-icon" title="Escríbenos por WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; font-size: 30px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span class="whatsapp-text" style="margin-top: 8px; font-size: 16px; color: #25D366; font-weight: 700; text-transform: uppercase; text-align: right;">
-        ¡Te Ayudamos!
-      </span>
-    </div> -->
-    
-  
-<script>
-    // Esperar a que el DOM esté completamente cargado
-    document.addEventListener("DOMContentLoaded", function() {
-        const whatsappIcon = document.getElementById("whatsappIcon");
-        const serviciosSection = document.querySelector("#servicios-resumen");
-
-        // Función para mostrar u ocultar el ícono de WhatsApp
-        function toggleWhatsappIcon() {
-            const serviciosPosition = serviciosSection.getBoundingClientRect().top;
-
-            // Verifica si la sección "Servicios" está en la vista
-            if (serviciosPosition < window.innerHeight) {
-                whatsappIcon.style.display = "flex"; // Muestra el ícono
-            } else {
-                whatsappIcon.style.display = "none"; // Oculta el ícono
-            }
         }
 
-        // Ejecutar la función al desplazarse
-        window.addEventListener("scroll", toggleWhatsappIcon);
-        toggleWhatsappIcon(); // Ejecutar al cargar la página para la inicialización
-    });
-</script>
+@keyframes movePolygon {
+  0% {
+    /* Forma base */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 77%, 68% 95%, 24% 89%, 0 99%, 0 0);
+  }
+
+  50% {
+    /* Las puntas inferiores bajan (más video visible) */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 85%, 68% 100%, 24% 97%, 0 100%, 0 0);
+  }
+
+  100% {
+    /* Vuelve a la forma original */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 77%, 68% 95%, 24% 89%, 0 99%, 0 0);
+  }
+}
+
+
+
+        /* Video */
+        .hero-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          filter: brightness(0.6); /* Oscurece para contraste */
+          transition: filter 0.5s ease;
+        }
+
+        .hero-video:hover {
+          filter: brightness(0.7);
+        }
+
+        /* Overlay poligonal */
+        .mask {
+          position: absolute;
+          inset: 0;
+          background: 
+            linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%), /* Más oscuro arriba */
+            radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.1) 90%);
+          z-index: 1;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+        }
+        
+        /* Sombra superior para navbar */
+        .top-shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 120px;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+          z-index: 2;
+        }
+
+        /* Texto principal */
+        .hero-text {
+          position: absolute;
+          top: 50%;
+          left: 10%;
+          transform: translateY(-50%);
+          color: #ffffff; /* Letras blancas */
+          font-family: 'Cinzel', serif;
+          font-size: 2rem;
+          text-transform: uppercase;
+          text-align: left;
+          z-index: 3;
+        }
+
+        /* Lista con animación y hover */
+        .hero-text ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .hero-text li {
+          opacity: 0;
+          transform: translateY(30px);
+          animation: fadeInUp 1s ease forwards;
+          margin-bottom: 0.5em;
+          transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .hero-text li:hover {
+          transform: scale(1.05);
+          text-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+
+        /* Delay escalonado */
+        .hero-text li:nth-child(1) { animation-delay: 0.3s; }
+        .hero-text li:nth-child(2) { animation-delay: 0.8s; }
+        .hero-text li:nth-child(3) { animation-delay: 1.1s; }
+        .hero-text li:nth-child(4) { animation-delay: 1.4s; }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+          .hero-text {
+            left: 5%;
+            font-size: 1.6rem;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .hero-text {
+            font-size: 1.3rem;
+          }
+        }
+      </style>
+
+      <script>
+        // Lazy load / play solo cuando se vea el hero
+        const heroVideo = document.querySelector('.hero-video');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting){
+              heroVideo.play();
+            } else {
+              heroVideo.pause();
+            }
+          });
+        });
+        observer.observe(heroVideo);
+      </script>
+
+      <!-- Sección Fernández&Cía - Firma Legal -->
+      <section id="fernandez-cia" class="fernandez-section">
+        <div class="fernandez-content" data-aos="fade-up" data-aos-duration="1000">
+          <div class="section-header text-center">
+            <h2>Fernández&amp;Cía</h2>
+            <div class="divider mx-auto"></div>
+          </div>
+          
+          <div class="fernandez-description text-center">
+            <p>Fernández&amp;Cía centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.</p>
+            <p>Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.</p>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        /* Sección completa con fondo blanco */
+        .fernandez-section {
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-family: 'Cinzel', serif;
+          background: #ffffff;
+          color: #222222;
+          overflow: hidden;
+          clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        /* Fondo poligonal sutil */
+        .fernandez-section::before {
+          content: '';
+          position: absolute;
+          top: -20%;
+          left: -20%;
+          width: 140%;
+          height: 140%;
+          background: rgba(0, 0, 0, 0.046);
+          clip-path: polygon(0% 0%, 100% 10%, 90% 100%, 10% 90%);
+          animation: polyMove 30s linear infinite;
+          z-index: 0;
+        }
+
+        @keyframes polyMove {
+          0% { transform: rotate(0deg) translate(0,0); }
+          50% { transform: rotate(30deg) translate(15px, -15px); }
+          100% { transform: rotate(0deg) translate(0,0); }
+        }
+
+        /* Contenido centrado */
+        .fernandez-content {
+          position: relative;
+          z-index: 1;
+          max-width: 900px;
+          text-align: center;
+          padding: 0 20px;
+        }
+
+        /* Título principal con hover */
+        .section-header h2 {
+          font-size: 3rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin-bottom: 20px;
+          transition: all 0.3s ease;
+          color: #111111;
+        }
+
+        .section-header h2:hover {
+          color: #183458;
+          transform: scale(1.05);
+          text-shadow: 0 0 15px rgba(0, 92, 215, 0.3);
+        }
+
+        /* Divider */
+        .divider {
+          width: 100px;
+          height: 4px;
+          margin: 0 auto 40px;
+          border-radius: 2px;
+          background: linear-gradient(90deg, #005CD7, #111111);
+          transition: all 0.3s ease;
+        }
+
+        .section-header:hover .divider {
+          width: 120px;
+        }
+
+        /* Descripción con animación y efecto hover */
+        .fernandez-description p {
+          font-size: 1.2rem;
+          line-height: 1.8;
+          margin-bottom: 1.5em;
+          opacity: 0;
+          transform: translateY(30px);
+          animation: fadeInUp 1s ease forwards;
+          transition: all 0.3s ease;
+          color: #111111;
+        }
+
+        .fernandez-description p:hover {
+          color: #005CD7;
+          transform: translateY(-5px) scale(1.02);
+          text-shadow: 0 0 10px rgba(0,92,215,0.2);
+        }
+
+        .fernandez-description p:nth-child(1) { animation-delay: 0.3s; }
+        .fernandez-description p:nth-child(2) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Botón */
+        .fernandez-cta .btn {
+          background: linear-gradient(45deg, #005CD7, #FF1150);
+          border: none;
+          color: #fff;
+          padding: 12px 30px;
+          border-radius: 50px;
+          font-size: 1rem;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+        }
+
+        .fernandez-cta .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+          .fernandez-section { height: auto; padding: 80px 0; clip-path: none; }
+          .section-header h2 { font-size: 2.5rem; }
+          .fernandez-description p { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 767px) {
+          .section-header h2 { font-size: 2rem; }
+          .fernandez-description p { font-size: 1rem; text-align: left; }
+          .fernandez-cta .btn { padding: 10px 25px; font-size: 0.95rem; }
+        }
+      </style>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-container">
+        <div class="footer-columns">
+
+          <!-- Contacto -->
+          <div class="footer-section">
+            <h4>Contáctanos</h4>
+            <p><strong>Teléfono:</strong> <a href="tel:+56982291257">+56 9 7620 2568</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
+          </div>
+
+          <!-- Prácticas -->
+          <div class="footer-section">
+            <h4>Prácticas</h4>
+            <ul>
+              <li><a href="servicios.html#defensa-deudores">Derecho Laboral</a></li>
+              <li><a href="servicios.html#dicom">Derecho Corporativo</a></li>
+              <li><a href="servicios.html#defensa-bancaria">Juicios y Arbitrajes</a></li>
+              <li><a href="servicios.html#tercerias">Cobranza</a></li>
+            </ul>
+          </div>
+
+          <!-- Dirección / Empresa -->
+          <div class="footer-section">
+            <h4>Dirección</h4>
+            <p>Fernández & Cía - Derecho Corporativo</p>
+            <p>Av. Ejemplo 1234, Santiago, Chile</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 <strong>fycia Spa</strong> - Todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+      /* Footer general: más claro, gris oscuro */
+      .footer {
+        position: relative;
+        background: linear-gradient(to top, #1a1a1a 0%, #2a2a2a 50%, #3a3a3a 100%);
+        color: #d7e4e5c0;
+        font-family: 'Cinzel', serif;
+        font-size: 0.85rem; /* tamaño pequeño */
+        padding: 20px 0 7px 0; /* –30% delgado */
+        overflow: hidden;
+      }
+
+      /* Efecto sutil de luz lenta */
+      .footer::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(41, 62, 88, 0.85) 0%, transparent 70%);
+        animation: lightMove 40s linear infinite; /* lento y sutil */
+        pointer-events: none;
+      }
+
+      /* Contenedor de columnas */
+      .footer-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-columns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      /* Secciones individuales */
+      .footer-section h4 {
+        color: #fff;
+        font-size: 1rem; 
+        margin-bottom: 6px; /* reducido */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-section h4:hover {
+        color: #00c3a5;
+      }
+
+      .footer-section p, 
+      .footer-section li, 
+      .footer-section a {
+        color: #d7e4e5c0;
+        text-decoration: none;
+        margin-bottom: 3px; /* reducido */
+        font-size: 0.8rem; /* más pequeño */
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #00c3a5;
+      }
+
+      /* Lista de prácticas */
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Footer bottom */
+      .footer-bottom {
+        text-align: center;
+        margin-top: 10px; /* reducido */
+        font-size: 0.7rem; /* más pequeño */
+        color: #bbb;
+      }
+
+      /* Animación efecto de luz lenta */
+      @keyframes lightMove {
+        0% { transform: rotate(0deg) translate(0, 0); }
+        50% { transform: rotate(180deg) translate(5px, 5px); }
+        100% { transform: rotate(360deg) translate(0, 0); }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .footer-columns {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+      }
+    </style>
 
     <!-- Scroll Top -->
-    <a href="#"id="scroll-top"class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+    <!-- Preloader -->
+    <div id="preloader" class="d-flex align-items-center justify-content-center">
+      <div class="preloader-content text-center">
+        <a href="index.html" class="logo">
+          <img src="assets/img/logo.png" alt="Fernández & Cía - Defensa Legal" class="logo-img">
+        </a>
 
-<!-- Preloader -->
-<!-- Preloader -->
-<div id="preloader" class="d-flex align-items-center justify-content-center">
-  <div class="preloader-content text-center">
-    <a href="index.html" class="logo">
-      <img src="assets/img/logo.png" alt="Fernández & Cía - Defensa Legal" class="logo-img">
-    </a>
-
-    <div class="slogan">
-      <p class="fade-in delay1">Derecho Laboral</p>
-      <p class="fade-in delay2">Derecho Corporativo</p>
-      <p class="fade-in delay3">Juicios y Arbitrajes</p>
-      <p class="fade-in delay4">Cobranza</p>
-      <p class="pulse delay5">Cargando...</p>
+        <div class="slogan">
+          <p class="fade-in delay1">Derecho Laboral</p>
+          <p class="fade-in delay2">Derecho Corporativo</p>
+          <p class="fade-in delay3">Juicios y Arbitrajes</p>
+          <p class="fade-in delay4">Cobranza</p>
+          <p class="pulse delay5">Cargando...</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
-/* Fondo general del preloader */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
-  transition: opacity 1s ease, visibility 1s ease;
-}
+      /* Fondo general del preloader */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        transition: opacity 1s ease, visibility 1s ease;
+      }
 
-/* Ocultar cuando carga */
-#preloader.hide {
-  opacity: 0;
-  visibility: hidden;
-}
+      /* Ocultar cuando carga */
+      #preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
 
-/* Logo */
-#preloader .logo-img {
-  width: 130px;
-  filter: brightness(1.2);
-  animation: fadeIn 1.5s ease-in-out;
-}
+      /* Logo */
+      #preloader .logo-img {
+        width: 130px;
+        filter: brightness(1.2);
+        animation: fadeIn 1.5s ease-in-out;
+      }
 
-/* Textos */
-#preloader .slogan p {
-  font-family: 'Cinzel', serif;
-  margin: 0.3rem 0;
-  color: #ffffff;
-  font-size: 1.3rem;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 1s ease forwards;
-}
+      /* Textos */
+      #preloader .slogan p {
+        font-family: 'Cinzel', serif;
+        margin: 0.3rem 0;
+        color: #ffffff;
+        font-size: 1.3rem;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 1s ease forwards;
+      }
 
-#preloader .slogan .pulse {
-  color: #00c3a5;
-  font-weight: 600;
-  letter-spacing: 1px;
-  animation: pulseGlow 2s infinite;
-}
+      #preloader .slogan .pulse {
+        color: #00c3a5;
+        font-weight: 600;
+        letter-spacing: 1px;
+        animation: pulseGlow 2s infinite;
+      }
 
-/* Animaciones escalonadas */
-.delay1 { animation-delay: 0.4s; }
-.delay2 { animation-delay: 0.8s; }
-.delay3 { animation-delay: 1.2s; }
-.delay4 { animation-delay: 1.6s; }
-.delay5 { animation-delay: 2.2s; }
+      /* Animaciones escalonadas */
+      .delay1 { animation-delay: 0.4s; }
+      .delay2 { animation-delay: 0.8s; }
+      .delay3 { animation-delay: 1.2s; }
+      .delay4 { animation-delay: 1.6s; }
+      .delay5 { animation-delay: 2.2s; }
 
-/* Keyframes */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      /* Keyframes */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
 
-@keyframes pulseGlow {
-  0%, 100% { text-shadow: 0 0 5px #00c3a5, 0 0 10px #0078c3; opacity: 1; }
-  50% { text-shadow: 0 0 20px #00c3a5, 0 0 30px #00c3a5; opacity: 0.8; }
-}
-</style>
+      @keyframes pulseGlow {
+        0%, 100% { text-shadow: 0 0 5px #00c3a5, 0 0 10px #0078c3; opacity: 1; }
+        50% { text-shadow: 0 0 20px #00c3a5, 0 0 30px #00c3a5; opacity: 0.8; }
+      }
+    </style>
 
-<script>
-// Oculta el preloader cuando carga la página o tras 4 segundos máximo
-window.addEventListener("load", function() {
-  const preloader = document.getElementById("preloader");
-  preloader.classList.add("hide");
-});
+    <script>
+      // Oculta el preloader cuando carga la página o tras 4 segundos máximo
+      window.addEventListener("load", function() {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hide");
+      });
 
-// Fallback: si algo falla, ocultar
+      // Fallback: si algo falla, ocultar después de 4 segundos
+      setTimeout(function() {
+        const preloader = document.getElementById("preloader");
+        if (preloader && !preloader.classList.contains('hide')) {
+          preloader.classList.add("hide");
+        }
+      }, 4000);
+    </script>
 
-
-
-
-    <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+    <script src="assets/vendor/php-email-form/validate.js"></script> 
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -686,12 +645,10 @@ window.addEventListener("load", function() {
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const faqItems = document.querySelectorAll('.faq-item');
-      
+
         faqItems.forEach(item => {
           item.addEventListener('click', () => {
             // Cierra todas las demás preguntas abiertas
@@ -705,7 +662,9 @@ window.addEventListener("load", function() {
           });
         });
       });
-      </script>
-      
-    </main>
+    </script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
   </body>
+</html>
