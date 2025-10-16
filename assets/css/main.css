@@ -1,69 +1,100 @@
-/* Fonts */
-:root {
-  --default-font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  --heading-font: "Merriweather", serif;
-  --nav-font: "Roboto", sans-serif;
+/* Footer general */
+.footer {
+  position: relative;
+  background: linear-gradient(to top, #1a1a1a 0%, #2c2c2c 50%, #3a3a3a 100%); /* tonos negro/gris */
+  color: var(--contrast-color); /* blanco */
+  font-family: var(--nav-font);
+  font-size: 0.8rem; /* más pequeño */
+  padding: 18px 0 5px 0; /* más delgado */
+  overflow: hidden;
 }
 
-/* Global Colors */
-:root { 
-  --background-color: #f4f4f4; /* Light grey background color for a clean look */
-  --default-color: #2c3e50; /* Dark grey for general text, providing good readability */
-  --heading-color: #1a1a1a; /* Very dark grey for headings to ensure emphasis */
-  --accent-color: #384d78; /* Deep blue for accents, symbolizing trust and professionalism */
-  --surface-color: #ffffff; /* White for cards and boxed elements to keep content clear */
-  --contrast-color: #ffffff; /* White for contrast on darker backgrounds */
+/* Efecto sutil de luz lenta */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  animation: lightMove 40s linear infinite;
+  pointer-events: none;
 }
 
-/* Nav Menu Colors */
-:root {
-  --nav-color: #d3e6e9; /* Darker grey for navmenu links */
-  --nav-hover-color: #1c4c7971; /* Deep blue on hover for emphasis */
-  --nav-mobile-background-color: #ffffff; /* White background for mobile menu for clarity */
-  --nav-dropdown-background-color: #ffffff; /* White background for dropdown items */
-  --nav-dropdown-color: #34495e; /* Dark grey for dropdown menu links */
-  --nav-dropdown-hover-color: #0d4d52; /* Deep  on hover for dropdown links */
+/* Contenedor de columnas */
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* Color Presets */
-.light-background {
-  --background-color: #f4f4f4; /* Light grey for a professional look */
-  --surface-color: #ffffff; /* White for clarity on cards and boxed elements */
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.dark-background {
-  --background-color: #2c3e50; /* Dark blue-grey background for high contrast */
-  --default-color: #ffffff; /* White text for high readability */
-  --heading-color: #ffffff; /* White for headings on dark background */
-  --surface-color: #34495e; /* Slightly lighter dark blue-grey for surface elements */
-  --contrast-color: #ffffff; /* White for text on dark backgrounds */
+/* Secciones individuales */
+.footer-section h4 {
+  color: var(--surface-color); /* blanco */
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
+.footer-section h4:hover {
+  color: var(--accent-color); /* azul profundo */
 }
 
-/* Estilos para el header con la clase .custom-header */
-.custom-header {
-  background-color: rgba(57, 64, 73, 0.8); /* Gris oscuro con 70% de opacidad */
-  padding: 10px 0; /* Ajusta el padding si es necesario */
+.footer-section p, 
+.footer-section li, 
+.footer-section a {
+  color: var(--default-color); /* gris oscuro para texto */
+  text-decoration: none;
+  margin-bottom: 3px;
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
 }
 
-
-
-.custom-header .navmenu a {
-  color: #ffffff; /* Color de los enlaces */
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
+.footer-section a:hover {
+  color: var(--accent-color);
 }
 
-.custom-header .navmenu a:hover,
-.custom-header .navmenu .active {
-  color: #0f6b654b; /* Color al pasar el ratón sobre los enlaces */
+/* Lista de prácticas */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.custom-header .mobile-nav-toggle {
-  color: #ffffff; /* Color del ícono del toggle móvil */
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--default-color); /* gris oscuro */
+}
+
+/* Animación efecto de luz lenta */
+@keyframes lightMove {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  50% { transform: rotate(180deg) translate(5px, 5px); }
+  100% { transform: rotate(360deg) translate(0, 0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 }
 
 
@@ -231,7 +262,7 @@ h6 {
 
 /* Global Header on Scroll */
 .scrolled .header {
-  --background-color: rgba(21, 47, 95, 0.85); /* Fondo más oscuro y semi-transparente */
+  --background-color: rgba(41, 62, 88, 0.85); /* Fondo más oscuro y semi-transparente */
   padding: 0; /* Altura reducida del navbar al hacer scroll */
   color: #FFEBCC;
   height: 120px; /* Altura reducida cuando se hace scroll */
@@ -1028,95 +1059,9 @@ section,
   position: relative; /* Para el posicionamiento del pseudo-elemento */
 }
 
-
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section - Background Image
 --------------------------------------------------------------*/
-
-/* Estilos para el contenido del overlay */
-.hero-content {
-  position: absolute;
-  top: 60%; /* Ajusta según lo necesites */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-  width: 90%; /* Abarca más espacio horizontal */
-}
-
-.hero-content h1 {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-  color: #FFEBCC;
-}
-
-.hero-content p {
-  font-size: 20px;
-  margin-top: 16px;
-  color: #FFEBCC;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Clase específica para párrafos adicionales */
-.hero-paragraph {
-  font-size: 24px;
-  margin-top: 16px;
-  max-width: 100%;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 2s ease-out;
-  margin-bottom: 16px;
-}
-
-.btn-primary {
-  padding: 12px 24px;
-  background-color: #0f6b65;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 32px;
-  display: inline-block;
-  box-shadow: 0 3px 10px rgba(255, 17, 80, 0.4);
-  animation: bounceIn 2.5s ease-out;
-}
-
-/* Ajustes específicos para dispositivos móviles */
-@media (max-width: 768px) {
-  .hero-content {
-    width: 95%; /* Abarca más espacio horizontal en móviles */
-  }
-
-  .hero-content h1 {
-    font-size: 32px; /* Tamaño reducido para h1 en dispositivos móviles */
-  }
-
-  .hero-content p {
-    font-size: 18px; /* Tamaño reducido para párrafos en dispositivos móviles */
-  }
-
-  .btn-primary {
-    padding: 10px 20px; /* Ajuste de padding para el botón en dispositivos móviles */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content {
-    width: 100%; /* Abarca el 100% en pantallas más pequeñas */
-  }
-
-  .hero-content h1 {
-    font-size: 24px; /* Tamaño aún más reducido para h1 en dispositivos móviles más pequeños */
-  }
-
-  .hero-content p {
-    font-size: 16px; /* Tamaño aún más reducido para párrafos en dispositivos móviles más pequeños */
-  }
-
-  .btn-primary {
-    padding: 8px 16px; /* Ajuste de padding para el botón en dispositivos móviles más pequeños */
-  }
-}
-
 
 
 /*--------------------------------------------------------------
