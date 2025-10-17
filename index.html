@@ -95,8 +95,6 @@
 
 /* Hero Section */
 
-/* Hero Section */
-/* Hero Section */
 .hero-mask {
   position: relative;
   height: 100vh;
@@ -388,144 +386,41 @@
       </style>
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-container">
-        <div class="footer-columns">
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <div class="footer-columns">
 
-          <!-- Contacto -->
-          <div class="footer-section">
-            <h4>Contáctanos</h4>
-            <p><strong>Teléfono:</strong> <a href="tel:+56982291257">+56 9 7620 2568</a></p>
-            <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
-          </div>
-
-          <!-- Prácticas -->
-          <div class="footer-section">
-            <h4>Prácticas</h4>
-            <ul>
-              <li><a href="servicios.html#defensa-deudores">Derecho Laboral</a></li>
-              <li><a href="servicios.html#dicom">Derecho Corporativo</a></li>
-              <li><a href="servicios.html#defensa-bancaria">Juicios y Arbitrajes</a></li>
-              <li><a href="servicios.html#tercerias">Cobranza</a></li>
-            </ul>
-          </div>
-
-          <!-- Dirección / Empresa -->
-          <div class="footer-section">
-            <h4>Dirección</h4>
-            <p>Fernández & Cía - Derecho Corporativo</p>
-            <p>Av. Ejemplo 1234, Santiago, Chile</p>
-          </div>
-        </div>
+      <!-- Contacto -->
+      <div class="footer-section">
+        <h4>Contáctanos</h4>
+        <p><strong>Teléfono:</strong> <a href="tel:+56976202568">+56 9 7620 2568</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2024 <strong>fycia Spa</strong> - Todos los derechos reservados</p>
+      <!-- Prácticas -->
+      <div class="footer-section">
+        <h4>Prácticas</h4>
+        <ul>
+          <li><a href="servicios.html#defensa-deudores">Derecho Laboral</a></li>
+          <li><a href="servicios.html#dicom">Derecho Corporativo</a></li>
+          <li><a href="servicios.html#defensa-bancaria">Juicios y Arbitrajes</a></li>
+          <li><a href="servicios.html#tercerias">Cobranza</a></li>
+        </ul>
       </div>
-    </footer>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+      <!-- Dirección / Empresa -->
+      <div class="footer-section">
+        <h4>Dirección</h4>
+        <p>Fernández & Cía - Derecho Corporativo</p>
+        <p>Av. Ejemplo 1234, Santiago, Chile</p>
+      </div>
+    </div>
+  </div>
 
-      /* Footer general: más claro, gris oscuro */
-      .footer {
-        position: relative;
-        background: linear-gradient(to top, #1a1a1a 0%, #2a2a2a 50%, #3a3a3a 100%);
-        color: #d7e4e5c0;
-        font-family: 'Cinzel', serif;
-        font-size: 0.85rem; /* tamaño pequeño */
-        padding: 20px 0 7px 0; /* –30% delgado */
-        overflow: hidden;
-      }
-
-      /* Efecto sutil de luz lenta */
-      .footer::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(41, 62, 88, 0.85) 0%, transparent 70%);
-        animation: lightMove 40s linear infinite; /* lento y sutil */
-        pointer-events: none;
-      }
-
-      /* Contenedor de columnas */
-      .footer-container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      .footer-columns {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      /* Secciones individuales */
-      .footer-section h4 {
-        color: #fff;
-        font-size: 1rem; 
-        margin-bottom: 6px; /* reducido */
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-      }
-
-      .footer-section h4:hover {
-        color: #00c3a5;
-      }
-
-      .footer-section p, 
-      .footer-section li, 
-      .footer-section a {
-        color: #d7e4e5c0;
-        text-decoration: none;
-        margin-bottom: 3px; /* reducido */
-        font-size: 0.8rem; /* más pequeño */
-        transition: color 0.3s ease;
-      }
-
-      .footer-section a:hover {
-        color: #00c3a5;
-      }
-
-      /* Lista de prácticas */
-      .footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      /* Footer bottom */
-      .footer-bottom {
-        text-align: center;
-        margin-top: 10px; /* reducido */
-        font-size: 0.7rem; /* más pequeño */
-        color: #bbb;
-      }
-
-      /* Animación efecto de luz lenta */
-      @keyframes lightMove {
-        0% { transform: rotate(0deg) translate(0, 0); }
-        50% { transform: rotate(180deg) translate(5px, 5px); }
-        100% { transform: rotate(360deg) translate(0, 0); }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .footer-columns {
-          flex-direction: column;
-          text-align: center;
-          gap: 1rem;
-        }
-      }
-    </style>
+  <div class="footer-bottom">
+    <p>© 2024 <strong>fycia Spa</strong> - Todos los derechos reservados</p>
+  </div>
+</footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -547,80 +442,7 @@
       </div>
     </div>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
-
-      /* Fondo general del preloader */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        overflow: hidden;
-        transition: opacity 1s ease, visibility 1s ease;
-      }
-
-      /* Ocultar cuando carga */
-      #preloader.hide {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      /* Logo */
-      #preloader .logo-img {
-        width: 130px;
-        filter: brightness(1.2);
-        animation: fadeIn 1.5s ease-in-out;
-      }
-
-      /* Textos */
-      #preloader .slogan p {
-        font-family: 'Cinzel', serif;
-        margin: 0.3rem 0;
-        color: #ffffff;
-        font-size: 1.3rem;
-        opacity: 0;
-        transform: translateY(10px);
-        animation: fadeInUp 1s ease forwards;
-      }
-
-      #preloader .slogan .pulse {
-        color: #00c3a5;
-        font-weight: 600;
-        letter-spacing: 1px;
-        animation: pulseGlow 2s infinite;
-      }
-
-      /* Animaciones escalonadas */
-      .delay1 { animation-delay: 0.4s; }
-      .delay2 { animation-delay: 0.8s; }
-      .delay3 { animation-delay: 1.2s; }
-      .delay4 { animation-delay: 1.6s; }
-      .delay5 { animation-delay: 2.2s; }
-
-      /* Keyframes */
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
-      }
-
-      @keyframes pulseGlow {
-        0%, 100% { text-shadow: 0 0 5px #00c3a5, 0 0 10px #0078c3; opacity: 1; }
-        50% { text-shadow: 0 0 20px #00c3a5, 0 0 30px #00c3a5; opacity: 0.8; }
-      }
-    </style>
+  
 
     <script>
       // Oculta el preloader cuando carga la página o tras 4 segundos máximo
