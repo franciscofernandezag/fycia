@@ -1,9 +1,50 @@
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
+// Hero video: Lazy load / play solo cuando se vea el hero
+const heroVideo = document.querySelector('.hero-video');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      heroVideo.play();
+    } else {
+      heroVideo.pause();
+    }
+  });
+});
+observer.observe(heroVideo);
+
+// Preloader
+window.addEventListener("load", function() {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hide");
+});
+
+// Fallback: si algo falla, ocultar después de 4 segundos
+setTimeout(function() {
+  const preloader = document.getElementById("preloader");
+  if (preloader && !preloader.classList.contains('hide')) {
+    preloader.classList.add("hide");
+  }
+}, 4000);
+
+// FAQ toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Cierra todas las demás preguntas abiertas
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove('faq-active');
+        }
+      });
+      // Alterna la clase 'faq-active' en la pregunta seleccionada
+      item.classList.toggle('faq-active');
+    });
+  });
+});
 
 
   
@@ -267,3 +308,5 @@ if (preloader) {
   window.addEventListener('load', applyEffectOnScroll);
 
 })();
+
+
