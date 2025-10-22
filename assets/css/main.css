@@ -729,7 +729,36 @@ h6 {
     font-size: 0.95rem; 
   }
 }
+/* SOLUCIÓN NUCLEAR - Sobrescribe cualquier estilo anterior */
+body .fernandez-section,
+html body .fernandez-section,
+body.index-page .fernandez-section {
+  height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  font-family: 'Cinzel', serif !important;
+  background: #ffffff !important;
+  color: #222222 !important;
+  overflow: hidden !important;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
+body .fernandez-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -20% !important;
+  left: -20% !important;
+  width: 140% !important;
+  height: 140% !important;
+  background: rgba(0, 0, 0, 0.046) !important;
+  clip-path: polygon(0% 0%, 100% 10%, 90% 100%, 10% 90%) !important;
+  animation: polyMove 30s linear infinite !important;
+  z-index: 0 !important;
+}
 /* Footer general: más claro, gris oscuro */
 .footer {
   position: relative;
