@@ -58,7 +58,7 @@
             <li><a href="nosotros.html">Quienes Somos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
             <li><a href="practicas.html">Prácticas</a></li>
-            <li><a href="contactox.html">Contacto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -134,7 +134,7 @@
           <div class="footer-section">
             <h4>Dirección</h4>
             <p>Fernández & Cía - Derecho Corporativo</p>
-            <p>Av. Ejemplo 1234, Santiago, Chile</p>
+           <p>Alonso de Córdova 4555, Las Condes, Región Metropolitana</p>
           </div>
         </div>
       </div>
@@ -147,104 +147,6 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
-      /* Footer general: más claro, gris oscuro */
-      .footer {
-        position: relative;
-        background: linear-gradient(to top, #1a1a1a 0%, #2a2a2a 50%, #3a3a3a 100%);
-        color: #d7e4e5c0;
-        font-family: 'Cinzel', serif;
-        font-size: 0.85rem; /* tamaño pequeño */
-        padding: 20px 0 7px 0; /* –30% delgado */
-        overflow: hidden;
-      }
-
-      /* Efecto sutil de luz lenta */
-      .footer::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(41, 62, 88, 0.85) 0%, transparent 70%);
-        animation: lightMove 40s linear infinite; /* lento y sutil */
-        pointer-events: none;
-      }
-
-      /* Contenedor de columnas */
-      .footer-container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      .footer-columns {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      /* Secciones individuales */
-      .footer-section h4 {
-        color: #fff;
-        font-size: 1rem; 
-        margin-bottom: 6px; /* reducido */
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-      }
-
-      .footer-section h4:hover {
-        color: #00c3a5;
-      }
-
-      .footer-section p, 
-      .footer-section li, 
-      .footer-section a {
-        color: #d7e4e5c0;
-        text-decoration: none;
-        margin-bottom: 3px; /* reducido */
-        font-size: 0.8rem; /* más pequeño */
-        transition: color 0.3s ease;
-      }
-
-      .footer-section a:hover {
-        color: #00c3a5;
-      }
-
-      /* Lista de prácticas */
-      .footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      /* Footer bottom */
-      .footer-bottom {
-        text-align: center;
-        margin-top: 10px; /* reducido */
-        font-size: 0.7rem; /* más pequeño */
-        color: #bbb;
-      }
-
-      /* Animación efecto de luz lenta */
-      @keyframes lightMove {
-        0% { transform: rotate(0deg) translate(0, 0); }
-        50% { transform: rotate(180deg) translate(5px, 5px); }
-        100% { transform: rotate(360deg) translate(0, 0); }
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .footer-columns {
-          flex-direction: column;
-          text-align: center;
-          gap: 1rem;
-        }
-      }
     </style>
 
     <!-- Scroll Top -->

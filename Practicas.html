@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Servicios - fycia Defensa Legal</title>
-    <meta name="description" content="Servicios especializados en defensa legal de deudores. Defensa judicial, prescripción de deudas, salida de DICOM y más.">
-    <meta name="keywords" content="defensa deudores, prescripción deudas, salir DICOM, insolvencia" >
-  
+    <title>fycia - Defensa Legal</title>
+    <meta name="description" content="Derecho Corporativo">
+    <meta name="keywords" content="abogados defensa deudores">
+
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -15,11 +15,10 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -27,361 +26,309 @@
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Main CSS File -->
+    <!-- Main CSS -->
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        color: #1b1b1b;
+      }
+
+      /* Header */
+      #header {
+        background-color: rgba(41, 62, 88, 0.85);
+        color: #FFEBCC;
+        height: 120px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+      #header a {
+        color: #FFEBCC !important;
+      }
+      #header a:hover {
+        color: #ffffff !important;
+      }
+
+      /* Sección con video lateral */
+      .fernandez-video-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        padding: 80px 0;
+        overflow: hidden;
+      }
+
+      .fernandez-video-section .video-container {
+        position: relative;
+        flex: 1;
+        height: 450px;
+        overflow: hidden;
+        clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+      }
+
+      .fernandez-video-section video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .fernandez-video-section .mask {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        mix-blend-mode: multiply;
+        animation: moveMask 6s ease-in-out infinite alternate;
+      }
+
+      @keyframes moveMask {
+        0% { clip-path: polygon(0 0, 100% 5%, 95% 100%, 0% 95%); }
+        100% { clip-path: polygon(0 5%, 95% 0, 100% 95%, 0 100%); }
+      }
+
+      .fernandez-video-section .text-container {
+        flex: 1;
+        padding: 0 50px;
+        text-align: left;
+      }
+
+      .fernandez-video-section h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.5rem;
+        color: #293e58;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .fernandez-video-section p {
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      .divider {
+        width: 70px;
+        height: 3px;
+        background: #293e58;
+        margin-bottom: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .fernandez-video-section {
+          flex-direction: column;
+        }
+        .fernandez-video-section .video-container {
+          width: 100%;
+          height: 300px;
+          clip-path: none;
+        }
+        .fernandez-video-section .text-container {
+          padding: 40px 20px;
+          text-align: center;
+        }
+      }
+
+      /* Preloader */
+      #preloader {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 1s ease, visibility 1s ease;
+      }
+      #preloader.hide { opacity: 0; visibility: hidden; }
+      #preloader .logo-img { width: 130px; animation: fadeIn 1.5s ease-in-out; }
+      #preloader .slogan p {
+        font-family: 'Cinzel', serif;
+        color: #fff;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 1s ease forwards;
+      }
+      .delay1 { animation-delay: 0.4s; }
+      .delay2 { animation-delay: 0.8s; }
+      .delay3 { animation-delay: 1.2s; }
+      .delay4 { animation-delay: 1.6s; }
+      .pulse { color: #00c3a5; font-weight: 600; animation: pulseGlow 2s infinite; }
+      @keyframes fadeInUp { from {opacity:0; transform:translateY(15px);} to {opacity:1; transform:translateY(0);} }
+      @keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
+      @keyframes pulseGlow {
+        0%, 100% { text-shadow: 0 0 10px #00c3a5, 0 0 20px #00c3a5; opacity: 1; }
+        50% { text-shadow: 0 0 25px #00c3a5, 0 0 40px #00c3a5; opacity: 0.8; }
+      }
+    </style>
   </head>
 
-  <body class="services-page">
+  <body class="index-page">
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="fycia - Derecho Corporativo" class="logo-img">
+        </a>
 
-    <header id="header" class="header d-flex align-items-center fixed-top ">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        
-        <!-- Logo y Slogan -->
-        <div class="logo-container d-flex align-items-center sticky-top">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="fycia - Defensa Legal de Deudores" class="logo-img">
-          </a>
-          <div class="slogan">
-            <p>Defensa <a href="https://fycia.cl/webmail/" class="legal-link">Legal</a></p>
-          </div>
-        </div>
-        
-        <!-- Navigation Menu -->
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="Practicas.html" class="active">Prácticas</a></li>
             <li><a href="nosotros.html">Quienes Somos</a></li>
-            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="practicas.html">Prácticas</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-        
       </div>
     </header>
 
-    <main class="main">
-      <!-- Page Title -->
-      <section class="page-title dark-background" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/img/services-bg.jpg') center/cover;">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h1 data-aos="fade-up">Nuestros Servicios</h1>
-              <p data-aos="fade-up" data-aos-delay="100" class="mt-3">
-                Soluciones legales integrales para proteger tus derechos y enfrentar tus deudas de manera efectiva
+    <!-- Main -->
+
+
+<main class="main" style="padding-top:140px;">
+
+  <!-- ======= Sección de Prácticas ======= -->
+  <section id="practicas" class="practicas-section py-5" data-aos="fade-up">
+    <div class="container">
+
+      <!-- Título principal -->
+      <div class="section-header text-center mb-5">
+        <h2>Prácticas</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <!-- Grid de Cards -->
+      <div class="row g-4 justify-content-center">
+
+        <!-- Card 1 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card-practica h-100">
+            <div class="card-body">
+              <h4>Derecho Laboral</h4>
+              <p>
+                Nuestro equipo brinda asesoría integral de excelencia a empresas e instituciones privadas en materia de derecho laboral, tanto individual como colectivo. Nuestros servicios incluyen la asesoría general, elaboración y redacción de documentación laboral, auditorías laborales; asesoría en materia de extranjería; litigación y defensa judicial en ámbito laboral; asesoría en negociaciones colectivas; tramitación de reclamaciones de multa; asistencia a mediaciones y comparendos, entre otros servicios.
               </p>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Servicios Section -->
-      <section id="servicios-detalle" class="constructions section">
-        <div class="container" data-aos="fade-up">
-          <div class="row gy-4">
-
-            <!-- Defensa Deudores -->
-            <div id="defensa-deudores" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="100">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="fas fa-gavel" style="font-size: 4rem; color: #007bff;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Defensa de Deudores</h3>
-                      <div class="service-content">
-                        <p><strong>¿En qué consiste la Defensa de Deudores?</strong></p>
-                        <p>Nuestro servicio de defensa para deudores está diseñado para proteger tus derechos ante cobros abusivos, embargos o demandas judiciales. Te acompañamos en todo el proceso para negociar condiciones justas con tus acreedores.</p>
-
-                        <p><strong>¿Cómo te ayudamos?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Negociación con Acreedores:</strong> Intervenimos en las negociaciones con tus acreedores para evitar demandas o embargos y lograr acuerdos que te permitan cumplir con tus obligaciones sin comprometer tu estabilidad financiera.</li>
-                          
-                          <li><strong>Defensa en Juicio:</strong> Si ya enfrentas acciones judiciales, ofrecemos defensa legal ante tribunales para proteger tus bienes y derechos.</li>
-                          
-                          <li><strong>Protección ante Embargos:</strong> Te asesoramos sobre cómo detener o evitar embargos injustos y proteger tus bienes esenciales.</li>
-                        </ul>
-
-                        <p>Con nuestra asesoría, podrás enfrentar tus deudas de manera más justa y efectiva.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Defensa Deudas Bancarias o Comerciales -->
-            <div id="defensa-bancaria" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="200">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="bi bi-bank" style="font-size: 4rem; color: #17a2b8;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Defensa Deudas Bancarias o Comerciales</h3>
-                      <div class="service-content">
-                        <p><strong>¿En qué consiste la Defensa de Deudas Bancarias o Comerciales?</strong></p>
-                        <p>La defensa de deudas bancarias o comerciales está enfocada en proteger tus derechos ante instituciones financieras o empresas comerciales, negociando condiciones más favorables y reduciendo las consecuencias legales de la mora.</p>
-
-                        <p><strong>¿Cómo te ayudamos?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Renegociación de Deudas:</strong> Te asesoramos en la renegociación de tus deudas bancarias o comerciales, para obtener términos más flexibles y adaptados a tu situación.</li>
-                          
-                          <li><strong>Detener Acciones Judiciales:</strong> En caso de demandas por parte de bancos o comercios, ofrecemos defensa legal para frenar embargos, juicios o acciones judiciales que puedan poner en riesgo tus bienes o patrimonio.</li>
-                          
-                          <li><strong>Reducción de Intereses y Cargos:</strong> Trabajamos para reducir los intereses abusivos y cargos adicionales que te imponen las instituciones financieras o comerciales, buscando acuerdos justos.</li>
-                        </ul>
-
-                        <p>Con nuestro servicio, podrás negociar con bancos y comercios de manera estratégica y proteger tu estabilidad financiera.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tercerías de Posesión y Dominio -->
-            <div id="tercerias" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="300">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="bi bi-house-door" style="font-size: 4rem; color: #8B4513;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Tercerías de Posesión y Dominio</h3>
-                      <div class="service-content">
-                        <p><strong>¿Qué es la Tercería de Posesión y Dominio?</strong></p>
-                        <p>Es una acción judicial que permite a un tercero, que no es parte del juicio principal, reclamar la posesión o dominio de bienes que están siendo embargados o ejecutados indebidamente.</p>
-
-                        <p><strong>¿Cuándo se puede interponer una tercería?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Tercería de Posesión:</strong> Se presenta cuando una persona demuestra que tiene la posesión de un bien que está siendo embargado, pero no es el deudor.</li>
-                          
-                          <li><strong>Tercería de Dominio:</strong> Se interpone cuando el demandante prueba ser el dueño del bien que está siendo embargado o ejecutado por las deudas de otro.</li>
-                          
-                          <li><strong>Defensa Legal:</strong> Te brindamos asistencia legal para proteger tus bienes frente a embargos erróneos y asegurar tus derechos de posesión y dominio.</li>
-                        </ul>
-
-                        <p>Nuestro equipo legal te guiará en la presentación de las tercerías correspondientes para que puedas defender tus bienes frente a acciones judiciales indebidas.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Prescripción de Deudas -->
-            <div id="prescripcion" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="400">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="fas fa-hourglass-half" style="font-size: 4rem; color: #28a745;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Prescripción de Deudas</h3>
-                      <div class="service-content">
-                        <p><strong>¿Qué es la Prescripción de Deudas?</strong></p>
-                        <p>La prescripción de deudas es un proceso legal que permite extinguir una deuda tras el paso de un tiempo determinado, siempre que no haya sido exigida judicialmente dentro de ese período.</p>
-                    
-                        <p><strong>¿Cómo funciona la Prescripción de Deudas?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Plazos de Prescripción:</strong> Las deudas tienen diferentes plazos de prescripción según su naturaleza. En Chile, deudas bancarias, comerciales o de servicios pueden prescribir entre 3 a 5 años, dependiendo de si fueron judicialmente reclamadas o no.</li>
-                          
-                          <li><strong>Suspensión del Cobro:</strong> Una vez que se alcanza el plazo de prescripción, el acreedor pierde la facultad de exigir judicialmente el pago de la deuda.</li>
-                          
-                          <li><strong>Gestión Legal:</strong> Te ayudamos a gestionar el proceso legal para solicitar la prescripción de tus deudas, protegiéndote frente a intentos de cobro fuera de plazo.</li>
-                        </ul>
-                    
-                        <p>Nuestro servicio te permitirá liberarte de deudas antiguas, siempre que cumplan con los plazos y condiciones estipuladas por la ley.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sal de DICOM -->
-            <div id="dicom" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="500">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="bi bi-key" style="font-size: 4rem; color: #d3c500;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Sal de DICOM</h3>
-                      <div class="service-content">
-                        <p><strong>¿Qué es DICOM?</strong></p>
-                        <p>DICOM es una base de datos que registra a personas con deudas impagas. Si estás en DICOM, puedes tener dificultades para acceder a crédito o servicios financieros.</p>
-
-                        <p><strong>¿Cómo salir de DICOM?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Estrategia de Pago Personalizada:</strong> Nuestro servicio está diseñado para ofrecerte un plan estratégico que te permita negociar con tus acreedores y regularizar tu situación financiera de manera eficiente. Evaluamos tu capacidad de pago y gestionamos acuerdos para reducir las deudas, permitiendo una salida efectiva de DICOM sin comprometer tu estabilidad económica.</li>
-                          
-                          <li><strong>Prescripción de la deuda:</strong> Si tu deuda ha prescrito, puedes solicitar su eliminación de DICOM mediante un proceso judicial.</li>
-                          
-                          <li><strong>Revisión de errores:</strong> Si la deuda fue ingresada erróneamente, es posible corregirla con la presentación de la documentación adecuada ante Equifax.</li>
-                        </ul>
-
-                        <p>Te ayudamos a gestionar estos procedimientos para que puedas mejorar tu situación financiera.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Declaración de Insolvencia -->
-            <div id="insolvencia" class="col-12 service-detail" data-aos="fade-up" data-aos-delay="600">
-              <div class="card-item expanded">
-                <div class="row">
-                  <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                    <div class="card-bg" style="width: 100px; height: 100px; background-color: transparent;">
-                      <i class="bi bi-exclamation-triangle" style="font-size: 4rem; color: #fd7e14;"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-9 d-flex align-items-center">
-                    <div class="card-body">
-                      <h3 class="card-title">Declaración de Insolvencia</h3>
-                      <div class="service-content">
-                        <p><strong>¿Qué es la Liquidación Voluntaria?</strong></p>
-                        <p>Es un procedimiento establecido en la Ley 20.720, que permite a las personas naturales en situación de insolvencia (incapacidad para pagar sus deudas) solicitar la liquidación de sus bienes con el fin de extinguir sus deudas.</p>
-
-                        <p><strong>¿Cuáles son los efectos de la Liquidación Voluntaria?</strong></p>
-                        
-                        <ul>
-                          <li><strong>Suspensión de Acciones Judiciales:</strong> Una vez iniciado el procedimiento de liquidación, se suspenden todas las demandas judiciales y embargos en curso por parte de los acreedores. Esto incluye la suspensión de las ejecuciones de cobro sobre los bienes del deudor.</li>
-                          
-                          <li><strong>Pérdida de Administración de sus Bienes:</strong> El deudor pierde la administración y disposición de sus bienes, los cuales pasan a ser controlados por el liquidador designado. Esto incluye tanto bienes presentes como futuros, salvo aquellos que están protegidos por ley (como los esenciales para la subsistencia).</li>
-                          
-                          <li><strong>Venta de Bienes:</strong> El liquidador procederá a la venta de los bienes del deudor para hacer frente a las obligaciones. Esta venta puede incluir inmuebles, vehículos, muebles y otros activos, que serán subastados o liquidados de acuerdo con las normas del procedimiento.</li>
-                          
-                          <li><strong>Extinción de Deudas:</strong> Una vez finalizada la liquidación, las deudas se extinguen, aunque esto no aplica a todas las obligaciones. Existen deudas que no se extinguen, como las de pensión de alimentos, multas penales o impuestos adeudados al Estado.</li>
-                        </ul>
-
-                        <p><strong>¿Cuáles son los requisitos para someterse a un procedimiento de liquidación?</strong></p>
-                        <p>El procedimiento de Liquidación Voluntaria está diseñado para personas que no pueden cumplir con sus deudas y buscan una solución definitiva para extinguirlas. Sin embargo, es necesario cumplir con ciertos requisitos para garantizar que el proceso sea legítimo y que el deudor efectivamente se encuentre en una situación de insolvencia. A continuación, se detallan los principales requisitos:</p>
-
-                        <ul>
-                          <li><strong>Insolvencia Real o Inminente:</strong> El deudor debe encontrarse en una situación de insolvencia real o estar próximo a caer en ella.</li>
-                          
-                          <li><strong>Estado de Cumplimiento de Obligaciones:</strong> La persona debe haber incurrido en el incumplimiento de alguna obligación o estar próxima a hacerlo. No es necesario que haya dejado de pagar todas sus deudas, pero debe haber algún incumplimiento o una amenaza seria de incumplimiento.</li>
-                          
-                          <li><strong>No Necesitar Aprobación de Acreedores:</strong> A diferencia de otros procedimientos concursales, como la reorganización, el deudor no necesita la aprobación de sus acreedores para iniciar el proceso de liquidación voluntaria. Basta con que demuestre su insolvencia ante el tribunal.</li>
-                          
-                          <li><strong>Solicitud de Liquidación:</strong> El deudor debe presentar una declaración jurada en la que afirme encontrarse en situación de insolvencia. Esta declaración debe incluir un listado detallado de todos sus bienes (con su ubicación, avalúo y gravámenes, si los hubiere), una lista de todos sus acreedores (con detalle de las deudas, montos y garantías, si las hubiera), información sobre sus ingresos y egresos, y la indicación de los litigios pendientes en los que el deudor sea parte.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="cta-section section bg-primary text-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-              <h3>¿Necesitas ayuda con alguno de nuestros servicios?</h3>
-              <p class="mt-3">Contáctanos para una consulta gratuita y evalúa tu situación con nuestros especialistas.</p>
-              <a href="contacto.html" class="btn btn-light btn-lg mt-3">Solicitar Consulta</a>
+        <!-- Card 2 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card-practica h-100">
+            <div class="card-body">
+              <h4>Derecho Corporativo</h4>
+              <p>
+                Nuestra oficina se encarga de prestar asesoría en materia corporativa a nuestros clientes, entre estas prácticas destacan la constitución y puesta en marcha de nuevas sociedades, fusiones y adquisiciones de negocios ya existentes, gobiernos corporativos, preparación y revisión de toda clase de contratos, entre otros servicios.
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
-    </main>
+        <!-- Card 3 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card-practica h-100">
+            <div class="card-body">
+              <h4>Juicios y Arbitrajes</h4>
+              <p>
+                Contamos con un equipo especializado en la tramitación de juicios de alta complejidad, tanto en materia civil, comercial, de derecho administrativo y de propiedad intelectual. En nuestro ejercicio, actuamos siempre teniendo presente las necesidades de nuestros clientes para lograr el resultado óptimo en cada uno de los procedimientos que afrontamos.
+              </p>
+            </div>
+          </div>
+        </div>
 
-    <footer id="footer" class="footer">
+        <!-- Card 4 -->
+        <div class="col-lg-5 col-md-6">
+          <div class="card-practica h-100">
+            <div class="card-body">
+              <h4>Cobranza</h4>
+              <p>
+                Nuestra oficina se destaca por prestar un servicio de cobranza en favor de nuestros clientes, realizando todas aquellas operaciones judiciales y extrajudiciales tendientes a recuperar los montos que se les adeudan, trabajando siempre con sentido práctico que busque la resolución de estas acreencias en el menor tiempo posible.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+
+
+       <footer id="footer" class="footer">
       <div class="footer-container">
-        <div class="footer-info">
-          <div class="footer-links">
+        <div class="footer-columns">
+
+          <!-- Contacto -->
+          <div class="footer-section">
             <h4>Contáctanos</h4>
-            <p><strong>Teléfono:</strong> <a href="tel:+56982291257" style="color: #d9e981d0; font-weight: bold;">+569 82291257</a></p>
-            <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl" style="color: #d9e981d0; font-weight: bold;">contacto@fycia.cl</a></p>
+            <p><strong>Teléfono:</strong> <a href="tel:+56982291257">+56 9 7620 2568</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
           </div>
-          <div class="footer-links">
-            <h4>Links</h4>
+
+          <!-- Prácticas -->
+          <div class="footer-section">
+            <h4>Prácticas</h4>
             <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="servicios.html">Servicios</a></li>
-              <li><a href="nosotros.html">Nosotros</a></li>
-              <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="servicios.html#defensa-deudores">Derecho Laboral</a></li>
+              <li><a href="servicios.html#dicom">Derecho Corporativo</a></li>
+              <li><a href="servicios.html#defensa-bancaria">Juicios y Arbitrajes</a></li>
+              <li><a href="servicios.html#tercerias">Cobranza</a></li>
             </ul>
           </div>
-          <div class="footer-services">
-            <h4>Nuestros servicios</h4>
-            <ul>
-              <li><a href="servicios.html#defensa-deudores">Defensa de Deudores</a></li>
-              <li><a href="servicios.html#dicom">Sal de DICOM</a></li>
-              <li><a href="servicios.html#defensa-bancaria">Defensa de Deudas Bancarias</a></li>
-              <li><a href="servicios.html#tercerias">Tercerías de Posesión</a></li>
-              <li><a href="servicios.html#prescripcion">Prescripción de Deudas</a></li>
-              <li><a href="servicios.html#insolvencia">Declaración de Insolvencia</a></li>
-            </ul>
-          </div>
-          <div class="footer-partners">
-            <h4>Empresas Asociadas</h4>
-            <ul>
-              <li><a href="https://slfb.cl/" target="_blank" rel="noopener noreferrer">Servicios Legales Fernández Battaglia</a></li>
-            </ul>
+
+          <!-- Dirección / Empresa -->
+          <div class="footer-section">
+            <h4>Dirección</h4>
+            <p>Fernández & Cía - Derecho Corporativo</p>
+            <p>Alonso de Córdova 4555, Las Condes, Región Metropolitana</p>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© 2024 <strong>fycia Spa</strong> - Todos los derechos reservados</p>
       </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <div class="whatsapp-container">
-      <a href="https://wa.me/56982291257" target="_blank" class="whatsapp-icon" title="Escríbenos por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <span class="whatsapp-text">¡Te Ayudamos!</span>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+    </style>
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <img src="assets/img/logo.png" alt="Fernández & Cía" class="logo-img">
+      <div class="slogan">
+        <p class="delay1">Derecho Laboral</p>
+        <p class="delay2">Derecho Corporativo</p>
+        <p class="delay3">Juicios y Arbitrajes</p>
+        <p class="delay4 pulse">Cargando...</p>
+      </div>
     </div>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
+    <!-- JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script>AOS.init({ once: true });</script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-
+    <script>
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hide");
+      });
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        if (preloader && !preloader.classList.contains('hide')) {
+          preloader.classList.add("hide");
+        }
+      }, 4000);
+    </script>
   </body>
 </html>
