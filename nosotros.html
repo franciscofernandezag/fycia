@@ -218,7 +218,7 @@
 <section class="contact-hero">
   <div class="container" data-aos="fade-up" data-aos-duration="1000">
     <h1>Fernández &amp; Cía</h1>
-    <div class="divider mx-auto"></div>
+ 
     <p>Conoce a nuestro equipo y nuestras prácticas legales especializadas.</p>
   </div>
 </section>
@@ -370,19 +370,10 @@
     <!-- JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script>AOS.init({ once: true });</script>
+<script>
+  AOS.init({ once: true, duration: 1000 });
+</script>
 
-    <script>
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        preloader.classList.add("hide");
-      });
-      setTimeout(() => {
-        const preloader = document.getElementById("preloader");
-        if (preloader && !preloader.classList.contains('hide')) {
-          preloader.classList.add("hide");
-        }
-      }, 4000);
-    </script>
+<script src="assets/js/main.js"></script>
   </body>
 </html>

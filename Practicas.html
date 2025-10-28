@@ -344,19 +344,9 @@
     <!-- JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script>AOS.init({ once: true });</script>
-
-    <script>
-      window.addEventListener("load", () => {
-        const preloader = document.getElementById("preloader");
-        preloader.classList.add("hide");
-      });
-      setTimeout(() => {
-        const preloader = document.getElementById("preloader");
-        if (preloader && !preloader.classList.contains('hide')) {
-          preloader.classList.add("hide");
-        }
-      }, 4000);
-    </script>
+<script>
+  AOS.init({ once: true, duration: 1000 });
+</script>
+<script src="assets/js/main.js"></script>
   </body>
 </html>
