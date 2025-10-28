@@ -126,104 +126,91 @@ h6 {
   z-index: 997;
 }
 
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
 .header .logo img {
-  max-height: 150px; /* Tamaño más grande por defecto */
+  max-height: 150px;
   width: auto;
-  height: auto; /* Mantiene la proporción de la imagen */
-  padding-top: 0; /* Quitar el padding superior */
-  margin-top: -10px; /* Opcional: ajustar la posición hacia arriba si es necesario */
+  height: auto;
+  margin-top: -10px;
 }
 
-
-/* Media Query para ajustar en pantallas pequeñas */
 @media (max-width: 768px) {
   .header .logo img {
-    max-height: 120px; /* Reducir tamaño en pantallas más pequeñas */
+    max-height: 120px;
   }
 }
-
-
-.header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
-}
-
-.header .logo span {
-  font-size: 24px;
-  padding-left: 1px;
-  font-family: var(--heading-font);
-  color: var(--color-primary);
-}
-
-
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Tipografía Navbar
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
 
-/* Global Header on Scroll */
+.header .navmenu a,
+.header .navmenu a:focus,
+.header .navmenu ul li a,
+.mobile-nav-active .navmenu > ul li a {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header .navmenu a:hover,
+.navmenu li:hover > a,
+.navmenu .active,
+.navmenu .active:focus,
+.mobile-nav-active .navmenu > ul li a:hover {
+  color: #f0f0f0 !important;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
+# Header al hacer scroll
+--------------------------------------------------------------*/
 .scrolled .header {
-  --background-color: rgba(41, 62, 88, 0.85); /* Fondo más oscuro y semi-transparente */
-  padding: 0; /* Altura reducida del navbar al hacer scroll */
-  color: #FFEBCC;
-  height: 120px; /* Altura reducida cuando se hace scroll */
-
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto de profundidad */
+  --background-color: rgba(41, 62, 88, 0.85);
+  padding: 0;
+  height: 120px;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.scrolled .header .navmenu ul li a,
-.header .navmenu ul li a {
-  color: #FFEBCC; /* Color de los enlaces de navegación */
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
-  font-weight: 300; /* Aumenta el grosor de la fuente */
-  font-size: 15px; /* Tamaño de fuente ligeramente mayor */
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Suave transición en hover */
-}
-
-.header .navmenu ul li a:hover {
-  color: var(--nav-hover-color); /* Cambia el color al hacer hover */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el ratón */
-}
-
-/* Mobile nav toggle */
+/*--------------------------------------------------------------
+# Mobile Nav Toggle
+--------------------------------------------------------------*/
 .header .mobile-nav-toggle {
-  color: #0d4d52; /* Color del ícono o texto */
-  background-color: #FFEBCC; /* Amarillo */
-  border-radius: 50%; /* Hace que el contenedor sea redondo */
-  padding: 10px; /* Ajusta el espacio dentro de la redondela */
-  display: inline-flex; /* Asegura que el contenido esté centrado */
+  color: #0d4d52;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Ajusta el tamaño de la redondela */
-  height: 40px; /* Ajusta el tamaño de la redondela */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.legal-link {
-  text-decoration: none; /* Quita el subrayado del enlace */
-  color: inherit; /* Usa el mismo color del texto circundante */
+.header .mobile-nav-toggle:hover {
+  color: #005cd7;
 }
 
-.legal-link:hover, .legal-link:focus {
-  text-decoration: none; /* Mantiene sin subrayado al pasar el cursor o al enfocarse */
-  color: inherit; /* No cambia de color al hacer hover */
-}
-
-
-/* Mobile Navigation */
-@media (min-width: 768px) { /* Cambiado a 768px para incluir dispositivos hasta iPad Pro */
+/*--------------------------------------------------------------
+# Desktop Navigation
+--------------------------------------------------------------*/
+@media (min-width: 768px) {
   .navmenu {
     padding: 0;
-  }
-
-  .scrolled .header .navmenu ul li a,
-  .header .navmenu ul li a {
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
-    font-weight: 400; /* Aumenta el grosor de la fuente */
-    font-size: 16px; /* Tamaño de fuente ligeramente mayor */
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Suave transición en hover */
   }
 
   .navmenu ul {
@@ -243,36 +230,16 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu a,
-  .navmenu a:focus {
-    color: var(--nav-color);
-    font-size: 14px;
-    padding: 0 2px;
-    font-family: var(--nav-font);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-    transition: 0.3s;
-    position: relative;
-    text-transform: uppercase;
-  }
-
-  .navmenu a i,
-  .navmenu a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
+  .navmenu .dropdown ul {
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
     transition: 0.3s;
   }
 
-
-
-  .navmenu li:hover > a,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: var(--nav-hover-color);
+  .navmenu .dropdown:hover > ul {
+    opacity: 1;
+    visibility: visible;
   }
 
   .navmenu .dropdown ul li {
@@ -284,37 +251,22 @@ h6 {
     font-size: 15px;
     text-transform: none;
     font-weight: 400;
-    color: var(--nav-dropdown-color);
+    color: #ffffff !important;
   }
 
-  .navmenu .dropdown ul a:hover,
-  .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover > a {
-    color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .dropdown:hover > ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-
-  .navmenu .dropdown .dropdown ul {
-    top: 0;
-    left: -90%;
-    visibility: hidden;
+  .navmenu .dropdown ul a:hover {
+    color: var(--nav-hover-color);
   }
 }
 
-/* Mobile Navigation */
-@media (max-width: 946px) { /* Ajustes para dispositivos móviles */
+/*--------------------------------------------------------------
+# Mobile Navigation
+--------------------------------------------------------------*/
+@media (max-width: 946px) {
   .mobile-nav-toggle {
-    color: var(--nav-hover-color);
-    font-size: 24px; /* Tamaño de fuente reducido */
-    line-height: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
+    color: #183458;
+    font-size: 26px;
+    z-index: 10000;
   }
 
   .navmenu {
@@ -326,134 +278,112 @@ h6 {
     display: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
-    padding: 10px 0;
-    margin: 0;
     border-radius: 6px;
-    background-color: rgba(21, 47, 95, 0.85);; /* Cambia el color de fondo aquí */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Cambia el borde si lo deseas */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra suave */
+    background-color: rgba(21, 47, 95, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-  }
-
-  .navmenu a,
-  .navmenu a:focus {
-    color: #ffffff; /* Cambiado a blanco para el navbar en móviles */
-    padding: 10px 15px; /* Reduce el padding para un menú más compacto */
-    font-family: var(--nav-font);
-    font-size: 15px; /* Tamaño de fuente ligeramente menor */
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-    transition: 0.3s;
-  }
-
-  .navmenu a i,
-  .navmenu a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para iconos */
-  }
-
-  .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: #FFEBCC; /* Color en hover, puedes cambiarlo si deseas */
-  }
-
-  .navmenu .active i,
-  .navmenu .active:focus i {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    transform: rotate(180deg);
-  }
-
-  .navmenu .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
-  }
-
-  .navmenu .dropdown > .dropdown-active {
-    display: block;
-    background-color: rgba(33, 37, 41, 0.03);
   }
 
   .mobile-nav-active {
     overflow: hidden;
   }
 
-.mobile-nav-toggle {
-  color: #183458;
-  font-size: 26px; /* más pequeño */
-  cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-  z-index: 10000;
-}
-
-.mobile-nav-toggle:hover {
-  color: #005CD7;
-}
-
-.mobile-nav-active .navmenu 
-{ position: fixed;
-   overflow: hidden;
+  .mobile-nav-active .navmenu {
+    position: fixed;
     inset: 0;
-     background: rgba(33, 37, 41, 0.8);
-      /* Mantiene el fondo oscuro semi-transparente */
-       transition: 0.3s; } .mobile-nav-active .navmenu > ul 
-       { display: flex; flex-direction: column; position: absolute; top: 60px;
-         /* ajusta altura respecto al header */ left: 50%; 
-         /* centra horizontalmente */ transform: translateX(-50%);
-          /* centra exactamente el menú */ width: 180px; 
-          /* ancho del menú */ background: rgba(41, 62, 88, 0.95);
-           border-radius: 10px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            padding: 8px 0; z-index: 9999; animation: fadeInMenu 0.3s ease forwards; }
-}
-.mobile-nav-active .navmenu > ul li a {
-  display: block;
-  padding: 8px 18px;
-  color: #FFEBCC;
-  font-size: 15px;
-  font-weight: 400;
-  text-decoration: none; /* quita subrayado */
-  text-align: left;
-  transition: all 0.3s ease;
-  font-family: 'Cinzel', serif;
-}
-
-.mobile-nav-active .navmenu > ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-@keyframes fadeInMenu {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@media (max-width: 946px) {
+  .mobile-nav-active .navmenu > ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    background: rgba(41, 62, 88, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    padding: 8px 0;
+    z-index: 9999;
+    animation: fadeInMenu 0.3s ease forwards;
+  }
+
+  .mobile-nav-active .navmenu > ul li a {
+    display: block;
+    padding: 8px 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-active .navmenu > ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes fadeInMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .mobile-nav-active .navmenu a:before {
-    display: none; /* quita subrayado en móviles */
+    display: none;
   }
 }
+
+/*--------------------------------------------------------------
+# Enlaces Legales
+--------------------------------------------------------------*/
+.legal-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.legal-link:hover,
+.legal-link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 
 /* Hero Section */
+.contact-hero {
+  text-align: center;
+  padding: 15px 20px 10px;
+  border-bottom: 3px solid #293e58;
+  color: #293e58;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+
 .hero-mask {
   position: relative;
   height: 100vh;

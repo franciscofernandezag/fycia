@@ -12,12 +12,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,147 +26,111 @@
 
     <style>
       body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Cinzel', serif;
         color: #1b1b1b;
-      }
-
-      /* Header */
-      #header {
-        background-color: rgba(41, 62, 88, 0.85);
-        color: #FFEBCC;
-        height: 120px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      }
-      #header a {
-        color: #FFEBCC !important;
-      }
-      #header a:hover {
-        color: #ffffff !important;
-      }
-
-      /* Hero Section Contacto - ESTILO CINZEL */
-      .contact-hero {
         background: #f8f9fa;
-        color: #293e58;
-        padding: 100px 0 60px;
+      }
+      #header {
+    background-color: rgba(41, 62, 88, 0.85) !important;
+    color: #ffffff !important;
+    height: 120px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+  #header .navmenu a,
+  #header .navmenu ul li a {
+    font-family: 'Cinzel', serif !important;
+    font-weight: 400 !important; /* más delgada */
+    font-size: 15px !important;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #ffffff !important; /* blanco puro */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === EFECTO HOVER === */
+  #header .navmenu a:hover,
+  #header .navmenu li:hover > a,
+  #header .navmenu .active,
+  #header .navmenu .active:focus {
+    color: #f0f0f0 !important; /* gris claro */
+    letter-spacing: 1px;
+  }
+
+  /* === ICONO MENU MOVIL === */
+  #header .mobile-nav-toggle {
+    color: #ffffff !important;
+  }
+      /* Hero Section */
+      .contact-hero {
         text-align: center;
+        padding: 150px 20px 10px;
         border-bottom: 3px solid #293e58;
+        color: #293e58;
       }
 
       .contact-hero h1 {
-        font-family: 'Cinzel', serif;
         font-size: 2.5rem;
-        margin-bottom: 1rem;
         font-weight: 600;
+        margin-bottom: 1rem;
       }
 
       .contact-hero p {
-        font-family: 'Cinzel', serif;
         font-size: 1.1rem;
-        max-width: 600px;
+        line-height: 1.6;
+      }
+
+      /* Contact Main Section */
+      .contact-main-section {
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 60px 20px;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      /* Left Column: Info + Map */
+      .contact-left {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .contact-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      }
+
+      .contact-card h3 {
+        color: #293e58;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+      }
+
+      .contact-details p {
+        margin-bottom: 10px;
         line-height: 1.6;
         color: #555;
       }
 
-      /* Sección Principal de Contacto */
-      .contact-main-section {
-        padding: 60px 0;
-        background: #f8f9fa;
-      }
-
-      .contact-container {
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      /* Formulario */
-      .contact-form-container {
-        flex: 1;
-        background: white;
-        border-radius: 15px;
-        padding: 40px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        min-width: 0; /* Permite que se ajuste al contenedor */
-      }
-
-      .form-title {
-        font-family: 'Cinzel', serif;
+      .contact-link {
         color: #293e58;
-        margin-bottom: 30px;
-        font-size: 1.8rem;
-        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
       }
 
-      .form-group {
-        margin-bottom: 25px;
-      }
-
-      .form-label {
-        font-weight: 600;
-        color: #293e58;
-        margin-bottom: 8px;
-        display: block;
-      }
-
-      .form-control {
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 12px 15px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .form-control:focus {
-        border-color: #293e58;
-        box-shadow: 0 0 0 0.2rem rgba(41, 62, 88, 0.25);
-      }
-
-      textarea.form-control {
-        min-height: 120px;
-        resize: vertical;
-      }
-
-      .btn-primary {
-        background: #293e58;
-        border: none;
-        padding: 12px 30px;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .btn-primary:hover {
-        background: #1e2f42;
-        transform: translateY(-2px);
-      }
-
-      /* Información de Contacto - MISMO ANCHO QUE FORMULARIO */
-      .contact-info-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        min-width: 0; /* Permite que se ajuste al contenedor */
-      }
-
-      .contact-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
-        text-align: center;
-        width: 100%; /* Mismo ancho que el formulario */
-      }
-
-      .contact-card:hover {
-        transform: translateY(-5px);
+      .contact-link:hover {
+        color: #0078c3;
+        text-decoration: underline;
       }
 
       .contact-icon {
@@ -182,357 +141,104 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 20px;
         color: white;
         font-size: 1.5rem;
-      }
-
-      .contact-card h3 {
-        color: #293e58;
         margin-bottom: 15px;
-        font-family: 'Cinzel', serif;
-        font-size: 1.4rem;
       }
 
-      .contact-details p {
-        margin-bottom: 10px;
-        color: #555;
-        text-align: center;
-        line-height: 1.6;
-      }
-
-      .contact-link {
-        color: #293e58;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .contact-link:hover {
-        color: #0078c3;
-        text-decoration: underline;
-      }
-
-      /* Botones de acción rápida */
-      .quick-action-buttons {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-        justify-content: center;
-      }
-
-      .action-btn {
-        flex: 1;
-        padding: 15px;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        text-decoration: none;
-        text-align: center;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        max-width: 200px;
-      }
-
-      .whatsapp-btn {
-        background: #25D366;
-        color: white;
-      }
-
-      .whatsapp-btn:hover {
-        background: #128C7E;
-        transform: translateY(-2px);
-        color: white;
-      }
-
-      .call-btn {
-        background: #293e58;
-        color: white;
-      }
-
-      .call-btn:hover {
-        background: #1e2f42;
-        transform: translateY(-2px);
-        color: white;
-      }
-
-      /* Mapa */
       .map-container {
-        margin-top: 40px;
+        height: 400px;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        height: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
 
       .map-container iframe {
         width: 100%;
         height: 100%;
-        border: none;
+        border: 0;
       }
 
-      /* Horario de Atención */
-      .schedule-card {
-        background: white;
+      /* Right Column: Form */
+      .contact-right {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .contact-form-container {
+        background: #fff;
         border-radius: 15px;
-        padding: 30px;
-        margin-top: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .form-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
         text-align: center;
       }
 
-      .schedule-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
+      .form-group {
+        margin-bottom: 25px;
       }
 
-      .schedule-item:last-child {
-        border-bottom: none;
-      }
-
-      .schedule-day {
+      .form-label {
         font-weight: 600;
         color: #293e58;
+        display: block;
+        margin-bottom: 8px;
       }
 
-      .schedule-time {
-        color: #555;
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
       }
 
-      /* MEJORAS RESPONSIVAS PARA CELULARES */
-      @media (max-width: 1200px) {
-        .contact-container {
-          gap: 30px;
-          padding: 0 20px;
-        }
+      .form-control:focus {
+        border-color: #293e58;
+        box-shadow: 0 0 0 0.2rem rgba(41,62,88,0.25);
       }
 
-      @media (max-width: 992px) {
-        .contact-container {
+      textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .btn-primary {
+        width: 100%;
+        background: #293e58;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: #1e2f42;
+      }
+
+      @media(max-width: 992px){
+        .contact-main-section{
           flex-direction: column;
-          align-items: center;
-        }
-        
-        .contact-form-container,
-        .contact-info-container {
-          width: 100%;
-          max-width: 600px;
-        }
-        
-        .contact-hero h1 {
-          font-size: 2.2rem;
-        }
-        
-        .quick-action-buttons {
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
-        
-        .action-btn {
-          min-width: 180px;
         }
 
-        .contact-info-container {
-          gap: 20px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .contact-hero {
-          padding: 80px 0 40px;
-        }
-        
-        .contact-hero h1 {
-          font-size: 2rem;
-          padding: 0 20px;
-        }
-        
-        .contact-hero p {
-          font-size: 1rem;
-          padding: 0 20px;
-        }
-        
-        .contact-main-section {
-          padding: 40px 0;
-        }
-        
-        .contact-form-container {
-          padding: 25px 20px;
-          margin: 0 15px;
-        }
-        
-        .form-title {
-          font-size: 1.5rem;
-        }
-        
-        .contact-card {
-          padding: 25px 20px;
-          margin: 0;
-        }
-        
-        .quick-action-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .action-btn {
+        .contact-left, .contact-right{
           width: 100%;
-          max-width: 250px;
         }
-        
-        .map-container {
-          margin: 40px 15px 0 15px;
+
+        .map-container{
           height: 300px;
         }
-        
-        .schedule-card {
-          margin: 30px 15px 0 15px;
-          padding: 25px 20px;
-        }
-        
-        .schedule-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 5px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .contact-hero h1 {
-          font-size: 1.8rem;
-        }
-        
-        .contact-hero p {
-          font-size: 0.9rem;
-        }
-        
-        .contact-form-container {
-          padding: 20px 15px;
-        }
-        
-        .form-title {
-          font-size: 1.3rem;
-        }
-        
-        .contact-card {
-          padding: 20px 15px;
-        }
-        
-        .contact-icon {
-          width: 50px;
-          height: 50px;
-          font-size: 1.2rem;
-        }
-        
-        .map-container {
-          height: 250px;
-        }
-        
-        .action-btn {
-          padding: 12px;
-          font-size: 0.9rem;
-        }
-        
-        /* Ajustes específicos para pantallas muy pequeñas */
-        .contact-details p {
-          font-size: 0.9rem;
-        }
-        
-        .form-control {
-          padding: 10px 12px;
-          font-size: 0.9rem;
-        }
-        
-        .btn-primary {
-          padding: 10px 20px;
-        }
-
-        .contact-card h3 {
-          font-size: 1.2rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .contact-hero h1 {
-          font-size: 1.6rem;
-        }
-        
-        .contact-hero p {
-          font-size: 0.85rem;
-        }
-        
-        .form-title {
-          font-size: 1.2rem;
-        }
-        
-        .contact-card h3 {
-          font-size: 1.1rem;
-        }
-        
-        .action-btn {
-          min-width: 140px;
-          font-size: 0.85rem;
-        }
-      }
-
-      /* Centrado adicional para elementos específicos */
-      .centered-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      /* Preloader */
-      #preloader {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transition: opacity 1s ease, visibility 1s ease;
-      }
-      #preloader.hide { opacity: 0; visibility: hidden; }
-      #preloader .logo-img { 
-        width: 130px; 
-        animation: fadeIn 1.5s ease-in-out; 
-        max-width: 80%;
-      }
-      #preloader .slogan p {
-        font-family: 'Cinzel', serif;
-        color: #fff;
-        opacity: 0;
-        transform: translateY(10px);
-        animation: fadeInUp 1s ease forwards;
-        text-align: center;
-        padding: 0 15px;
-      }
-      .delay1 { animation-delay: 0.4s; }
-      .delay2 { animation-delay: 0.8s; }
-      .delay3 { animation-delay: 1.2s; }
-      .delay4 { animation-delay: 1.6s; }
-      .pulse { color: #00c3a5; font-weight: 600; animation: pulseGlow 2s infinite; }
-      @keyframes fadeInUp { from {opacity:0; transform:translateY(15px);} to {opacity:1; transform:translateY(0);} }
-      @keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
-      @keyframes pulseGlow {
-        0%, 100% { text-shadow: 0 0 10px #00c3a5, 0 0 20px #00c3a5; opacity: 1; }
-        50% { text-shadow: 0 0 25px #00c3a5, 0 0 40px #00c3a5; opacity: 0.8; }
       }
     </style>
   </head>
 
-  <body class="index-page">
-    <!-- Header -->
+  <body>
+    <!-- Header (sin cambios) -->
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
@@ -544,177 +250,99 @@
             <li><a href="nosotros.html">Quienes Somos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
             <li><a href="Practicas.html">Prácticas</a></li>
-            <li><a href="contactox.html" class="active">Contacto</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
     </header>
 
-    <!-- Main -->
-    <main class="main" style="padding-top:140px;">
+    <!-- Hero -->
+  <section class="contact-hero">
+  <div class="hero-content">
+    <h1 data-aos="fade-up">Contáctenos</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Estamos aquí para ayudarle con sus necesidades legales</p>
+  </div>
+</section>
 
-      <!-- Hero Section - ESTILO CINZEL MÁS PEQUEÑO -->
-      <section class="contact-hero">
-        <div class="container">
-          <div class="centered-content">
-            <h1 data-aos="fade-up">Contáctenos</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Estamos aquí para ayudarle con sus necesidades legales</p>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main-section">
+      <!-- Left Column: Info + Map -->
+      <div class="contact-left" data-aos="fade-right">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <h3>Nuestra Oficina</h3>
+          <div class="contact-details">
+            <p><strong>Dirección:</strong><br>Avenida Vitacura N°3.568, oficina 807, Vitacura<br>Región Metropolitana, Chile</p>
+            <p><strong>Horario:</strong><br>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 10:00 - 14:00 hrs</p>
           </div>
         </div>
-      </section>
 
-      <!-- Sección Principal de Contacto -->
-      <section class="contact-main-section">
-        <div class="container">
-          <div class="contact-container">
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.126047223548!2d-70.5793886242757!3d-33.41521579398115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6c8c3b79c5%3A0x30579bb9bf24e70!2sAvenida%20Vitacura%203568%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1698765432100!5m2!1ses!2scl"
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="contact-right" data-aos="fade-left">
+        <div class="contact-form-container">
+          <h2 class="form-title">Solicite una Consulta</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="name">Nombre Completo *</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
             
-            <!-- Formulario de Contacto -->
-            <div class="contact-form-container" data-aos="fade-right">
-              <h2 class="form-title">Solicite una Consulta</h2>
-              <form id="contact-form">
-                <div class="form-group">
-                  <label class="form-label" for="name">Nombre Completo *</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label" for="email">Correo Electrónico *</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label" for="phone">Teléfono</label>
-                  <input type="tel" class="form-control" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label" for="subject">Asunto *</label>
-                  <select class="form-control" id="subject" name="subject" required>
-                    <option value="">Seleccione un asunto</option>
-                    <option value="derecho-laboral">Derecho Laboral</option>
-                    <option value="derecho-corporativo">Derecho Corporativo</option>
-                    <option value="juicios-arbitrajes">Juicios y Arbitrajes</option>
-                    <option value="cobranza">Cobranza</option>
-                    <option value="consulta-general">Consulta General</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label class="form-label" for="message">Mensaje *</label>
-                  <textarea class="form-control" id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                  <i class="bi bi-send-fill me-2"></i>Enviar Mensaje
-                </button>
-              </form>
+            <div class="form-group">
+              <label class="form-label" for="email">Correo Electrónico *</label>
+              <input type="email" class="form-control" id="email" name="email" required>
             </div>
-
-            <!-- Información de Contacto - MISMO ANCHO QUE FORMULARIO -->
-            <div class="contact-info-container" data-aos="fade-left">
-              
-              <!-- Información de Contacto Principal -->
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <h3>Nuestra Oficina</h3>
-                <div class="contact-details">
-                  <p><strong>Dirección:</strong><br>Alonso de Córdova 4555, Las Condes<br>Región Metropolitana, Chile</p>
-                  <p><strong>Horario:</strong><br>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 10:00 - 14:00 hrs</p>
-                </div>
-              </div>
-
-              <!-- Contacto Directo -->
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-telephone-fill"></i>
-                </div>
-                <h3>Contacto Directo</h3>
-                <div class="contact-details">
-                  <p><strong>Teléfono:</strong><br><a href="tel:+56976202568" class="contact-link">+56 9 7620 2568</a></p>
-                  <p><strong>Email:</strong><br><a href="mailto:contacto@fycia.cl" class="contact-link">contacto@fycia.cl</a></p>
-                  <p><strong>WhatsApp:</strong><br><a href="https://wa.me/56976202568" class="contact-link">+56 9 7620 2568</a></p>
-                </div>
-                
-                <!-- Botones de Acción Rápida -->
-                <div class="quick-action-buttons">
-                  <a href="https://wa.me/56976202568" class="action-btn whatsapp-btn">
-                    <i class="bi bi-whatsapp"></i>WhatsApp
-                  </a>
-                  <a href="tel:+56976202568" class="action-btn call-btn">
-                    <i class="bi bi-telephone"></i>Llamar
-                  </a>
-                </div>
-              </div>
-
-              <!-- Contactos del Equipo -->
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-people-fill"></i>
-                </div>
-                <h3>Contacto por Integrante</h3>
-                <div class="contact-details">
-                  <p><strong>Francisco Fernández Silva</strong><br>
-                    <a href="mailto:ffernandez@fycia.cl" class="contact-link">ffernandez@fycia.cl</a></p>
-                  
-                  <p><strong>Juan Vicuña Subercaseaux</strong><br>
-                    <a href="mailto:jvicuna@fycia.cl" class="contact-link">jvicuna@fycia.cl</a></p>
-                  
-                  <p><strong>Raimundo Castillo Sanhueza</strong><br>
-                    <a href="mailto:rcastillo@fycia.cl" class="contact-link">rcastillo@fycia.cl</a></p>
-                </div>
-              </div>
-
+            
+            <div class="form-group">
+              <label class="form-label" for="phone">Teléfono</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
             </div>
-          </div>
-
-          <!-- Mapa -->
-          <div class="map-container" data-aos="fade-up">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.126047223548!2d-70.5793886242757!3d-33.41521579398115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6c8c3b79c5%3A0x30579bb9bf24e70!2sAlonso%20de%20C%C3%B3rdova%204555%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1698765432100!5m2!1ses!2scl" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-
-          <!-- Horario de Atención -->
-          <div class="schedule-card" data-aos="fade-up">
-            <h3 style="color: #293e58; margin-bottom: 25px; font-family: 'Cinzel', serif;">Horario de Atención</h3>
-            <div class="schedule-item">
-              <span class="schedule-day">Lunes - Viernes</span>
-              <span class="schedule-time">9:00 - 18:00 hrs</span>
+            
+            <div class="form-group">
+              <label class="form-label" for="subject">Asunto *</label>
+              <select class="form-control" id="subject" name="subject" required>
+                <option value="">Seleccione un asunto</option>
+                <option value="derecho-laboral">Derecho Laboral</option>
+                <option value="derecho-corporativo">Derecho Corporativo</option>
+                <option value="juicios-arbitrajes">Juicios y Arbitrajes</option>
+                <option value="cobranza">Cobranza</option>
+                <option value="consulta-general">Consulta General</option>
+              </select>
             </div>
-            <div class="schedule-item">
-              <span class="schedule-day">Sábados</span>
-              <span class="schedule-time">10:00 - 14:00 hrs</span>
+            
+            <div class="form-group">
+              <label class="form-label" for="message">Mensaje *</label>
+              <textarea class="form-control" id="message" name="message" required></textarea>
             </div>
-            <div class="schedule-item">
-              <span class="schedule-day">Domingos</span>
-              <span class="schedule-time">Cerrado</span>
-            </div>
-            <div class="schedule-item">
-              <span class="schedule-day">Consultas Urgentes</span>
-              <span class="schedule-time">24/7 vía WhatsApp</span>
-            </div>
-          </div>
-
+            
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-send-fill me-2"></i>Enviar Mensaje
+            </button>
+          </form>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="footer">
+       <footer id="footer" class="footer">
       <div class="footer-container">
         <div class="footer-columns">
 
           <!-- Contacto -->
           <div class="footer-section">
             <h4>Contáctanos</h4>
-            <p><strong>Teléfono:</strong> <a href="tel:+56976202568">+56 9 7620 2568</a></p>
+            <p><strong>Teléfono:</strong> <a href="tel:+56982291257">+56 9 7620 2568</a></p>
             <p><strong>Email:</strong> <a href="mailto:contacto@fycia.cl">contacto@fycia.cl</a></p>
           </div>
 
@@ -729,11 +357,11 @@
             </ul>
           </div>
 
-          <!-- Dirección -->
+          <!-- Dirección / Empresa -->
           <div class="footer-section">
             <h4>Dirección</h4>
             <p>Fernández & Cía - Derecho Corporativo</p>
-            <p>Alonso de Córdova 4555, Las Condes, Región Metropolitana</p>
+            <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
           </div>
         </div>
       </div>
@@ -743,40 +371,24 @@
       </div>
     </footer>
 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+    </style>
+
     <!-- Preloader -->
     <div id="preloader">
-      <div class="centered-content">
-        <img src="assets/img/logo.png" alt="Fernández & Cía" class="logo-img">
-        <div class="slogan">
-          <p class="delay1">Derecho Laboral</p>
-          <p class="delay2">Derecho Corporativo</p>
-          <p class="delay3">Juicios y Arbitrajes</p>
-          <p class="delay4 pulse">Cargando...</p>
-        </div>
+      <img src="assets/img/logo.png" alt="Fernández & Cía" class="logo-img">
+      <div class="slogan">
+
+        <p class="delay4 pulse">Cargando...</p>
       </div>
     </div>
 
     <!-- JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-    <script>
-      AOS.init({ 
-        once: true,
-        duration: 800
-      });
-      
-      // Manejo del formulario
-      document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Aquí iría la lógica para enviar el formulario
-        alert('¡Gracias por su mensaje! Nos pondremos en contacto con usted pronto.');
-        this.reset();
-      });
-
-      // Mejorar experiencia táctil en móviles
-      document.addEventListener('touchstart', function() {}, {passive: true});
-    </script>
+    <script>AOS.init({ once: true });</script>
 
     <script>
       window.addEventListener("load", () => {

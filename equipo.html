@@ -22,24 +22,55 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
-    <style>
-      #header {
-        background-color: rgba(41, 62, 88, 0.85) !important;
-        color: #FFEBCC !important;
-        height: 120px !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+<style>
+
+       body {
+    font-family: 'Cinzel', serif;
+        color: #1b1b1b;
       }
-      #header a {
-        color: #FFEBCC !important;
-      }
-      #header a:hover {
-        color: #ffffff !important;
-      }
-    </style>
+  /* === HEADER UNIFICADO PARA TODAS LAS SECCIONES === */
+  #header {
+    background-color: rgba(41, 62, 88, 0.85) !important;
+    color: #ffffff !important;
+    height: 120px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+  #header .navmenu a,
+  #header .navmenu ul li a {
+    font-family: 'Cinzel', serif !important;
+    font-weight: 400 !important; /* más delgada */
+    font-size: 15px !important;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #ffffff !important; /* blanco puro */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === EFECTO HOVER === */
+  #header .navmenu a:hover,
+  #header .navmenu li:hover > a,
+  #header .navmenu .active,
+  #header .navmenu .active:focus {
+    color: #f0f0f0 !important; /* gris claro */
+    letter-spacing: 1px;
+  }
+
+  /* === ICONO MENU MOVIL === */
+  #header .mobile-nav-toggle {
+    color: #ffffff !important;
+  }
+</style>
+
   </head>
 
   <body class="index-page">
@@ -68,15 +99,23 @@
     <!-- Main -->
     <main class="main" style="padding-top:140px;">
 
+
+<!-- Hero Section -->
+<section class="contact-hero">
+  <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <h1>Equipo</h1>
+    <div class="divider mx-auto"></div>
+    <p>Conoce a los profesionales que forman parte de nuestra firma.</p>
+  </div>
+</section>
+
+
       <!-- Sección Equipo -->
       <section id="equipo" class="equipo-section py-5" style="background:#f8f9fa;">
        <div class="container" data-aos="fade-up" data-aos-duration="1000">
     <div class="section-header text-center mb-5">
       
-      <h2>Equipo</h2>
-      <div class="divider mx-auto" style="width:60px; height:3px; background:#293e58; margin:15px auto;"></div>
-      <!-- <p>Conoce a los profesionales que forman parte de nuestra firma.</p> -->
-    </div>
+
 
           <div class="row g-4 justify-content-center">
 
@@ -202,7 +241,7 @@
           <div class="footer-section">
             <h4>Dirección</h4>
             <p>Fernández & Cía - Derecho Corporativo</p>
-          <p>Alonso de Córdova 4555, Las Condes, Región Metropolitana</p>>
+          <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
           </div>
         </div>
       </div>
@@ -225,10 +264,7 @@
         </a>
 
         <div class="slogan">
-          <p class="fade-in delay1">Derecho Laboral</p>
-          <p class="fade-in delay2">Derecho Corporativo</p>
-          <p class="fade-in delay3">Juicios y Arbitrajes</p>
-          <p class="fade-in delay4">Cobranza</p>
+
           <p class="pulse delay5">Cargando...</p>
         </div>
       </div>

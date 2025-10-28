@@ -31,23 +31,46 @@
 
     <style>
       body {
-        font-family: 'Roboto', sans-serif;
+    font-family: 'Cinzel', serif;
         color: #1b1b1b;
       }
 
       /* Header */
       #header {
-        background-color: rgba(41, 62, 88, 0.85);
-        color: #FFEBCC;
-        height: 120px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      }
-      #header a {
-        color: #FFEBCC !important;
-      }
-      #header a:hover {
-        color: #ffffff !important;
-      }
+    background-color: rgba(41, 62, 88, 0.85) !important;
+    color: #ffffff !important;
+    height: 120px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+  #header .navmenu a,
+  #header .navmenu ul li a {
+    font-family: 'Cinzel', serif !important;
+    font-weight: 400 !important; /* más delgada */
+    font-size: 15px !important;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #ffffff !important; /* blanco puro */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* === EFECTO HOVER === */
+  #header .navmenu a:hover,
+  #header .navmenu li:hover > a,
+  #header .navmenu .active,
+  #header .navmenu .active:focus {
+    color: #f0f0f0 !important; /* gris claro */
+    letter-spacing: 1px;
+  }
+
+  /* === ICONO MENU MOVIL === */
+  #header .mobile-nav-toggle {
+    color: #ffffff !important;
+  }
 
       /* Sección con video lateral */
       .fernandez-video-section {
@@ -189,6 +212,14 @@
     <!-- Main -->
 
 <main class="main" style="padding-top:140px;">
+<!-- Hero Section -->
+<section class="contact-hero">
+  <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <h1>Fernández &amp; Cía</h1>
+    <div class="divider mx-auto"></div>
+    <p>Conoce a nuestro equipo y nuestras prácticas legales especializadas.</p>
+  </div>
+</section>
 
   <!-- ======= Sección Video + Contenido ======= -->
   <section class="fernandez-video-section d-flex align-items-start" data-aos="fade-up"
@@ -208,11 +239,7 @@
 
     <!-- Contenido textual a la derecha -->
     <div class="fernandez-content" style="flex: 1; min-width: 300px; margin: 0; padding: 0;">
-      <div class="section-header" style="margin-top:0;">
-        <h2 style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-top:0;">Fernández &amp; Cía</h2>
-        <div class="divider mx-auto"
-          style="width: 60px; height: 3px; background: #0078c3; margin: 0.5rem auto 1rem auto;"></div>
-      </div>
+  
       <div class="fernandez-description"
         style="font-family: 'Cinzel', serif; font-size: 1.1rem; line-height: 1.7; text-align: left; margin-top:0; padding-top:40px;">
         <p>Fernández &amp; Cía centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.</p>
@@ -306,7 +333,7 @@
           <div class="footer-section">
             <h4>Dirección</h4>
             <p>Fernández & Cía - Derecho Corporativo</p>
-          <p>Alonso de Córdova 4555, Las Condes, Región Metropolitana</p>
+          <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
           </div>
         </div>
       </div>
@@ -325,9 +352,7 @@
     <div id="preloader">
       <img src="assets/img/logo.png" alt="Fernández & Cía" class="logo-img">
       <div class="slogan">
-        <p class="delay1">Derecho Laboral</p>
-        <p class="delay2">Derecho Corporativo</p>
-        <p class="delay3">Juicios y Arbitrajes</p>
+
         <p class="delay4 pulse">Cargando...</p>
       </div>
     </div>
