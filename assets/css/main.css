@@ -606,36 +606,6 @@ h6 {
 
 
 
-
-
-/* Sección Fernández&Cía - Estilo consistente para index.html y equipo.html */
-.fernandez-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-family: 'Cinzel', serif;
-  background: #ffffff;
-  color: #222222;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-}
-
-/* Fondo poligonal sutil */
-.fernandez-section::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: rgba(0, 0, 0, 0.046);
-  clip-path: polygon(0% 0%, 100% 10%, 90% 100%, 10% 90%);
-  animation: polyMove 30s linear infinite;
-  z-index: 0;
-}
-
 @keyframes polyMove {
   0% { transform: rotate(0deg) translate(0,0); }
   50% { transform: rotate(30deg) translate(15px, -15px); }
@@ -651,15 +621,7 @@ h6 {
   padding: 0 20px;
 }
 
-/* Título principal con hover */
-.fernandez-section .section-header h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-  color: #111111;
-}
+
 
 .fernandez-section .section-header h2:hover {
   color: #183458;
@@ -1240,41 +1202,38 @@ section,
 .section-title {
   position: relative; /* Para el posicionamiento del pseudo-elemento */
 }
-
-.section-title h2 {
-  color: #02191f; /* Color azul para el título */
-  text-transform: uppercase; /* Mayúsculas */
-  margin-bottom: 5px; /* Espacio inferior del título */
-  position: relative; /* Para el posicionamiento del pseudo-elemento */
-  display: inline-block; /* Para permitir el uso de pseudo-elementos */
-}
-/* Estilos para el subrayado del título */
-.section-title::before {
-  content: ""; /* Crear el pseudo-elemento */
-  position: absolute; /* Posicionamiento absoluto */
-  left: -20px; /* Ajustar para que termine más a la izquierda */
-  right: -40px; /* Mantener el mismo valor o ajustarlo según sea necesario */
-  bottom: -20px; /* Ajustar para que la onda no se corte */
-  height: 20px; /* Altura del efecto (puedes ajustarlo a tu gusto) */
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 10"><path d="M0 5 Q 50 2, 100 5 Q 150 8, 200 5 V 10 H 0 Z" fill="none" stroke="%23177a7efb" stroke-width="4"/></svg>'); /* Mantener el mismo SVG */
-  background-repeat: no-repeat;
-  background-size: 100% 180%; /* Hacer el subrayado más largo y visible */
-  transform: scaleX(0); /* Iniciar invisible */
-  transform-origin: left; /* Iniciar animación desde la izquierda */
-  transition: transform 1.5s ease; /* Animación lenta */
+/* === HERO SECTION UNIFICADO PARA TODAS LAS PÁGINAS === */
+.contact-hero {
+    text-align: center;
+    padding: 15px 20px 60px;  /* Mismo padding superior */
+    color: #293e58;
+    background: #f8f9fa;
 }
 
-/* Efecto al pasar el cursor en desktop */
-.section-title:hover::before {
-  transform: scaleX(1); /* Expande el subrayado al pasar el mouse */
+.contact-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #293e58;
 }
 
-/* Aplicar subrayado automáticamente cuando el título está en pantalla en móviles */
-.section-title.active::before {
-  transform: scaleX(1); /* Expande el subrayado automáticamente en móviles */
+.contact-hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-
+/* Divider consistente */
+.divider {
+    width: 70px;
+    height: 3px;
+    background: #293e58;
+    margin: 0 auto 20px auto;
+}
+      
 
 .custom-padding {
   padding-top: 40px; /* Ajusta el valor según tus necesidades */
@@ -1289,8 +1248,226 @@ section,
   margin-top: 0; /* Sin margen superior */
   position: relative; /* Para el posicionamiento del pseudo-elemento */
 }
+/* === SECCIÓN FERNÁNDEZ & CÍA - EFECTOS LENTOS === */
+.fernandez-section {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+    padding: 100px 0;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    animation: polygonMove 15s ease-in-out infinite alternate;
+    font-family: 'Cinzel', serif;
+}
 
+.fernandez-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Cinzel', serif;
+}
 
+/* Título principal con efectos más lentos */
+.fernandez-section .section-header h2 {
+    font-family: 'Cinzel', serif !important;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #293e58;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.8s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.fernandez-section .section-header h2:hover {
+    color: #183458;
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(0, 92, 215, 0.3);
+}
+
+/* Divider animado más lento */
+.fernandez-section .divider {
+    width: 100px;
+    height: 4px;
+    margin: 0 auto 40px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #005CD7, #111111);
+    transition: all 1s ease;
+}
+
+.fernandez-section .section-header:hover .divider {
+    width: 120px;
+}
+
+/* Descripción con animación más lenta */
+.fernandez-description {
+    font-family: 'Cinzel', serif !important;
+}
+
+.fernandez-description p {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 2.5s ease forwards;
+    transition: all 0.8s ease;
+    color: #111111;
+    font-weight: 400;
+}
+
+.fernandez-description p:hover {
+    color: #005CD7;
+    transform: translateY(-5px) scale(1.02);
+    text-shadow: 0 0 10px rgba(0,92,215,0.2);
+}
+
+/* Delays más largos para la animación escalonada */
+.fernandez-description p:nth-child(1) { 
+    animation-delay: 0.8s;
+}
+
+.fernandez-description p:nth-child(2) { 
+    animation-delay: 1.6s;
+}
+
+/* Animaciones más lentas */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes polygonMove {
+    0% { 
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%); 
+    }
+    50% { 
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%); 
+    }
+    100% { 
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%); 
+    }
+}
+
+/* Fondo poligonal más lento */
+.fernandez-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(41, 62, 88, 0.05) 0%, transparent 70%);
+    animation: lightMove 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes lightMove {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    50% { transform: rotate(180deg) translate(10px, 10px); }
+    100% { transform: rotate(360deg) translate(0, 0); }
+}
+
+/* Efectos de entrada para AOS más lentos */
+[data-aos] {
+    transition-duration: 2000ms !important; /* 2 segundos para AOS */
+}
+
+[data-aos][data-aos][data-aos-delay="200"] {
+    transition-delay: 400ms !important; /* Delays duplicados */
+}
+
+[data-aos][data-aos][data-aos-delay="400"] {
+    transition-delay: 800ms !important;
+}
+
+[data-aos][data-aos][data-aos-delay="600"] {
+    transition-delay: 1200ms !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .fernandez-section { 
+        padding: 80px 0; 
+        clip-path: none; 
+        animation: none; /* Desactivar animación en móviles para mejor rendimiento */
+    }
+    
+    .fernandez-section .section-header h2 { 
+        font-size: 2.rem; 
+    }
+    
+    .fernandez-description p { 
+        font-size: 1.1rem; 
+    }
+    
+    /* Animaciones más rápidas en móviles */
+    .fernandez-description p {
+        animation: fadeInUp 1.5s ease forwards;
+    }
+}
+
+@media (max-width: 767px) {
+    .fernandez-section .section-header h2 { 
+        font-size: 2rem; 
+    }
+    
+    .fernandez-description p { 
+        font-size: 1rem; 
+        text-align: left; 
+    }
+    
+    .fernandez-section .section-header h2 {
+        transition: all 0.5s ease; /* Transición más rápida en móviles */
+    }
+    
+    .fernandez-section .divider {
+        transition: all 0.6s ease;
+    }
+    
+    .fernandez-description p {
+        transition: all 0.5s ease;
+    }
+}
+
+/* Clases de utilidad para textos */
+.text-center {
+    text-align: center !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Smooth scrolling para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejoras de rendimiento para animaciones */
+.fernandez-section {
+    will-change: transform, clip-path;
+}
+
+.fernandez-section .section-header h2 {
+    will-change: transform, color;
+}
+
+.fernandez-description p {
+    will-change: transform, opacity;
+}
 
 /*--------------------------------------------------------------
 # Get Started Section

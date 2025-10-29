@@ -73,86 +73,7 @@
   #header .mobile-nav-toggle {
     color: #ffffff !important;
   }
-      /* Sección con video lateral */
-      .fernandez-video-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f9fa;
-        padding: 80px 0;
-        overflow: hidden;
-      }
 
-      .fernandez-video-section .video-container {
-        position: relative;
-        flex: 1;
-        height: 450px;
-        overflow: hidden;
-        clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
-      }
-
-      .fernandez-video-section video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .fernandez-video-section .mask {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.25);
-        mix-blend-mode: multiply;
-        animation: moveMask 6s ease-in-out infinite alternate;
-      }
-
-      @keyframes moveMask {
-        0% { clip-path: polygon(0 0, 100% 5%, 95% 100%, 0% 95%); }
-        100% { clip-path: polygon(0 5%, 95% 0, 100% 95%, 0 100%); }
-      }
-
-      .fernandez-video-section .text-container {
-        flex: 1;
-        padding: 0 50px;
-        text-align: left;
-      }
-
-      .fernandez-video-section h2 {
-        font-family: 'Cinzel', serif;
-        font-size: 2.5rem;
-        color: #293e58;
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
-
-      .fernandez-video-section p {
-        color: #444;
-        line-height: 1.7;
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-      }
-
-      .divider {
-        width: 70px;
-        height: 3px;
-        background: #293e58;
-        margin-bottom: 20px;
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .fernandez-video-section {
-          flex-direction: column;
-        }
-        .fernandez-video-section .video-container {
-          width: 100%;
-          height: 300px;
-          clip-path: none;
-        }
-        .fernandez-video-section .text-container {
-          padding: 40px 20px;
-          text-align: center;
-        }
-      }
 
       /* Preloader */
       #preloader {
@@ -218,8 +139,9 @@
 
 <section class="contact-hero">
   <div class="hero-content">
-    <h1 data-aos="fade-up">Prácticas</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Conozca las áreas de práctica de nuestra firma</p>
+    <h1 data-aos="fade-up">Prácticas Legales</h1>
+    <div class="divider" data-aos="fade-up" data-aos-delay="100"></div>
+    <p data-aos="fade-up" data-aos-delay="200">Nuestras áreas de especialización legal.</p>
   </div>
 </section>
 
