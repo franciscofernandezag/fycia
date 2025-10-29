@@ -1,6 +1,6 @@
 <?php
 // Configuración del correo receptor
-$receiving_email_address = 'contacto@exico.cl';
+$receiving_email_address = 'contacto@fycia.cl';
 
 // Verifica si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
