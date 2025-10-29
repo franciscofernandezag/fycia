@@ -5,36 +5,44 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Sitemap actualizado para fycia.cl - Páginas individuales -->
-<url>
-  <loc>https://www.fycia.cl/</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.fycia.cl/servicios.html</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://www.fycia.cl/nosotros.html</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.fycia.cl/preguntas-frecuentes.html</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.fycia.cl/contacto.html</loc>
-  <lastmod>2024-10-09T02:26:18+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
+  <!-- Página de inicio -->
+  <url>
+    <loc>https://www.fycia.cl/</loc>
+    <lastmod>2025-10-29T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Nosotros -->
+  <url>
+    <loc>https://www.fycia.cl/nosotros.html</loc>
+    <lastmod>2025-10-29T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Equipo -->
+  <url>
+    <loc>https://www.fycia.cl/equipo.html</loc>
+    <lastmod>2025-10-29T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Prácticas -->
+  <url>
+    <loc>https://www.fycia.cl/practicas.html</loc>
+    <lastmod>2025-10-29T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://www.fycia.cl/contacto.html</loc>
+    <lastmod>2025-10-29T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
 </urlset>
