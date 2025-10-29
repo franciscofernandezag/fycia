@@ -1404,7 +1404,7 @@ section,
 /* Ajustes responsivos */
 @media (max-width: 992px) {
   .card-practica {
-    height: auto; /* en móviles no forzamos altura */
+    height: auto; /* 
   }
 }
 
