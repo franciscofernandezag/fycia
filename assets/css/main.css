@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 
 
 
@@ -522,20 +523,19 @@ h6 {
           z-index: 2;
         }
 
-        /* Texto principal */
-        .hero-text {
-          position: absolute;
-          top: 50%;
-          left: 10%;
-          transform: translateY(-50%);
-          color: #ffffff; /* Letras blancas */
-          font-family: 'Cinzel', serif;
-          font-size: 1.8rem;
-        
-          text-transform: uppercase;
-          text-align: left;
-          z-index: 3;
-        }
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* Letras blancas */
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center; /* centra el texto */
+  z-index: 3;
+}
+
 
         /* Lista con animación y hover */
         .hero-text ul {
@@ -568,21 +568,19 @@ h6 {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
-        @media (max-width: 991px) {
-          .hero-text {
-            left: 5%;
-            font-size: 1.6rem;
-          }
-        }
 
-        @media (max-width: 767px) {
-          .hero-text {
-            font-size: 1.3rem;
-          }
-        }
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-text {
+    font-size: 1.6rem;
+  }
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@media (max-width: 767px) {
+  .hero-text {
+    font-size: 1.3rem;
+  }
+}
 
 
 .equipo-img-container {
@@ -694,7 +692,7 @@ h6 {
     clip-path: none; 
   }
   .fernandez-section .section-header h2 { 
-    font-size: 2.5rem; 
+    font-size: 1.8rem; 
   }
   .fernandez-description p { 
     font-size: 1.1rem; 
@@ -703,7 +701,7 @@ h6 {
 
 @media (max-width: 767px) {
   .fernandez-section .section-header h2 { 
-    font-size: 2rem; 
+    font-size: 1.8rem; 
   }
   .fernandez-description p { 
     font-size: 1rem; 
@@ -713,6 +711,11 @@ h6 {
     padding: 10px 25px; 
     font-size: 0.95rem; 
   }
+}
+.title-logo {
+  height: 40px;           /* ajusta según el tamaño deseado */
+  margin-right: 10px;     /* separa del texto */
+  vertical-align: middle; /* alinea con el texto */
 }
 
 /* Footer general: más claro, gris oscuro */
@@ -1204,26 +1207,41 @@ section,
 }
 /* === HERO SECTION UNIFICADO PARA TODAS LAS PÁGINAS === */
 .contact-hero {
-    text-align: center;
-    padding: 15px 20px 60px;  /* Mismo padding superior */
-    color: #293e58;
-    background: #f8f9fa;
+  text-align: center;
+  padding: 15px 20px 60px; /* Mismo padding superior */
+  color: #293e58;
+  background: #f8f9fa;
 }
 
 .contact-hero h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #293e58;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 5vw, 2.5rem); /* Escala automáticamente según ancho de pantalla */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #293e58;
+  white-space: nowrap; /* Evita que se divida en dos líneas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Previene desbordes si el texto es muy largo */
 }
 
 .contact-hero p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Ajustes responsivos adicionales */
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
 }
 
 /* Divider consistente */
@@ -1271,8 +1289,8 @@ section,
 /* Título principal con efectos más lentos */
 .fernandez-section .section-header h2 {
     font-family: 'Cinzel', serif !important;
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 500;
     color: #293e58;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -1280,6 +1298,7 @@ section,
     transition: all 0.8s ease;
     position: relative;
     display: inline-block;
+    text-align: center;
 }
 
 .fernandez-section .section-header h2:hover {
@@ -1305,6 +1324,7 @@ section,
 /* Descripción con animación más lenta */
 .fernandez-description {
     font-family: 'Cinzel', serif !important;
+    text-align: justify; /* ✅ Justifica todo el texto */
 }
 
 .fernandez-description p {
@@ -1318,7 +1338,9 @@ section,
     transition: all 0.8s ease;
     color: #111111;
     font-weight: 400;
+    text-align: justify; /* ✅ Asegura que todos los párrafos estén justificados */
 }
+
 
 .fernandez-description p:hover {
     color: #005CD7;
@@ -1454,7 +1476,7 @@ section,
     }
     
     .fernandez-section .section-header h2 { 
-        font-size: 2.rem; 
+        font-size: 1.5rem; 
     }
     
     .fernandez-description p { 
@@ -1469,7 +1491,7 @@ section,
 
 @media (max-width: 767px) {
     .fernandez-section .section-header h2 { 
-        font-size: 2rem; 
+        font-size: 1.5rem; 
     }
     
     .fernandez-description p { 
