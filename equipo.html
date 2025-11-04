@@ -28,47 +28,53 @@
     <link href="assets/css/main.css" rel="stylesheet" />
 
 <style>
+body {
+  font-family: 'Cinzel', serif;
+  color: #1b1b1b;
+}
 
-       body {
-    font-family: 'Cinzel', serif;
-        color: #1b1b1b;
-      }
-  /* === HEADER UNIFICADO PARA TODAS LAS SECCIONES === */
-  #header {
-    background-color: rgba(41, 62, 88, 0.85) !important;
-    color: #ffffff !important;
-    height: 120px !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-  }
+/* === HEADER UNIFICADO PARA INDEX === */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 120px !important;
+  color: #ffffff !important;
+  background-color: rgba(41, 62, 88, 0.85) !important; /* color fijo */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
 
-  /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
-  #header .navmenu a,
-  #header .navmenu ul li a {
-    font-family: 'Cinzel', serif !important;
-    font-weight: 400 !important; /* más delgada */
-    font-size: 15px !important;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #ffffff !important; /* blanco puro */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+/* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+#header .navmenu a,
+#header .navmenu ul li a {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  /* === EFECTO HOVER === */
-  #header .navmenu a:hover,
-  #header .navmenu li:hover > a,
-  #header .navmenu .active,
-  #header .navmenu .active:focus {
-    color: #f0f0f0 !important; /* gris claro */
-    letter-spacing: 1px;
-  }
+/* === EFECTO HOVER === */
+#header .navmenu a:hover,
+#header .navmenu li:hover > a,
+#header .navmenu .active,
+#header .navmenu .active:focus {
+  color: #f0f0f0 !important;
+  letter-spacing: 1px;
+}
 
-  /* === ICONO MENU MOVIL === */
-  #header .mobile-nav-toggle {
-    color: #ffffff !important;
-  }
+/* === ICONO MENU MÓVIL === */
+#header .mobile-nav-toggle {
+  color: #ffffff !important;
+}
+
 </style>
 
   </head>
@@ -78,7 +84,7 @@
     <!-- Header -->
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        <div class="logo-container d-flex align-items-center sticky-top">
+<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
           <a href="index.html" class="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="fycia - Derecho Corporativo" class="logo-img">
           </a>

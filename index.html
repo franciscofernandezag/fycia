@@ -40,6 +40,66 @@
     <link href="assets/css/main.css" rel="stylesheet" />
   </head>
 
+
+
+  
+<style>
+body {
+  font-family: 'Cinzel', serif;
+  color: #1b1b1b;
+}
+
+/* === HEADER UNIFICADO PARA INDEX === */
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 120px !important;
+  color: #ffffff !important;
+  background-color: transparent !important; /* inicia transparente */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0); /* mantiene espacio visual, sin sombra visible */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* === HEADER CON SCROLL === */
+#header.scrolled {
+  background-color: rgba(41, 62, 88, 0.85) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+#header .navmenu a,
+#header .navmenu ul li a {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === EFECTO HOVER === */
+#header .navmenu a:hover,
+#header .navmenu li:hover > a,
+#header .navmenu .active,
+#header .navmenu .active:focus {
+  color: #f0f0f0 !important;
+  letter-spacing: 1px;
+}
+
+/* === ICONO MENU MÓVIL === */
+#header .mobile-nav-toggle {
+  color: #ffffff !important;
+}
+
+
+</style>
+
   <body class="index-page">
 
     <header id="header" class="header d-flex align-items-center fixed-top ">
@@ -219,22 +279,6 @@
         mirror: false
       });
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-          item.addEventListener('click', () => {
-            // Cierra todas las demás preguntas abiertas
-            faqItems.forEach(i => {
-              if (i !== item) {
-                i.classList.remove('faq-active');
-              }
-            });
-            // Alterna la clase 'faq-active' en la pregunta seleccionada
-            item.classList.toggle('faq-active');
-          });
-        });
-      });
     </script>
 
     <!-- Main JS File -->

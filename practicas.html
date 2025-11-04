@@ -14,10 +14,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,17 +22,17 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
 
     <!-- Main CSS -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
     <style>
       body {
-        font-family: 'Cinzel', serif;
+        font-family: 'Roboto', sans-serif;
         color: #1b1b1b;
       }
 
+      /* === HEADER === */
       #header {
         background-color: rgba(41, 62, 88, 0.85) !important;
         color: #ffffff !important;
@@ -43,8 +40,7 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
       }
 
-      #header .navmenu a,
-      #header .navmenu ul li a {
+      #header .navmenu a {
         font-family: 'Cinzel', serif !important;
         font-weight: 400 !important;
         font-size: 15px !important;
@@ -57,66 +53,236 @@
 
       #header .navmenu a:hover,
       #header .navmenu li:hover > a,
-      #header .navmenu .active,
-      #header .navmenu .active:focus {
+      #header .navmenu .active {
         color: #f0f0f0 !important;
-        letter-spacing: 1px;
       }
 
-      #header .mobile-nav-toggle {
-        color: #ffffff !important;
+      /* === CONTENEDOR PRINCIPAL === */
+      .practicas-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        overflow: hidden;
+        background: #fff;
+        min-height: 700px;
       }
 
-      /* Cards de prácticas uniformes */
+      /* === VIDEO LATERAL COMPLETO CON EFECTO POLYGON A LA DERECHA === */
+      .video-lateral-container {
+        flex: 0 0 45%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Video que se adapta al contenedor - COMPLETO */
+      .video-lateral {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      /* Contenedor para el efecto polygon en el lado derecho */
+      .polygon-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        animation: polygonRightAnimation 8s ease-in-out infinite alternate;
+        z-index: 2;
+      }
+
+      /* Efecto polygon aplicado al lado derecho */
+      @keyframes polygonRightAnimation {
+        0% { 
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        25% { 
+          clip-path: polygon(0 0, 100% 5%, 95% 100%, 0 100%);
+        }
+        50% { 
+          clip-path: polygon(0 0, 95% 0, 100% 95%, 0 100%);
+        }
+        75% { 
+          clip-path: polygon(0 5%, 100% 0, 100% 100%, 5% 100%);
+        }
+        100% { 
+          clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0 95%);
+        }
+      }
+
+      /* Overlay sutil para mejorar contraste */
+      .video-lateral-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg, 
+          rgba(41, 62, 88, 0.1) 0%, 
+          rgba(0, 155, 77, 0.05) 100%
+        );
+        z-index: 1;
+      }
+
+      /* === CONTENIDO DE LAS CARDS MEJORADO === */
+      .contenido-practicas {
+        flex: 1;
+        padding: 60px 40px;
+        min-width: 55%;
+        display: flex;
+        align-items: center;
+      }
+
+      .practicas-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+      }
+
       .card-practica {
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        padding: 20px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 35px 30px;
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         background-color: #fff;
+        min-height: 300px;
       }
 
       .card-practica:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
 
       .card-practica h4 {
         font-family: 'Cinzel', serif;
         font-weight: 600;
         font-size: 1.3rem;
-        margin-bottom: 15px;
-        color: #293e58;
+        margin-bottom: 20px;
+        color: #009B4D;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
+        justify-content: center;
       }
 
       .card-practica h4 i {
-        color: #00c3a5;
+        color: #009B4D;
         font-size: 1.5rem;
       }
 
       .card-practica p {
         font-family: 'Cinzel', serif;
         font-weight: 400;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.7;
         text-align: justify;
+        color: #444;
+        margin: 0;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
       }
 
       .divider { 
         width: 60px; 
         height: 3px; 
-        background-color: #293e58; 
-        margin-bottom: 15px; 
+        background-color: #009B4D; 
+        margin: 10px auto 20px; 
       }
 
-      .practicas-section .row {
-        justify-content: center;
+      /* Responsividad mejorada */
+      @media (max-width: 1200px) {
+        .practicas-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .practicas-wrapper {
+          flex-direction: column;
+          min-height: auto;
+        }
+        .video-lateral-container {
+          flex: 0 0 400px;
+          width: 100%;
+        }
+        .polygon-mask {
+          animation: polygonRightAnimationMobile 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes polygonRightAnimationMobile {
+          0% { 
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          }
+          25% { 
+            clip-path: polygon(0 0, 100% 3%, 97% 100%, 0 100%);
+          }
+          50% { 
+            clip-path: polygon(0 0, 97% 0, 100% 97%, 0 100%);
+          }
+          75% { 
+            clip-path: polygon(0 3%, 100% 0, 100% 100%, 3% 100%);
+          }
+          100% { 
+            clip-path: polygon(3% 0, 100% 3%, 97% 100%, 0 97%);
+          }
+        }
+        
+        .contenido-practicas {
+          padding: 40px 20px;
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .video-lateral-container {
+          flex: 0 0 350px;
+        }
+        .card-practica {
+          padding: 25px 20px;
+          min-height: 280px;
+        }
+        .practicas-grid {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .contenido-practicas {
+          padding: 30px 15px;
+        }
+        .card-practica {
+          padding: 20px 15px;
+          min-height: 260px;
+        }
+        .card-practica h4 {
+          font-size: 1.2rem;
+        }
+        .card-practica p {
+          font-size: 0.9rem;
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -124,7 +290,7 @@
   <body class="index-page">
     <!-- Header -->
     <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="fycia - Derecho Corporativo" class="logo-img">
         </a>
@@ -133,7 +299,7 @@
           <ul>
             <li><a href="nosotros.html">Quienes Somos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
-<li><a href="practicas.html">Prácticas</a></li>
+            <li><a href="practicas.html" class="active">Prácticas</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -143,67 +309,75 @@
 
     <!-- Main -->
     <main class="main" style="padding-top:140px;">
-      <section class="contact-hero">
-        <div class="hero-content text-center">
-          <h1 data-aos="fade-up">Áreas de Práctica</h1>
-          <div class="divider" data-aos="fade-up" data-aos-delay="100"></div>
-          <p data-aos="fade-up" data-aos-delay="200">Nuestras áreas de especialización legal.</p>
+
+      <!-- Hero -->
+      <section class="contact-hero text-center">
+        <div class="hero-content" data-aos="fade-up">
+          <h1>Áreas de Práctica</h1>
+          <div class="divider"></div>
+          <p>Nuestras áreas de especialización legal.</p>
         </div>
       </section>
 
-      <!-- Sección de Prácticas -->
-      <section id="practicas" class="practicas-section py-5" data-aos="fade-up">
-        <div class="container">
-          <div class="row g-4 justify-content-center">
+      <!-- Sección con video lateral e información -->
+      <section id="practicas" class="practicas-wrapper">
+        <!-- Video Izquierda -->
+        <div class="video-lateral-container" data-aos="fade-right">
+          <video class="video-lateral" autoplay muted loop playsinline>
+            <source src="assets/video/practicas.mp4" type="video/mp4">
+            <source src="assets/video/practicas.webm" type="video/webm">
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <!-- Máscara con efecto polygon en el lado derecho -->
+          <div class="polygon-mask"></div>
+        </div>
 
-            <!-- Card 1 -->
-            <div class="col-lg-5 col-md-6">
-              <div class="card-practica h-100">
+        <!-- Cards -->
+        <div class="contenido-practicas">
+          <div class="container-fluid">
+            <div class="practicas-grid">
+              
+              <!-- Card 1 -->
+              <div class="card-practica" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-body">
                   <h4><i class="bi bi-people-fill"></i>Derecho Laboral</h4>
                   <p>
-                    Nuestro equipo brinda asesoría integral de excelencia a empresas e instituciones privadas en materia de derecho laboral, tanto individual como colectivo. Nuestros servicios incluyen la asesoría general, elaboración y redacción de documentación laboral, auditorías laborales; asesoría en materia de extranjería; litigación y defensa judicial en ámbito laboral; asesoría en negociaciones colectivas; tramitación de reclamaciones de multa; asistencia a mediaciones y comparendos, entre otros servicios.
+                    Nuestro equipo brinda asesoría integral de excelencia a empresas e instituciones privadas en materia de derecho laboral, tanto individual como colectivo. Nuestros servicios incluyen la asesoría general, elaboración y redacción de documentación laboral, auditorías laborales, asesoría en materia de extranjería, litigación y defensa judicial en ámbito laboral, negociaciones colectivas, tramitación de reclamaciones y asistencia a mediaciones.
                   </p>
                 </div>
               </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="col-lg-5 col-md-6">
-              <div class="card-practica h-100">
+              <!-- Card 2 -->
+              <div class="card-practica" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-body">
                   <h4><i class="bi bi-building"></i>Derecho Corporativo</h4>
                   <p>
-                    Nuestra oficina se encarga de prestar asesoría en materia corporativa a nuestros clientes, entre estas prácticas destacan la constitución y puesta en marcha de nuevas sociedades, fusiones y adquisiciones de negocios ya existentes, gobiernos corporativos, preparación y revisión de toda clase de contratos, entre otros servicios.
+                    Prestamos asesoría en materia corporativa, incluyendo constitución y puesta en marcha de sociedades, fusiones, adquisiciones, gobiernos corporativos, y preparación o revisión de contratos comerciales.
                   </p>
                 </div>
               </div>
-            </div>
 
-            <!-- Card 3 -->
-            <div class="col-lg-5 col-md-6">
-              <div class="card-practica h-100">
+              <!-- Card 3 -->
+              <div class="card-practica" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-body">
-<h4><i class="bi bi-bank"></i> Juicios y Arbitrajes</h4>
+                  <h4><i class="bi bi-bank"></i>Juicios y Arbitrajes</h4>
                   <p>
-                    Contamos con un equipo especializado en la tramitación de juicios de alta complejidad, tanto en materia civil, comercial, de derecho administrativo y de propiedad intelectual. En nuestro ejercicio, actuamos siempre teniendo presente las necesidades de nuestros clientes para lograr el resultado óptimo en cada uno de los procedimientos que afrontamos.
+                    Contamos con un equipo especializado en litigios complejos civiles, comerciales y administrativos. Actuamos siempre priorizando las necesidades de nuestros clientes para lograr resultados óptimos.
                   </p>
                 </div>
               </div>
-            </div>
 
-            <!-- Card 4 -->
-            <div class="col-lg-5 col-md-6">
-              <div class="card-practica h-100">
+              <!-- Card 4 -->
+              <div class="card-practica" data-aos="fade-up" data-aos-delay="400">
                 <div class="card-body">
                   <h4><i class="bi bi-cash-stack"></i>Cobranza</h4>
                   <p>
-                    Nuestra oficina se destaca por prestar un servicio de cobranza en favor de nuestros clientes, realizando todas aquellas operaciones judiciales y extrajudiciales tendientes a recuperar los montos que se les adeudan, trabajando siempre con sentido práctico que busque la resolución de estas acreencias en el menor tiempo posible.
+                    Ofrecemos servicios judiciales y extrajudiciales de cobranza, orientados a la recuperación eficiente de activos con sentido práctico y soluciones oportunas.
                   </p>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
       </section>
@@ -247,6 +421,25 @@
     <script src="assets/vendor/aos/aos.js"></script>
     <script>
       AOS.init({ once: true, duration: 1000 });
+      
+      // Control del video para mejor rendimiento
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.querySelector('.video-lateral');
+        if (video) {
+          // Pausar video cuando no es visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                video.play();
+              } else {
+                video.pause();
+              }
+            });
+          });
+          
+          observer.observe(video);
+        }
+      });
     </script>
     <script src="assets/js/main.js"></script>
   </body>
