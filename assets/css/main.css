@@ -236,7 +236,6 @@ h6 {
   }
 
   .navmenu > ul > li {
-    white-space: nowrap;
     padding: 15px 14px;
   }
 
@@ -257,7 +256,6 @@ h6 {
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
-    text-transform: uppercase;
   }
 
   .navmenu a i,
@@ -529,9 +527,8 @@ h6 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff; /* Letras blancas */
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
-  text-transform: uppercase;
   text-align: center; /* centra el texto */
   z-index: 3;
 }
@@ -667,22 +664,6 @@ h6 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Botón */
-.fernandez-cta .btn {
-  background: linear-gradient(45deg, #005CD7, #FF1150);
-  border: none;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.fernandez-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
 
 /* Responsive */
 @media (max-width: 991px) {
@@ -763,7 +744,6 @@ h6 {
   color: #fff;
   font-size: 1rem; 
   margin-bottom: 6px; /* reducido */
-  text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
@@ -1283,17 +1263,16 @@ section,
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: 'Cinzel', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Título principal con efectos más lentos */
 .fernandez-section .section-header h2 {
     font-family: 'Cinzel', serif !important;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 500;
     color: #293e58;
     margin-bottom: 20px;
-    text-transform: uppercase;
     letter-spacing: 2px;
     transition: all 0.8s ease;
     position: relative;
@@ -1323,21 +1302,21 @@ section,
 
 /* Descripción con animación más lenta */
 .fernandez-description {
-    font-family: 'Cinzel', serif !important;
+
     text-align: justify; /* ✅ Justifica todo el texto */
 }
 
 .fernandez-description p {
-    font-family: 'Cinzel', serif !important;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1.5em;
+  font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.7rem;
+    margin-bottom: 1.4em;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 2.5s ease forwards;
     transition: all 0.8s ease;
     color: #111111;
-    font-weight: 400;
+    font-weight: 200;
     text-align: justify; /* ✅ Asegura que todos los párrafos estén justificados */
 }
 
@@ -1398,7 +1377,6 @@ section,
   font-size: 1.4rem;
   color: #293e58; /* color destacado */
   margin-bottom: 15px;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -1585,7 +1563,6 @@ html {
 .get-started .php-email-form h3 {
   font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -2761,7 +2738,6 @@ html {
   position: absolute;
   right: 0;
   bottom: 0;
-  text-transform: uppercase;
   font-size: 13px;
   padding: 6px 12px;
   font-weight: 500;
@@ -3553,7 +3529,6 @@ html {
   font-size: 16px;
   color: #25D366;
   font-weight: 700;
-  text-transform: uppercase;
   text-align: center; /* Centra el texto debajo del ícono */
 }
 
