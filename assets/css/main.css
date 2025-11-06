@@ -611,9 +611,9 @@ h6 {
 .fernandez-content {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 1500px;
   text-align: center;
-  padding: 0 20px;
+
 }
 
 
@@ -626,7 +626,7 @@ h6 {
 
 /* Divider */
 .fernandez-section .divider {
-  width: 100px;
+  width: 70px;
   height: 4px;
   margin: 0 auto 40px;
   border-radius: 2px;
@@ -640,7 +640,7 @@ h6 {
 
 /* Descripción con animación y efecto hover */
 .fernandez-description p {
-  font-size: 1.2rem;
+  font-size: 8px;
   line-height: 1.8;
   margin-bottom: 1.5em;
   opacity: 0;
