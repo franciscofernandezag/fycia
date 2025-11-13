@@ -14,10 +14,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,46 +28,51 @@
 
     <style>
       body {
-    font-family: 'Cinzel', serif;
+        font-family: 'Cinzel', serif;
         color: #1b1b1b;
+      }
+
+      /* Aplicar Cinzel a todos los párrafos */
+      p {
+        font-family: 'Cinzel', serif;
       }
 
       /* Header */
       #header {
-    background-color: rgba(41, 62, 88, 0.85) !important;
-    color: #ffffff !important;
-    height: 120px !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-  }
+        background-color: rgba(41, 62, 88, 0.85) !important;
+        color: #ffffff !important;
+        height: 120px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+      }
 
-  /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
-  #header .navmenu a,
-  #header .navmenu ul li a {
-    font-family: 'Cinzel', serif !important;
-    font-weight: 400 !important; /* más delgada */
-    font-size: 15px !important;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #ffffff !important; /* blanco puro */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+      /* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
+      #header .navmenu a,
+      #header .navmenu ul li a {
+        font-family: 'Cinzel', serif !important;
+        font-weight: 400 !important; /* más delgada */
+        font-size: 15px !important;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #ffffff !important; /* blanco puro */
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-  /* === EFECTO HOVER === */
-  #header .navmenu a:hover,
-  #header .navmenu li:hover > a,
-  #header .navmenu .active,
-  #header .navmenu .active:focus {
-    color: #f0f0f0 !important; /* gris claro */
-    letter-spacing: 1px;
-  }
+      /* === EFECTO HOVER === */
+      #header .navmenu a:hover,
+      #header .navmenu li:hover > a,
+      #header .navmenu .active,
+      #header .navmenu .active:focus {
+        color: #f0f0f0 !important; /* gris claro */
+        letter-spacing: 1px;
+      }
 
-  /* === ICONO MENU MOVIL === */
-  #header .mobile-nav-toggle {
-    color: #ffffff !important;
-  }
+      /* === ICONO MENU MOVIL === */
+      #header .mobile-nav-toggle {
+        color: #ffffff !important;
+      }
 
       /* Sección con video lateral */
       .fernandez-video-section {
@@ -123,7 +125,9 @@
         margin-bottom: 20px;
       }
 
+      /* Aplicar Cinzel específicamente a los párrafos de esta sección */
       .fernandez-video-section p {
+        font-family: 'Cinzel', serif !important;
         color: #444;
         line-height: 1.7;
         margin-bottom: 15px;
@@ -135,6 +139,11 @@
         height: 3px;
         background: #293e58;
         margin-bottom: 20px;
+      }
+
+      /* Aplicar Cinzel al párrafo del hero */
+      .contact-hero p {
+        font-family: 'Cinzel', serif;
       }
 
       /* Responsive */
@@ -152,10 +161,7 @@
           text-align: center;
         }
       }
-
-      
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
   </head>
 
@@ -171,7 +177,7 @@
           <ul>
             <li><a href="nosotros.html">Quienes Somos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
-            <li><a href="practicas.html">Prácticas</a></li>
+            <li><a href="practicas.html">Áreas de Práctica</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -180,116 +186,104 @@
     </header>
 
     <!-- Main -->
+    <main class="main" style="padding-top:140px; width: 100%; max-width: 1200px; margin: 0 auto;">
 
-<main class="main" style="padding-top:140px; width: 100%; max-width: 1200px; margin: 0 auto;">
+      <!-- Hero Section -->
+      <section class="contact-hero">
+        <div class="hero-content">
+          <h1 data-aos="fade-up">Áreas de Práctica</h1>
+          <div class="divider" data-aos="fade-up" data-aos-delay="100"></div>
+          <p data-aos="fade-up" data-aos-delay="200">Conoce a nuestro equipo y nuestras prácticas legales especializadas.</p>
+        </div>
+      </section>
 
+      <!-- ======= Sección Video + Contenido ======= -->
+      <section class="fernandez-video-section d-flex align-items-start" data-aos="fade-up"
+        style="gap: 2rem; flex-wrap: wrap; padding: 60px 20px; position: relative; overflow: hidden; justify-content: space-between;">
 
-  <!-- Hero Section -->
+        <!-- Fondo general con efecto poligonal -->
+        <div class="polygon-bg"></div>
 
-<section class="contact-hero">
-  <div class="hero-content">
-    <h1 data-aos="fade-up">Fernández &amp; Cía</h1>
-    <div class="divider" data-aos="fade-up" data-aos-delay="100"></div>
-    <p data-aos="fade-up" data-aos-delay="200">Conoce a nuestro equipo y nuestras prácticas legales especializadas.
+        <!-- Video lateral izquierdo -->
+        <div class="video-container"
+          style="flex: 1; min-width: 350px; max-width: 600px; height: 100%; margin: 0; padding: 0;">
+          <video autoplay muted loop playsinline poster="assets/img/video-poster.jpg" class="polygon-video">
+            <source src="assets/video/nosotros.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
 
-</p>
-  </div>
-</section>
+        <!-- Contenido textual a la derecha -->
+        <div class="fernandez-content" style="flex: 1; min-width: 350px; max-width: 600px; display: flex; align-items: center; justify-content: center; margin: 0; padding: 0;">
+          <div class="fernandez-description"
+            style="font-family: 'Cinzel', serif; font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-top: 0; padding: 40px; display: flex; flex-direction: column; justify-content: center; height: 100%;">
 
-  <!-- ======= Sección Video + Contenido ======= -->
-  <section class="fernandez-video-section d-flex align-items-start" data-aos="fade-up"
-    style="gap: 2rem; flex-wrap: wrap; padding: 60px 20px; position: relative; overflow: hidden; justify-content: space-between;">
+            <!-- Título de sección separado -->
+            <h2 style="font-size: 2.5rem; color: #293e58; margin-bottom: 40px; text-align: left;">Nuestra Práctica Legal</h2>
 
-    <!-- Fondo general con efecto poligonal -->
-    <div class="polygon-bg"></div>
+            <p style="margin-bottom: 25px;">Nuestra oficina centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.</p>
 
-    <!-- Video lateral izquierdo -->
-    <div class="video-container"
-      style="flex: 1; min-width: 350px; max-width: 600px; height: 100%; margin: 0; padding: 0;">
-      <video autoplay muted loop playsinline poster="assets/img/video-poster.jpg" class="polygon-video">
-        <source src="assets/video/nosotros.mp4" type="video/mp4">
-        Tu navegador no soporta video HTML5.
-      </video>
-    </div>
+            <p style="margin-bottom: 25px;">Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.</p>
 
-    <!-- Contenido textual a la derecha -->
-    <div class="fernandez-content" style="flex: 1; min-width: 350px; max-width: 600px; display: flex; align-items: center; justify-content: center; margin: 0; padding: 0;">
-      <div class="fernandez-description"
-        style="font-family: 'Cinzel', serif; font-size: 1.15rem; line-height: 1.8; text-align: justify; margin-top: 0; padding: 40px; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <p style="margin-bottom: 25px;">Velamos siempre por ofrecer un servicio cercano, práctico y confiable, adaptado a las necesidades de nuestros clientes, privilegiando una asesoría de carácter personal y directa que los apoye en la solución de sus contingencias y con el respaldo que sus negocios requieren.</p>
+          </div>
+        </div>
 
-        <!-- Título de sección separado -->
-        <h2 style="font-size: 2.5rem; color: #293e58; margin-bottom: 40px; text-align: left;">Nuestra Práctica Legal</h2>
+      </section>
 
-        <p style="margin-bottom: 25px;">Nuestra oficina centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.</p>
-        <br> <br> 
-       
-        <p style="margin-bottom: 25px;">Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.</p>
-        <br> <br> 
-        <p style="margin-bottom: 25px;">Velamos siempre por ofrecer un servicio cercano, práctico y confiable, adaptado a las necesidades de nuestros clientes, privilegiando una asesoría de carácter personal y directa que los apoye en la solución de sus contingencias y con el respaldo que sus negocios requieren.</p>
- <br> <br> 
-      </div>
-    </div>
+    </main>
 
-  </section>
+    <style>
+      /* Fondo animado con polígonos superiores e inferiores */
+      .polygon-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+        clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+        animation: polygonMove 4s ease-in-out infinite alternate;
+        z-index: 0;
+        opacity: 0.9;
+      }
 
-</main>
+      /* Video con forma poligonal animada */
+      .polygon-video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        object-fit: contain;
+        margin-top:0;
+        padding-top:0;
+        clip-path: polygon(0 0, 100% 3%, 100% 90%, 0 97%);
+        animation: videoPolygon 3s ease-in-out infinite alternate;
+        z-index: 2;
+        position: relative;
+      }
 
+      /* Animaciones acentuadas y más rápidas */
+      @keyframes polygonMove {
+        0% {
+          clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
+        }
+        100% {
+          clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 97%);
+        }
+      }
 
+      @keyframes videoPolygon {
+        0% {
+          clip-path: polygon(0 0, 100% 3%, 100% 90%, 0 97%);
+        }
+        100% {
+          clip-path: polygon(0 2%, 100% 0, 100% 88%, 0 100%);
+        }
+      }
+    </style>
 
-<style>
-/* Fondo animado con polígonos superiores e inferiores */
-.polygon-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
-  animation: polygonMove 4s ease-in-out infinite alternate;
-  z-index: 0;
-  opacity: 0.9;
-}
-
-/* Video con forma poligonal animada */
-.polygon-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  object-fit: contain;
-  margin-top:0;
-  padding-top:0;
-  clip-path: polygon(0 0, 100% 3%, 100% 90%, 0 97%);
-  animation: videoPolygon 3s ease-in-out infinite alternate;
-  z-index: 2;
-  position: relative;
-}
-
-/* Animaciones acentuadas y más rápidas */
-@keyframes polygonMove {
-  0% {
-    clip-path: polygon(0 0, 100% 3%, 100% 95%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 97%);
-  }
-}
-
-@keyframes videoPolygon {
-  0% {
-    clip-path: polygon(0 0, 100% 3%, 100% 90%, 0 97%);
-  }
-  100% {
-    clip-path: polygon(0 2%, 100% 0, 100% 88%, 0 100%);
-  }
-}
-</style>
-
-
-
-
-       <footer id="footer" class="footer">
+    <footer id="footer" class="footer">
       <div class="footer-container">
         <div class="footer-columns">
 
@@ -303,18 +297,18 @@
           <!-- Prácticas -->
           <div class="footer-section">
             <h4>Prácticas</h4>
-      <ul>
-    <li><a href="practicas.html">Derecho Laboral</a></li>
-    <li><a href="practicas.html">Derecho Corporativo</a></li>
-    <li><a href="practicas.html">Juicios y Arbitrajes</a></li>
-    <li><a href="practicas.html">Cobranza</a></li>
-  </ul>
+            <ul>
+              <li><a href="practicas.html">Derecho Laboral</a></li>
+              <li><a href="practicas.html">Derecho Corporativo</a></li>
+              <li><a href="practicas.html">Juicios y Arbitrajes</a></li>
+              <li><a href="practicas.html">Cobranza</a></li>
+            </ul>
           </div>
 
           <!-- Dirección / Empresa -->
           <div class="footer-section">
             <h4>Dirección</h4>
-          <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
+            <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
           </div>
         </div>
       </div>
@@ -324,20 +318,13 @@
       </div>
     </footer>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
-
-    </style>
-
-   
-
     <!-- JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 1000 });
-</script>
+    <script>
+      AOS.init({ once: true, duration: 1000 });
+    </script>
 
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

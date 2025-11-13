@@ -1368,16 +1368,24 @@ section,
   border-radius: 12px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Por si un padre aplica peso en cascada */
+  font-weight: 300;
 }
 
-/* Resaltar títulos */
+/* Resaltar títulos (mantener fuertes) */
 .card-practica h4 {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 1.4rem;
-  color: #293e58; /* color destacado */
+  color: #293e58;
   margin-bottom: 15px;
   letter-spacing: 1px;
+}
+
+/* Íconos dentro del título */
+.card-practica h4 i {
+  font-weight: 400;
+  margin-right: 6px;
 }
 
 /* Cuerpo del card ocupa todo el espacio restante */
@@ -1387,12 +1395,24 @@ section,
   flex-direction: column;
 }
 
-/* Párrafos dentro del card */
-.card-practica p {
-  flex: 1; /* hace que el contenido se distribuya de manera uniforme */
+/* Párrafos dentro del card: regla con alta prioridad */
+.card-practica p,
+.card-practica p * {
+  flex: 1;
   font-size: 0.95rem;
   line-height: 1.6;
   color: #1b1b1b;
+  font-weight: 300 !important;      /* fuerza peso ligero */
+  font-family: inherit !important;  /* evita herencias inesperadas */
+  font-synthesis: none !important;  /* evita síntesis de peso por el browser */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Si hay <strong> que no quieras, normalizarlos dentro de las cards */
+.card-practica p strong,
+.card-practica p b {
+  font-weight: 300 !important;
 }
 
 /* Efecto hover opcional */
@@ -1400,6 +1420,8 @@ section,
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+
 
 /* Ajustes responsivos */
 @media (max-width: 992px) {

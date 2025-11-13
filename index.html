@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-   <title>Fycia - Abogados | Fernández & Cía</title>
-  <meta name="description" content="Estudio jurídico especializado en derecho laboral, corporativo y litigios. Asesorías empresariales integrales en Fycia.cl.">
+    <title>Fycia - Abogados | Fernández & Cía</title>
+    <meta name="description" content="Estudio jurídico especializado en derecho laboral, corporativo y litigios. Asesorías empresariales integrales en Fycia.cl.">
     <meta name="keywords" content="Abogados" >
   
     <!-- Favicons -->
@@ -26,78 +26,79 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Importar Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
   </head> 
-<style>
 
+  <style>
+    /* === HEADER UNIFICADO PARA INDEX - Transparente === */
+    #header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      height: 120px !important;
+      color: #ffffff !important;
+      background-color: transparent !important; /* Transparente */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0) !important; /* Sin sombra inicial */
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
 
-/* === HEADER UNIFICADO PARA INDEX === */
-#header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  height: 120px !important;
-  color: #ffffff !important;
-  background-color: transparent !important; /* inicia transparente */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0); /* mantiene espacio visual, sin sombra visible */
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-}
+    /* === HEADER CON SCROLL - Aparece el fondo al hacer scroll === */
+    #header.scrolled {
+      background-color: rgba(41, 62, 88, 0.85) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
 
-/* === HEADER CON SCROLL === */
-#header.scrolled {
-  background-color: rgba(41, 62, 88, 0.85) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-}
+    /* === FUENTE Y ESTILO UNIFICADO PARA LINKS - Igual que equipo.html === */
+    #header .navmenu a,
+    #header .navmenu ul li a {
+      font-family: 'Cinzel', serif !important;
+      font-weight: 400 !important; /* más delgada igual que equipo.html */
+      font-size: 15px !important; /* tamaño más pequeño igual que equipo.html */
+      letter-spacing: 0.8px;
+      text-transform: uppercase; /* texto en mayúsculas igual que equipo.html */
+      color: #ffffff !important;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+      -webkit-font-smoothing: antialiased; /* suavizado igual que equipo.html */
+      -moz-osx-font-smoothing: grayscale; /* suavizado igual que equipo.html */
+    }
 
-/* === FUENTE Y ESTILO UNIFICADO PARA LINKS === */
-#header .navmenu a,
-#header .navmenu ul li a {
-  font-size: 20px !important;
-  letter-spacing: 0.8px;
-  color: #ffffff !important;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+    /* === EFECTO HOVER === */
+    #header .navmenu a:hover,
+    #header .navmenu li:hover > a,
+    #header .navmenu .active,
+    #header .navmenu .active:focus {
+      color: #f0f0f0 !important;
+      letter-spacing: 1px;
+    }
 
-}
-
-/* === EFECTO HOVER === */
-#header .navmenu a:hover,
-#header .navmenu li:hover > a,
-#header .navmenu .active,
-#header .navmenu .active:focus {
-  color: #f0f0f0 !important;
-  letter-spacing: 1px;
-}
-
-/* === ICONO MENU MÓVIL === */
-#header .mobile-nav-toggle {
-  color: #ffffff !important;
-}
-
-
-</style>
+    /* === ICONO MENU MÓVIL === */
+    #header .mobile-nav-toggle {
+      color: #ffffff !important;
+    }
+  </style>
 
   <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top ">
+    <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         
         <!-- Logo y Slogan -->
@@ -112,7 +113,7 @@
             <!-- <li><a href="index.html">Inicio</a></li> -->
             <li><a href="nosotros.html">Quienes Somos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
-<li><a href="practicas.html">Prácticas</a></li>
+            <li><a href="practicas.html">Áreas de Práctica</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -123,65 +124,64 @@
     <main class="main">
       <!-- Hero Section Optimizado -->
       <section class="hero-mask">
-  <!-- Video original -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="assets/video/hero1.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
+        <!-- Video original -->
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/video/hero1.mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
 
-  <!-- Overlay poligonal y sombreado superior -->
-  <div class="mask"></div>
-  <div class="top-shadow"></div>
+        <!-- Overlay poligonal y sombreado superior -->
+        <div class="mask"></div>
+        <div class="top-shadow"></div>
 
-  <!-- Texto principal -->
-  <div class="hero-text">
-    <ul>
-      <li>Derecho Laboral</li>
-      <li>Derecho Corporativo</li>
-      <li>Juicios y Arbitrajes</li>
-      <li>Cobranza</li>
-    </ul>
-  </div>
-</section>
-
+        <!-- Texto principal -->
+        <div class="hero-text">
+          <ul>
+            <li>Derecho Laboral</li>
+            <li>Derecho Corporativo</li>
+            <li>Juicios y Arbitrajes</li>
+            <li>Cobranza</li>
+          </ul>
+        </div>
+      </section>
 
       <!-- Sección Fernández&Cía - Firma Legal -->
       <section id="fernandez-cia" class="fernandez-section">
-  <div class="fernandez-content" data-aos="fade-up" data-aos-duration="2000">
-    <div class="section-header text-center mb-5">
-      <h2 class="display-5 fw-light">Fernández &amp; Cía</h2>
-      <div class="divider mx-auto mt-4 mb-5"></div>
-    </div>
-    
-    <div class="fernandez-description">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="row justify-content-center">
-              <div class="col-lg-12">
-              <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
-                Fernández &amp; Cía centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.
-              </p>
-            </div>
+        <div class="fernandez-content" data-aos="fade-up" data-aos-duration="2000">
+          <div class="section-header text-center mb-5">
+            <h2 class="display-5 fw-light">Fernández &amp; Cía</h2>
+            <div class="divider mx-auto mt-4 mb-5"></div>
           </div>
-          <div class="row justify-content-center">
-                <div class="col-lg-12">
-              <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
-                Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.
-              </p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
-                Velamos siempre por ofrecer un servicio cercano, práctico y confiable, adaptado a las necesidades de nuestros clientes.
-              </p>
+          
+          <div class="fernandez-description">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="row justify-content-center">
+                  <div class="col-lg-12">
+                    <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
+                      Fernández &amp; Cía centra su práctica en materias relacionadas con derecho laboral, corporativo, litigios y asesorías empresariales integrales.
+                    </p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-lg-12">
+                    <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
+                      Contamos con vasta experiencia asesorando empresas nacionales y extranjeras en la creación de nuevos negocios, gobierno corporativo, due diligence, derecho laboral y juicios de alta complejidad.
+                    </p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-lg-12">
+                    <p class="lead mb-5 px-5" data-aos="fade-up" data-aos-delay="1200">
+                      Velamos siempre por ofrecer un servicio cercano, práctico y confiable, adaptado a las necesidades de nuestros clientes.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </main>
 
     <footer id="footer" class="footer">
@@ -198,18 +198,18 @@
           <!-- Prácticas -->
           <div class="footer-section">
             <h4>Prácticas</h4>
-   <ul>
-    <li><a href="Practicas.html">Derecho Laboral</a></li>
-    <li><a href="Practicas.html">Derecho Corporativo</a></li>
-    <li><a href="Practicas.html">Juicios y Arbitrajes</a></li>
-    <li><a href="Practicas.html">Cobranza</a></li>
-  </ul>
+            <ul>
+              <li><a href="Practicas.html">Derecho Laboral</a></li>
+              <li><a href="Practicas.html">Derecho Corporativo</a></li>
+              <li><a href="Practicas.html">Juicios y Arbitrajes</a></li>
+              <li><a href="Practicas.html">Cobranza</a></li>
+            </ul>
           </div>
 
           <!-- Dirección / Empresa -->
           <div class="footer-section">
             <h4>Dirección</h4>
-           <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
+            <p>Avenida Vitacura N°3.568, oficina 807, Vitacura</p>
           </div>
         </div>
       </div>
@@ -219,17 +219,12 @@
       </div>
     </footer>
 
-    <style>
-
-    </style>
-
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Preloader -->
     <div id="preloader" class="d-flex align-items-center justify-content-center">
       <div class="preloader-content text-center">
-    
         <div class="slogan">
           <p class="pulse delay5">Cargando...</p>
         </div>
@@ -250,6 +245,16 @@
           preloader.classList.add("hide");
         }
       }, 4000);
+
+      // Script para el efecto de scroll en el navbar
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
     </script>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -271,7 +276,6 @@
         delay: 100,
         mirror: false
       });
-
     </script>
 
     <!-- Main JS File -->
